@@ -1,23 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1, initial-scale=1.0">
-    <title>Formulario</title>
-</head>
-<body>
-    <form>
-        <div>
-            <label> nombre</label>
-        </div>
-        <div>
-            <label> Contraseña</label>
-        </div>
-        <div>
-            <label> Correo electronico</label>
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=1, initial-scale=1.0">
+        <title>Formulario</title>
+    </head>
+    <nav>
+        <section>
+            <li>
+                <a href="pages/informacion.html">Más Información</a>
+            </li>
 
+            <li>
+                <a href="pages/comunidad.html">Comunidad</a>
+            </li>
 
-    </form>
-</body>
+            <li>
+                <a href="pages/descargar.html">Descargar</a>
+            </li>
+        </section>
+    </nav>
+
+    <body>
+        <form action="/receptor-formulario" method="post" enctype="multipart/form-data">
+            <div>
+                <label> Nombre</label>
+                <input name="nombre usuario" id="input nombre" type="text" placeholder="Nombre de usuario" required autofocus> 
+            </div>
+            <div>
+                <label> Contraseña</label>
+                <input name="contrasenia" id="input contrasenia" type="password" placeholder="Mas de 8 caracteres" required minlength="10">
+            </div>
+            <div>
+                <label> Correo electronico</label>
+                <input name="correo electronico" id="input correo" type="email" required>
+            </div>
+            <div>
+                <label> <h3> Modalidad </h3></label>
+                <label for="rad-normal">Normal</label>
+                <input type="radio" id="rad-basico" name="plan" value="basico" checked>
+                <label for="rad-seguridad">Alta seguridad</label>
+                <input type="radio" id="rad-seguro" name="plan" value="segurio">
+                <label for="rad-personalizado">Personalizado</label>
+                <input type="radio" id="rad-personalizado" name="plan" value="personalizado">
+            </div>
+
+            <div>
+                <label> Acepto terminos y condiciones</label>
+                <input name="terminos aceptados" id="input check terminos" type="checkbox" required value="aceptado">
+            </div>
+
+            <div>
+                <button type="submit">Crear cuenta</button>
+                <button type="reset"> Cancelar</button>
+            </div>
+        </form>
+    </body>
 </html>
