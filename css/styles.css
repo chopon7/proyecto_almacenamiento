@@ -1,0 +1,37 @@
+*{
+    color: rgb(10, 10, 10);
+}
+
+.border {
+    border: 5px solid white;
+}
+    
+header {
+    border: 5px solid white;
+    background-color: #efa9a9;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+body {
+    border: 5px solid white;
+    background-color: #665c5c;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    border: 5px solid white;
+    background-color: #88a14a;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+}
+
+#img-principal {
+    width: 30%;
+    height: auto;
+}

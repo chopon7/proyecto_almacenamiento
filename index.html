@@ -24,11 +24,12 @@
     <meta property="og:image" content="https://imgs.search.brave.com/LFUvWDowFZiyRemXTzSNoQZqHijRwnziYuDO23TvPWo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9raW5z/dGEuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIyLzA4L2Ns/b3VkLXN0b3JhZ2Ut/cHJvY2Vzcy1pbGx1/c3RyYXRpb24ucG5n">
     <meta property="og:url" content="https://temudrive.com">
     <meta property="og:type" content="website">
-    
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 
-<body>
-    <header>
+<body id="body">
+    <header class="header">
         <h2>Temu Drive</h2>
         <nav>
             <section>
@@ -45,7 +46,6 @@
                 </li>
             </section>
         </nav>
-
     </header>
     <main>
         <section name="Introduccion">
@@ -70,7 +70,7 @@
                 loading="lazy"  
             >
 
-            <img src="assets/img/Fondo1.jpg"
+            <img id="img-principal" src="assets/img/Fondo1.jpg"
             alt="Imagen de fondo de texto principal y con tranparencia"
             width="300"
             height="300"
@@ -79,13 +79,13 @@
         </picture>
                 
         <section name="Botones" content="Botones de iniciar sesion y registrarse">
-            <button>Iniciar sesión</button>
-            <button>Registrarse</button>
+            <button class="border"">Iniciar sesión</button>
+            <button class="border"">Registrarse</button>
         </section>
 
     </main>
 
-    <footer>
+    <footer id="div-footer">
         <section name="pie de pagina">
             Temu Drive Company
             <div>
