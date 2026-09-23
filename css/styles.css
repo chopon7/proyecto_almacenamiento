@@ -1,32 +1,42 @@
-*{
-    color: rgb(10, 10, 10);
+:root{
+    --gris1: #626262;
+    --gris2: #27272a;
+    --fondo: #0c0a09;
+    --verde: #10b981;
+    --gris-claro: #cbcbcb;
+}
+@font-face {
+  font-family: Roboto, sans-serif;
+  src: url(../assets/fonts/Roboto-Medium.ttf);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-.border {
-    border: 5px solid white;
+*{
+    color: var(--gris-claro);
 }
     
 header {
-    border: 5px solid white;
-    background-color: #efa9a9;
-    padding: 20px;
-    font-size: 24px;
+    border: 0.1rem solid white;
+    background-color: var(--gris1);
+
+    font-size: 1rem;
     font-weight: bold;
 }
 
 body {
-    border: 5px solid white;
-    background-color: #665c5c;
-    font-family: Arial, sans-serif;
+    border: 0.1rem solid white;
+    background-color: var(--gris2);
+    font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 footer {
-    border: 5px solid white;
-    background-color: #88a14a;
-    padding: 10px;
-    font-size: 14px;
+    border: 0.1rem solid white;
+    background-color: var(--gris1);
+    font-size: 1rem;
     text-align: center;
     color: white;
 }
@@ -35,3 +45,7 @@ footer {
     width: 30%;
     height: auto;
 }
+.Eslogan {
+    color: var(--verde);
+}
+
