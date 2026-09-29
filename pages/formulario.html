@@ -1,59 +1,73 @@
+<!--Esta pagina debera ser eliminada, solo es de practica-->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=1, initial-scale=1.0">
-        <title>Formulario</title>
-    </head>
-    <nav>
-        <section>
-            <li>
-                <a href="pages/informacion.html">Más Información</a>
-            </li>
 
-            <li>
-                <a href="pages/comunidad.html">Comunidad</a>
-            </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://temudrive/register">
 
-            <li>
-                <a href="pages/descargar.html">Descargar</a>
-            </li>
-        </section>
-    </nav>
+    <!-- Información de pestaña-->
+    <link rel="icon" type="image/png" href="./assets/icons/nube.png">
+    <title>Registro</title>
 
-    <body>
-        <form action="/receptor-formulario" method="post" enctype="multipart/form-data">
-            <div>
-                <label> Nombre</label>
-                <input name="nombre usuario" id="input nombre" type="text" placeholder="Nombre de usuario" required autofocus> 
-            </div>
-            <div>
-                <label> Contraseña</label>
-                <input name="contrasenia" id="input contrasenia" type="password" placeholder="Mas de 8 caracteres" required minlength="10">
-            </div>
-            <div>
-                <label> Correo electronico</label>
-                <input name="correo electronico" id="input correo" type="email" required>
-            </div>
-            <div>
-                <label> <h3> Modalidad </h3></label>
-                <label for="rad-normal">Normal</label>
-                <input type="radio" id="rad-basico" name="plan" value="basico" checked>
-                <label for="rad-seguridad">Alta seguridad</label>
-                <input type="radio" id="rad-seguro" name="plan" value="segurio">
-                <label for="rad-personalizado">Personalizado</label>
-                <input type="radio" id="rad-personalizado" name="plan" value="personalizado">
-            </div>
+    <!-- Metadatos para SEO y redes sociales -->
+    <meta name="description"
+        content="Registrate en Temu Drive, la mejor web para almacenar tus archivos en la nube de manera segura y confiable.">
+    <meta name="Keywords" content="HTML, CSS, almacenamiento en la nube">
+    <meta name="robots" content="index, follow">
+</head>
+<nav>
+    <section>
+        <li>
+            <a href="pages/informacion.html">Más Información</a>
+        </li>
 
-            <div>
-                <label> Acepto terminos y condiciones</label>
-                <input name="terminos aceptados" id="input check terminos" type="checkbox" required value="aceptado">
-            </div>
+        <li>
+            <a href="pages/comunidad.html">Comunidad</a>
+        </li>
 
-            <div>
-                <button type="submit">Crear cuenta</button>
-                <button type="reset"> Cancelar</button>
-            </div>
-        </form>
-    </body>
+    </section>
+</nav>
+
+<body>
+    <form action="/receptor-formulario" method="post" enctype="multipart/form-data">
+        <div>
+            <label> Nombre</label>
+            <input name="nombre usuario" id="input nombre" type="text" placeholder="Nombre de usuario" required
+                autofocus>
+        </div>
+        <div>
+            <label> Contraseña</label>
+            <input name="contrasenia" id="input contrasenia" type="password" placeholder="Mas de 8 caracteres" required
+                minlength="10">
+        </div>
+        <div>
+            <label> Correo electronico</label>
+            <input name="correo electronico" id="input correo" type="email" required>
+        </div>
+        <div>
+            <label>
+                <h3> Modalidad </h3>
+            </label>
+            <label for="rad-normal">Normal</label>
+            <input type="radio" id="rad-basico" name="plan" value="basico" checked>
+            <label for="rad-seguridad">Alta seguridad</label>
+            <input type="radio" id="rad-seguro" name="plan" value="segurio">
+            <label for="rad-personalizado">Personalizado</label>
+            <input type="radio" id="rad-personalizado" name="plan" value="personalizado">
+        </div>
+
+        <div>
+            <label> Acepto terminos y condiciones</label>
+            <input name="terminos aceptados" id="input check terminos" type="checkbox" required value="aceptado">
+        </div>
+
+        <div>
+            <button type="submit">Crear cuenta</button>
+            <button type="reset"> Cancelar</button>
+        </div>
+    </form>
+</body>
+
 </html>
