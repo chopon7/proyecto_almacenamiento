@@ -1,0 +1,104 @@
+:root {
+    --gris1: #626262;
+    --gris2: #27272a;
+    --fondo: #0c0a09;
+    --verde: #10b981;
+    --gris-claro: #cbcbcb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    background-color: var(--fondo);
+    color: white;
+
+    text-align: center;
+
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+    font-size: 4vw;
+    font-weight: bold;
+
+    display: inline-block;
+
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 0.08em;
+
+    color: white;
+}
+
+h2 {
+    color: white;
+    margin: 0 0 16px;
+    font-size: 1.75rem;
+}
+
+p {
+    color: var(--gris-claro);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+.descripcion-carta {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--gris-claro);
+}
+
+.contenido {
+    padding: 24px;
+
+}
+
+.alineacion-cartas {
+    padding: 24px;
+    text-align: center;
+}
+
+.carta {
+    display: inline-block;
+    min-width: 250px;
+    min-height: 250px;
+    width: 350px;
+    height: 280px;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--gris2);
+    border: 1px solid var(--gris1);
+    border-radius: 4px;
+    text-align: left;
+}
+
+
+.titulo-carta {
+    margin: 4px 0;
+    font-size: 1.25rem;
+}
+
+.boton {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px 16px;
+    background-color: var(--verde);
+    color: white;
+
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    border: 1px solid var(--color-primario);
+    border-radius: 2px;
+}
