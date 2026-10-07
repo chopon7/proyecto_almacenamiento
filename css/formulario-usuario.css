@@ -99,96 +99,54 @@ body {
     font-family: var(--fuente-secundaria);
 }
 
-/* Main */
-.main {
-    text-align: center;
-    padding: 12rem 6rem;
-    background: url('../assets/img/Fondo1.jpg') center/cover no-repeat;
-    background-size: 30rem;
+/* Formulario */
+.formulario {
+    font-size: 1rem;
     background-color: var(--fondo);
-    background-attachment: inherit;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 2rem auto;
 }
 
-.main__subtitle {
-    font-family: var(--fuente-secundaria);
-    color: var(--gris1);
-    margin-bottom: 1rem;
-}
-
-.main__title {
-    font-family: var(--fuente-principal);
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.main__title--highlight {
+.formulario-h2 {
     color: var(--verde);
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-.main__text {
-    max-width: 700px;
-    margin: 0 auto 2rem;
-    line-height: 1.6;
-}
-
-/* Botones */
-.main__buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.button {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: var(--fuente-principal);
-    transition: transform 0.3s ease;
-}
-
-.button--primary {
-    background-color: var(--verde);
-    color: #fff;
-}
-
-.button--secondary {
-    background-color: var(--gris2);
-    color: #fff;
-}
-
-.button:hover {
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: var(--fondo2);
-    border-top: 0.1rem solid var(--gris1);
-    padding: 2rem;
-    font-family: var(--fuente-secundaria);
+.formulario-h3 {
+    color: var(--verde);
+    margin-top: 1rem;
     text-align: left;
 }
 
-footer section {
-    flex: 1 1 200px;
-    margin: 1rem;
+.formulario label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-footer p {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+.formulario input[type="text"],
+.formulario input[type="password"],
+.formulario input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--gris1);
+    background-color: var(--fondo);
     color: var(--gris-claro);
+    font-family: var(--fuente-secundaria);
 }
 
-footer picture img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    vertical-align: middle;
+.formulario-botton {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    background-color: var(--verde);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: var(--fuente-secundaria);
 }

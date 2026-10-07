@@ -7,67 +7,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://temudrive/register">
 
+    
     <!-- Información de pestaña-->
-    <link rel="icon" type="image/png" href="./assets/icons/nube.png">
-    <title>Registro</title>
+    <link rel="icon" type="image/png" href="../assets/icons/nube.png">
+    <title>Temu Drive - Registro</title>
 
     <!-- Metadatos para SEO y redes sociales -->
     <meta name="description"
         content="Registrate en Temu Drive, la mejor web para almacenar tus archivos en la nube de manera segura y confiable.">
     <meta name="Keywords" content="HTML, CSS, almacenamiento en la nube">
     <meta name="robots" content="index, follow">
+
+    <!-- Vincular css-->
+    <link rel="stylesheet" href="../css/formulario-usuario.css">
 </head>
-<nav>
-    <section>
-        <li>
-            <a href="pages/informacion.html">Más Información</a>
-        </li>
 
-        <li>
-            <a href="pages/comunidad.html">Comunidad</a>
-        </li>
-
-    </section>
-</nav>
-
-<body>
-    <form action="/receptor-formulario" method="post" enctype="multipart/form-data">
-        <div>
-            <label> Nombre</label>
-            <input name="nombre usuario" id="input nombre" type="text" placeholder="Nombre de usuario" required
-                autofocus>
-        </div>
-        <div>
-            <label> Contraseña</label>
-            <input name="contrasenia" id="input contrasenia" type="password" placeholder="Mas de 8 caracteres" required
-                minlength="10">
-        </div>
-        <div>
-            <label> Correo electronico</label>
-            <input name="correo electronico" id="input correo" type="email" required>
-        </div>
-        <div>
-            <label>
-                <h3> Modalidad </h3>
-            </label>
-            <label for="rad-normal">Normal</label>
-            <input type="radio" id="rad-basico" name="plan" value="basico" checked>
-            <label for="rad-seguridad">Alta seguridad</label>
-            <input type="radio" id="rad-seguro" name="plan" value="segurio">
-            <label for="rad-personalizado">Personalizado</label>
-            <input type="radio" id="rad-personalizado" name="plan" value="personalizado">
+<body id="body">
+    <header class="header">
+        <div class="header__brand">
+            <img class="header__logo-img" src="../assets/icons/nube.png" alt="Logo Temu Drive" width="50" height="50"
+                loading="lazy">
+            <h2 class="header__logo-text">Temu Drive</h2>
         </div>
 
-        <div>
-            <label> Acepto terminos y condiciones</label>
-            <input name="terminos aceptados" id="input check terminos" type="checkbox" required value="aceptado">
-        </div>
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a class="header__link" href="pages/informacion.html">Más Información</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="pages/soporte.html">Soporte</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="pages/comunidad.html">Comunidad</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="pages/soporte.html">Descargar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-        <div>
-            <button type="submit">Crear cuenta</button>
-            <button type="reset"> Cancelar</button>
-        </div>
-    </form>
+    <div class="formulario">
+        <h2 class="formulario-h2">Registro de usuario</h2>
+        <form action="/receptor-formulario" method="post" enctype="multipart/form-data">
+            <div>
+                <label class="formulario-label"> Nombre</label>
+                <input class="formulario-input" name="nombre usuario" id="input nombre" type="text" placeholder="Nombre de usuario" required
+                    autofocus>
+            </div>
+            <div>
+                <label class="formulario-label"> Contraseña</label>
+                <input class="formulario-input" name="contrasenia" id="input contrasenia" type="password" placeholder="Mas de 8 caracteres"
+                    required minlength="10">
+            </div>
+            <div>
+                <label class="formulario-label"> Correo electronico</label>
+                <input class="formulario-input" name="correo electronico" id="input correo" type="email" required>
+            </div>
+            <div>
+                <h3 class="formulario-h3"> Modalidad </h3>
+                <label for="rad-normal">Normal</label>
+                <input type="radio" id="rad-basico" name="plan" value="basico" checked>
+                <label for="rad-seguridad">Alta seguridad</label>
+                <input type="radio" id="rad-seguro" name="plan" value="segurio">
+                <label for="rad-personalizado">Personalizado</label>
+                <input type="radio" id="rad-personalizado" name="plan" value="personalizado">
+            </div>
+
+            <div>
+                <label class="formulario-label"> Acepto terminos y condiciones</label>
+                <input name="terminos aceptados" id="input check terminos" type="checkbox" required value="aceptado">
+            </div>
+
+            <div>
+                <button class="formulario-botton" type="submit">Crear cuenta</button>
+                <button class="formulario-botton" type="reset"> Cancelar</button>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>

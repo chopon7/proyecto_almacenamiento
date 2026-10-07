@@ -1,28 +1,98 @@
 :root {
     --gris1: #626262;
     --gris2: #27272a;
-    --fondo: #0c0a09;
+    --fondo: #252528;
+    --fondo2: #1E1E1E;
     --verde: #10b981;
     --gris-claro: #cbcbcb;
+
+    --fuente-principal: 'Share Tech Mono', monospace;
+    --fuente-secundaria: 'Roboto Mono', monospace;
 }
 
 * {
     box-sizing: border-box;
 }
 
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--fondo2);
+    font-family: var(--fuente-principal);
+    border-bottom: 0.1rem solid var(--gris1);
+    padding: 1rem 2rem;
+}
+
+.header__logo-img {
+    display: block;
+}
+
+.header__list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.header__logo {
+    font-family: var(--fuente-principal);
+    font-size: 1.5rem;
+}
+
+.header__logo-text {
+    font-family: var(--fuente-principal);
+    font-size: 1.5rem;
+    margin: 0; 
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+}
+
+.header__link {
+    text-decoration: none;
+    color: var(--gris-claro);
+    font-family: var(--fuente-secundaria);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Pseudoclase */
+.header__link:hover {
+    color: var(--verde);
+}
+
+/* Pseudoelemento */
+.header__link::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: var(--verde);
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+
+.header__link:hover::after {
+    width: 100%;
+}
+
+
 body {
     margin: 0;
-
     background-color: var(--fondo);
     color: white;
-
     text-align: center;
-
-    font-family: 'PT Sans', sans-serif;
+    font-family: var(--fuente-secundaria);
 }
 
 h1 {
-    font-size: 4vw;
+    font-size: 2rem;
     font-weight: bold;
 
     display: inline-block;
@@ -31,6 +101,7 @@ h1 {
     text-align: left;
     letter-spacing: 0.08em;
 
+    font-family: var(--fuente-principal);
     color: white;
 }
 
@@ -38,6 +109,7 @@ h2 {
     color: white;
     margin: 0 0 16px;
     font-size: 1.75rem;
+    font-family: var(--fuente-principal);
 }
 
 p {
@@ -77,6 +149,17 @@ p {
     border: 1px solid var(--gris1);
     border-radius: 4px;
     text-align: left;
+    position: relative;
+}
+
+.etiqueta--popular{
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    background-color: var(--verde);
+    color: white;
+    font-size: 0.75rem; 
+    position: absolute;
 }
 
 
