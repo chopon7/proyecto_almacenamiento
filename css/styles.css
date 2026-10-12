@@ -18,6 +18,29 @@
     padding: 0;
 }
 
+/* Asignación de áreas del Grid */
+.header { grid-area: header; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
+/* Contenedor Grid */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+}
+
+/* Body */
+body {
+    background-color: var(--fondo2);
+    font-family: var(--fuente-secundaria);
+}
+
 /* Header */
 h2 {
     color: white;
@@ -25,7 +48,6 @@ h2 {
     font-size: 1.75rem;
     font-family: var(--fuente-principal);
 }
-
 
 .header {   
     display: flex;
@@ -52,11 +74,6 @@ h2 {
     margin: 0; 
 }
 
-.header__logo {
-    font-family: var(--fuente-principal);
-    font-size: 1.5rem;
-}
-
 .header__list {
     display: flex;
     gap: 2rem;
@@ -71,12 +88,10 @@ h2 {
     transition: color 0.3s ease;
 }
 
-/* Pseudoclase */
 .header__link:hover {
     color: var(--verde);
 }
 
-/* Pseudoelemento */
 .header__link::after {
     content: "";
     display: block;
@@ -93,20 +108,17 @@ h2 {
     width: 100%;
 }
 
-/* Body */
-body {
-    background-color: var(--fondo2);
-    font-family: var(--fuente-secundaria);
-}
-
 /* Main */
 .main {
     text-align: center;
-    padding: 12rem 6rem;
+    padding: 8rem 2rem;
     background: url('../assets/img/Fondo1.jpg') center/cover no-repeat;
     background-size: 30rem;
     background-color: var(--fondo);
-    background-attachment: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main__subtitle {
@@ -163,7 +175,7 @@ body {
 }
 
 /* Footer */
-footer {
+.footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -174,19 +186,20 @@ footer {
     text-align: left;
 }
 
-footer section {
+.footer section {
     flex: 1 1 200px;
     margin: 1rem;
 }
 
-footer p {
+.footer p {
+    width: 100%;
     text-align: center;
     margin-top: 2rem;
     font-size: 0.9rem;
     color: var(--gris-claro);
 }
 
-footer picture img {
+.footer picture img {
     width: 30px;
     height: 30px;
     margin-right: 10px;
