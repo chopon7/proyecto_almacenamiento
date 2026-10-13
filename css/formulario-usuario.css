@@ -63,17 +63,20 @@ h2 {
     list-style: none;
 }
 
+.header__toggle {
+    display: none;
+}
+
+.header__burger {
+    display: none;
+}
+
 .header__link {
     text-decoration: none;
     color: var(--gris-claro);
     font-family: var(--fuente-secundaria);
     position: relative;
     transition: color 0.3s ease;
-}
-
-/* Pseudoclase */
-.header__link:hover {
-    color: var(--verde);
 }
 
 /* Pseudoelemento */
@@ -87,10 +90,6 @@ h2 {
     position: absolute;
     bottom: -4px;
     left: 0;
-}
-
-.header__link:hover::after {
-    width: 100%;
 }
 
 /* Body */
@@ -149,4 +148,77 @@ body {
     border: none;
     cursor: pointer;
     font-family: var(--fuente-secundaria);
+}
+
+/*Efectos hover solo en dispositivos con mouse o trackpad.
+En celulares y tabletas (pantalla tactil) no hay cursor, y el hover
+se quedaria "pegado" despues de tocar un link o boton*/
+@media (hover: hover) {
+    .header__link:hover {
+        color: var(--verde);
+    }
+
+    .header__link:hover::after {
+        width: 100%;
+    }
+}
+
+/*Menu de hamburguesa: celulares y tabletas*/
+@media (max-width: 1023px) {
+    .header {
+        /*Permite que el nav baje a su propia fila debajo del logo*/
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    /*Forma del menu de hamburgesa*/
+    .header__burger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .header__burger span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background-color: var(--gris-claro);
+        border-radius: 2px;
+        transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /*Esconde el nav; width 100% lo obliga a ocupar una fila completa*/
+    .header__nav {
+        display: none;
+        width: 100%;
+    }
+
+    /*Y lo muestra cuando la checkbox esta marcada*/
+    .header__toggle:checked~.header__nav {
+        display: block;
+    }
+
+    /*Estaquea los links*/
+    .header__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    /*El icono se convierte en una X al abrir*/
+    .header__toggle:checked+.header__burger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .header__toggle:checked+.header__burger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header__toggle:checked+.header__burger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }

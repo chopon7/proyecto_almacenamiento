@@ -40,10 +40,18 @@
 <body id="body">
     <header class="header">
         <div class="header__brand">
-            <img class="header__logo-img" src="../assets/icons/nube.png" alt="Logo Temu Drive" width="50" height="50"
+            <img class="header__logo-img" src="/assets/img/nube.webp" alt="Logo Temu Drive" width="50" height="50"
                 loading="lazy">
             <h2 class="header__logo-text">Temu Drive</h2>
         </div>
+
+        <!-- Agrega boton hamburger, hidden checkbox + hamburger button -->
+        <input type="checkbox" id="menu-toggle" class="header__toggle">
+        <label for="menu-toggle" class="header__burger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
         <nav class="header__nav">
             <ul class="header__list">
