@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temu Drive - Paquetes</title>
-    <!-- Información de pestaña-->
     <link rel="icon" type="image/png" href="../assets/icons/nube.png">
     <link rel="stylesheet" href="../css/cartas-estilos.css">
 </head>
 
-<body>
+<body id="body" class="layout">
+
+    <!-- Header -->
     <header class="header">
-        <div class="header__brand">
-            <img class="header__logo-img" src="../assets/icons/nube.png" alt="Logo Temu Drive" width="50" height="50"
-                loading="lazy">
+        <section class="header__brand">
+            <img class="header__logo-img" src="../assets/icons/nube.png" alt="Logo Temu Drive" width="50" height="50" loading="lazy">
             <h2 class="header__logo-text">Temu Drive</h2>
-        </div>
+        </section>
 
         <!-- Agrega boton hamburger, hidden checkbox + hamburger button -->
         <input type="checkbox" id="menu-toggle" class="header__toggle">
@@ -28,23 +28,16 @@
 
         <nav class="header__nav">
             <ul class="header__list">
-                <li class="header__item">
-                    <a class="header__link" href="pages/informacion.html">Más Información</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="pages/soporte.html">Soporte</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="pages/comunidad.html">Comunidad</a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="pages/soporte.html">Descargar</a>
-                </li>
+                <li class="header__item"><a class="header__link" href="pages/informacion.html">Más Información</a></li>
+                <li class="header__item"><a class="header__link" href="pages/soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="pages/comunidad.html">Comunidad</a></li>
+                <li class="header__item"><a class="header__link" href="pages/soporte.html">Descargar</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="contenido">
+    <!-- Main -->
+    <main class="main contenido">
         <section>
             <h2>Elige tu paquete de almacenamiento</h2>
             <p>Selecciona el plan que mejor se adapte a tus necesidades.</p>
@@ -53,57 +46,57 @@
         <section class="alineacion-cartas">
 
             <article class="carta">
-                <h4 class="titulo-carta">Básico</h4>
-                <p class="descripcion-carta">
-                    Incluye:
-                </p>
-                <ul class="descripcion-carta">
-                    <li>10 GB de almacenamiento seguro. </li>
-                    <li>Precio: $5/mes </li>
-                    <li>Incluye acceso a funciones básicas de almacenamiento y compartición de archivos</li>
-                    <li>Soporte por un ali</li>
-                    <li>Medidas de seguridad standart</li>
-                </ul>
-
-                <button class="boton">Seleccionar</button>
-            </article>
-            <article class="carta">
-                <h4 class="titulo-carta">Pro</h4> <span class="etiqueta--popular">Popular</span>
-                <p class="descripcion-carta">
-                    Incluye:
-                </p>
-                <ul class="descripcion-carta">
-                    <li>20 GB de almacenamiento seguro. </li>
-                    <li>Precio: $10/mes </li>
-                    <li>Incluye acceso a funciones básicas de almacenamiento y compartición de archivos</li>
-                    <li>Soporte prioritario</li>
-                    <li>Funciones avanzadas de seguridad</li>
-                </ul>
+                <div>
+                    <h4 class="titulo-carta">Básico</h4>
+                    <p class="descripcion-carta">Incluye:</p>
+                    <ul class="descripcion-carta">
+                        <li>10 GB de almacenamiento seguro</li>
+                        <li>Precio: $5/mes</li>
+                        <li>Funciones básicas de guardado</li>
+                        <li>Soporte estándar por correo</li>
+                    </ul>
+                </div>
                 <button class="boton">Seleccionar</button>
             </article>
 
             <article class="carta">
-                <h4 class="titulo-carta">Master</h4>
-                <p class="descripcion-carta">
-                    Incluye:
-                </p>
-                <ul class="descripcion-carta">
-                    <li>50 GB de almacenamiento seguro. </li>
-                    <li>Precio: $15/mes </li>
-                    <li>Incluye acceso a funciones básicas de almacenamiento y compartición de archivos</li>
-                    <li>Soporte prioritario</li>
-                    <li>Funciones avanzadas de seguridad</li>
-                </ul>
+                <span class="etiqueta--popular">Popular</span>
+                <div>
+                    <h4 class="titulo-carta">Pro</h4>
+                    <p class="descripcion-carta">Incluye:</p>
+                    <ul class="descripcion-carta">
+                        <li>20 GB de almacenamiento seguro</li>
+                        <li>Precio: $10/mes</li>
+                        <li>Acceso compartido avanzado</li>
+                        <li>Soporte prioritario</li>
+                        <li>Funciones de seguridad reforzada</li>
+                    </ul>
+                </div>
+                <button class="boton">Seleccionar</button>
+            </article>
 
+            <article class="carta">
+                <div>
+                    <h4 class="titulo-carta">Master</h4>
+                    <p class="descripcion-carta">Incluye:</p>
+                    <ul class="descripcion-carta">
+                        <li>50 GB de almacenamiento seguro</li>
+                        <li>Precio: $15/mes</li>
+                        <li>Acceso total y compartido</li>
+                        <li>Soporte 24/7 dedicado</li>
+                        <li>Cifrado militar avanzado</li>
+                    </ul>
+                </div>
                 <button class="boton">Seleccionar</button>
             </article>
 
         </section>
     </main>
 
-    <footer>
+    <!-- Footer  -->
+    <footer class="footer">
         <p>© 2026 Temu Drive. Todos los derechos reservados.</p>
     </footer>
-</body>
 
+</body>
 </html>

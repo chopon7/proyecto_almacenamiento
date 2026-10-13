@@ -12,12 +12,46 @@
     --font-size-normal: 1.5rem;
 }
 
+/* Reset */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Asignación de áreas del Grid */
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Contenedor principal */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+}
+
+body {
+    background-color: var(--fondo);
+    color: white;
+    font-family: var(--fuente-secundaria);
 }
 
 /* Header */
-header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,8 +61,21 @@ header {
     padding: 1rem 2rem;
 }
 
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .header__logo-img {
     display: block;
+}
+
+.header__logo-text {
+    font-family: var(--fuente-principal);
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
 }
 
 .header__list {
@@ -70,7 +117,13 @@ header {
     transition: color 0.3s ease;
 }
 
+
+
 /* Pseudoelemento */
+.header__link:hover {
+    color: var(--verde);
+}
+
 .header__link::after {
     content: "";
     display: block;
@@ -83,112 +136,135 @@ header {
     left: 0;
 }
 
-
 body {
     margin: 0;
     background-color: var(--fondo);
     color: white;
+}
+
+.header__link:hover::after {
+    width: 100%;
+}
+
+/* Main  */
+.contenido {
+    padding: 3rem 1.5rem;
     text-align: center;
-    font-family: var(--fuente-secundaria);
 }
 
-h1 {
+.contenido h2 {
+    color: white;
+    margin-bottom: 0.75rem;
     font-size: 2rem;
-    font-weight: bold;
-
-    display: inline-block;
-
-    text-transform: uppercase;
-    text-align: left;
-    letter-spacing: 0.08em;
-
-    font-family: var(--fuente-principal);
-    color: white;
-}
-
-h2 {
-    color: white;
-    margin: 0 0 16px;
-    font-size: 1.75rem;
     font-family: var(--fuente-principal);
 }
 
-p {
+.contenido>section>p {
     color: var(--gris-claro);
     font-size: 1rem;
     line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
-
-.descripcion-carta {
-    margin: 0;
-    font-size: 0.875rem;
-    color: var(--gris-claro);
-}
-
-.contenido {
-    padding: 24px;
-
-}
-
+/* Rejilla de cartas */
 .alineacion-cartas {
     padding: 24px;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Carta */
 .carta {
     width: auto;
     height: auto;
     min-height: 250px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: var(--gris2);
     border: 1px solid var(--gris1);
-    border-radius: 4px;
+    border-radius: 8px;
+    padding: 1.75rem;
     text-align: left;
     position: relative;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .etiqueta--popular {
     top: 10px;
     right: 10px;
     padding: 4px 8px;
+}
+
+.carta:hover {
+    transform: translateY(-4px);
+    border-color: var(--verde);
+}
+
+.titulo-carta {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    font-family: var(--fuente-principal);
+    color: white;
+}
+
+.descripcion-carta {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--gris-claro);
+    line-height: 1.5;
+}
+
+ul.descripcion-carta {
+    list-style: square inside;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.etiqueta--popular {
+    top: 12px;
+    right: 12px;
+    padding: 4px 10px;
     background-color: var(--verde);
     color: white;
     font-size: 0.75rem;
     position: absolute;
-}
-
-
-.titulo-carta {
-    margin: 4px 0;
-    font-size: 1.25rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: var(--fuente-principal);
 }
 
 .boton {
     display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 8px 16px;
+    width: 100%;
+    padding: 0.75rem 1rem;
     background-color: var(--verde);
     color: white;
-
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-
-    border: 1px solid var(--gris-claro);
-    border-radius: 2px;
-    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--fuente-principal);
+    font-size: 1rem;
+    transition: opacity 0.2s ease;
 }
 
-/*Efectos hover solo en dispositivos con mouse o trackpad.
-En celulares y tabletas (pantalla tactil) no hay cursor, y el hover
-se quedaria "pegado" despues de tocar un link o boton*/
+/*Efectos hover solo en dispositivos con mouse o trackpad.*/
+/*En celulares y tabletas (pantalla tactil) no hay cursor, y el hover
+    se quedaria "pegado" despues de tocar un link o boton*/
 @media (hover: hover) {
     .boton:hover {
         transform: scale(1.05);
