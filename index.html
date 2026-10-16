@@ -35,29 +35,30 @@
 
     <header class="header">
         <div class="header__brand">
-            <img class="header__logo-img" src="/assets/img/nube.webp" alt="Logo Temu Drive" width="50" height="50"
+            <img class="header__logo-img" src="assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50" height="50"
                 loading="lazy">
 
             <h2 class="header__logo-text">Temu Drive</h2>
             </section>
+        </div>
+        <!-- Agrega boton hamburger, hidden checkbox + hamburger button -->
+        <input type="checkbox" id="menu-toggle" class="header__toggle">
+        <label for="menu-toggle" class="header__burger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-            <!-- Agrega boton hamburger, hidden checkbox + hamburger button -->
-            <input type="checkbox" id="menu-toggle" class="header__toggle">
-            <label for="menu-toggle" class="header__burger" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item"><a class="header__link" href="pages/informacion.html">Más Información</a>
+                </li>
+                <li class="header__item"><a class="header__link" href="pages/soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="pages/comunidad.html">Comunidad</a></li>
+                <li class="header__item"><a class="header__link" href="pages/soporte.html">Descargar</a></li>
+            </ul>
+        </nav>
 
-            <nav class="header__nav">
-                <ul class="header__list">
-                    <li class="header__item"><a class="header__link" href="pages/informacion.html">Más Información</a>
-                    </li>
-                    <li class="header__item"><a class="header__link" href="pages/soporte.html">Soporte</a></li>
-                    <li class="header__item"><a class="header__link" href="pages/comunidad.html">Comunidad</a></li>
-                    <li class="header__item"><a class="header__link" href="pages/soporte.html">Descargar</a></li>
-                </ul>
-            </nav>
     </header>
 
     <main class="main">
@@ -114,7 +115,7 @@
             <section>Case studies</section>
         </section>
 
-        <p>© 2026 Temu Drive. Todos los derechos reservados.</p>
+        <p class="footer__copyright">© 2026 Temu Drive. Todos los derechos reservados.</p>
     </footer>
 
 </body>

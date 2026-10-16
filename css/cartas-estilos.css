@@ -9,7 +9,6 @@
     --fuente-principal: 'Share Tech Mono', monospace;
     --fuente-secundaria: 'Roboto Mono', monospace;
 
-    --font-size-normal: 1.5rem;
 }
 
 /* Reset */
@@ -35,7 +34,7 @@
 /* Contenedor principal */
 .layout {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "header"
@@ -73,7 +72,7 @@ body {
 
 .header__logo-text {
     font-family: var(--fuente-principal);
-    font-size: 1.5rem;
+    font-size: max(1.5rem, 2vw);
     color: white;
     margin: 0;
 }
@@ -94,19 +93,6 @@ body {
 
 .header__logo {
     font-family: var(--fuente-principal);
-    font-size: var(--font-size-normal);
-}
-
-.header__logo-text {
-    font-family: var(--fuente-principal);
-    font-size: var(--font-size-normal);
-    margin: 0;
-}
-
-.header__brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .header__link {
@@ -116,8 +102,6 @@ body {
     position: relative;
     transition: color 0.3s ease;
 }
-
-
 
 /* Pseudoelemento */
 .header__link:hover {
@@ -155,13 +139,13 @@ body {
 .contenido h2 {
     color: white;
     margin-bottom: 0.75rem;
-    font-size: 2rem;
+    font-size: max(2rem, 2.5vw);
     font-family: var(--fuente-principal);
 }
 
 .contenido>section>p {
     color: var(--gris-claro);
-    font-size: 1rem;
+    font-size: min(2rem, 100%);
     line-height: 1.6;
     margin-bottom: 2rem;
 }
@@ -171,12 +155,10 @@ body {
     padding: 24px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 340px));
     gap: 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
     justify-content: center;
-    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -212,14 +194,14 @@ body {
 
 .titulo-carta {
     margin: 0 0 1rem;
-    font-size: 1.5rem;
+    font-size: min(3rem, 100%);
     font-family: var(--fuente-principal);
     color: white;
 }
 
 .descripcion-carta {
     margin: 0.5rem 0;
-    font-size: 0.9rem;
+    font-size: min(1.2rem, 90%);
     color: var(--gris-claro);
     line-height: 1.5;
 }
@@ -258,7 +240,7 @@ ul.descripcion-carta {
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--fuente-principal);
-    font-size: 1rem;
+    font-size: 1.2rem;
     transition: opacity 0.2s ease;
 }
 
@@ -348,10 +330,6 @@ ul.descripcion-carta {
 
 /*Adaptacion para celulare*/
 @media (max-width: 767px) {
-    :root {
-        --font-size-normal: 1.1rem;
-        --margen-base: 1rem;
-    }
 
     h1 {
         font-size: 1.5rem;
@@ -370,11 +348,22 @@ ul.descripcion-carta {
 /*Adaptacion para tabletas*/
 @media (min-width: 768px) and (max-width: 1023px) {
     :root {
-        --font-size-normal: 1.3rem;
         --margen-base: 1.3rem;
     }
 
     .contenido {
-        padding: 4rem 1rem;
+        padding: 3rem 1rem;
+    }
+
+    .alineacion-cartas {
+        padding: 24px;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 340px));
+        gap: 1rem;
+        display: grid;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }

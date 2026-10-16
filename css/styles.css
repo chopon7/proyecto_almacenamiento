@@ -88,13 +88,18 @@ h2 {
 
 .header__logo-text {
     font-family: var(--fuente-principal);
-    font-size: var(--font-size-normal);
+    font-size: max(1.5rem, 2vw);
     margin: 0;
 }
 
 .header__logo {
     font-family: var(--fuente-principal);
-    font-size: var(--font-size-normal);
+    font-size: max(1.5rem, 2vw);
+}
+
+.header__nav {
+    display: flex;
+    align-items: end;
 }
 
 .header__list {
@@ -158,7 +163,7 @@ body {
     background-image: url('../assets/img/Fondo1.avif');
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.3;
     z-index: -1;
 }
 
@@ -170,7 +175,7 @@ body {
 
 .main__title {
     font-family: var(--fuente-principal);
-    font-size: calc(var(--font-size-large) * 1.2);
+    font-size: max(3rem, 4vw);
     margin-bottom: calc(var(--margen-base) / 2);
 }
 
@@ -179,7 +184,7 @@ body {
 }
 
 .main__text {
-    max-width: 700px;
+    width: min(100%, 40);
     margin: 0 auto var(--margen-base);
     line-height: 1.6;
 }
@@ -230,10 +235,10 @@ body {
 }
 
 .footer p {
-    width: 100%;
+    width: max(100%, 100px);
     text-align: center;
     margin-top: var(--margen-base);
-    font-size: 0.9rem;
+    font-size: max(0.8rem, 1vw);
     color: var(--gris-claro);
 }
 
@@ -244,22 +249,12 @@ body {
     vertical-align: middle;
 }
 
-
-.layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-        "main"
-        "footer";
-    gap: 0 24px;
-}
-
-.body {
-    grid-area: main;
-}
-
-.footer {
-    grid-area: footer;
+.footer__copyright {
+    width: max(100%, 50px);
+    text-align: center;
+    margin-top: var(--margen-base);
+    font-size: max(0.8rem, 1vw);
+    color: var(--gris-claro);
 }
 
 
