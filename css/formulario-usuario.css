@@ -56,13 +56,13 @@ body {
     align-items: center;
     background-color: var(--fondo2);
     border-bottom: 0.1rem solid var(--gris1);
-    padding: 1rem 2rem;
+    padding: max(1rem, 1.3vw) min(2rem, 4vw);
 }
 
 .header__brand {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: max(0.5rem, 0.6vw);
 }
 
 .header__logo-img {
@@ -71,14 +71,14 @@ body {
 
 .header__logo-text {
     font-family: var(--fuente-principal);
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
     color: white;
     margin: 0;
 }
 
 .header__list {
     display: flex;
-    gap: 2rem;
+    gap: min(2rem, 4vw);
     list-style: none;
 }
 
@@ -119,9 +119,9 @@ body {
 
 /* Formulario */
 .formulario {
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
     background-color: var(--fondo);
-    padding: 2.5rem;
+    padding: min(2.5rem, 5vw);
     border-radius: 0.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     width: 100%;
@@ -131,25 +131,25 @@ body {
 
 .formulario-h2 {
     color: var(--verde);
-    margin-bottom: 1.5rem;
+    margin-bottom: min(1.5rem, 3vw);
     text-align: center;
     font-family: var(--fuente-principal);
-    font-size: 1.6rem;
+    font-size: clamp(1.3rem, 1.15rem + 0.6vw, 1.6rem);
 }
 
 .formulario__grupo {
-    margin-bottom: 1.25rem;
+    margin-bottom: max(1.25rem, 1.6vw);
 }
 
 .formulario-label {
     display: block;
-    margin-bottom: 0.4rem;
-    font-size: 0.9rem;
+    margin-bottom: max(0.4rem, 0.5vw);
+    font-size: clamp(0.8rem, 0.75rem + 0.2vw, 0.9rem);
 }
 
 .formulario-input {
     width: 100%;
-    padding: 0.65rem 0.75rem;
+    padding: max(0.65rem, 0.8vw) max(0.75rem, 1vw);
     border: 1px solid var(--gris1);
     background-color: var(--fondo2);
     color: var(--gris-claro);
@@ -165,28 +165,28 @@ body {
 
 /* Opciones de Modalidad */
 .formulario__radios {
-    margin: 1.5rem 0;
+    margin: min(1.5rem, 3vw) 0;
 }
 
 .formulario-h3 {
     color: var(--verde);
-    margin-bottom: 0.75rem;
+    margin-bottom: max(0.75rem, 1vw);
     font-family: var(--fuente-principal);
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
 }
 
 .radio-group {
     display: flex;
-    gap: 1rem;
+    gap: max(1rem, 1.3vw);
     flex-wrap: wrap;
 }
 
 .radio-item {
     display: flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: max(0.35rem, 0.45vw);
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 0.75rem + 0.2vw, 0.9rem);
 }
 
 .radio-item input[type="radio"],
@@ -199,42 +199,42 @@ body {
 .checkbox-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: max(0.5rem, 0.6vw);
     cursor: pointer;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
+    font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
+    margin-top: max(0.5rem, 0.6vw);
 }
 
 /* Botones de acción */
 .formulario__acciones {
     display: flex;
-    gap: 1rem;
-    margin-top: 1.75rem;
+    gap: max(1rem, 1.3vw);
+    margin-top: min(1.75rem, 3.5vw);
 }
 
 .formulario-botton {
     flex: 1;
-    padding: 0.75rem;
+    padding: max(0.75rem, 1vw);
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--fuente-principal);
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
     transition: opacity 0.2s ease, transform 0.2s ease;
-}
 
-.formulario-botton:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-}
+    &:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
 
-.formulario-botton--primary {
-    background-color: var(--verde);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-family: var(--fuente-secundaria);
+    &.formulario-botton--primary {
+        background-color: var(--verde);
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: var(--fuente-secundaria);
+    }
 }
 
 /*Efectos hover solo en dispositivos con mouse o trackpad.
@@ -255,8 +255,8 @@ se quedaria "pegado" despues de tocar un link o boton*/
     .header {
         /*Permite que el nav baje a su propia fila debajo del logo*/
         flex-wrap: wrap;
-        gap: 1rem;
-        padding: 1rem;
+        gap: max(1rem, 2vw);
+        padding: max(1rem, 2vw);
     }
 
     /*Forma del menu de hamburgesa*/
@@ -292,8 +292,8 @@ se quedaria "pegado" despues de tocar un link o boton*/
     .header__list {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding: 1rem 0;
+        gap: max(1rem, 2vw);
+        padding: max(1rem, 2vw) 0;
     }
 
     /*El icono se convierte en una X al abrir*/

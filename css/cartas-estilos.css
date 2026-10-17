@@ -57,13 +57,13 @@ body {
     background-color: var(--fondo2);
     font-family: var(--fuente-principal);
     border-bottom: 0.1rem solid var(--gris1);
-    padding: 1rem 2rem;
+    padding: max(1rem, 1.3vw) min(2rem, 4vw);
 }
 
 .header__brand {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: max(0.5rem, 0.6vw);
 }
 
 .header__logo-img {
@@ -72,14 +72,14 @@ body {
 
 .header__logo-text {
     font-family: var(--fuente-principal);
-    font-size: max(1.5rem, 2vw);
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
     color: white;
     margin: 0;
 }
 
 .header__list {
     display: flex;
-    gap: 2rem;
+    gap: min(2rem, 4vw);
     list-style: none;
 }
 
@@ -93,6 +93,7 @@ body {
 
 .header__logo {
     font-family: var(--fuente-principal);
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
 }
 
 .header__link {
@@ -132,27 +133,27 @@ body {
 
 /* Main  */
 .contenido {
-    padding: 3rem 1.5rem;
+    padding: min(3rem, 6vw) min(1.5rem, 3vw);
     text-align: center;
 }
 
 .contenido h2 {
     color: white;
-    margin-bottom: 0.75rem;
-    font-size: max(2rem, 2.5vw);
+    margin-bottom: max(0.75rem, 1vw);
+    font-size: clamp(2rem, 1.5rem + 1.5vw, 3rem);
     font-family: var(--fuente-principal);
 }
 
 .contenido>section>p {
     color: var(--gris-claro);
-    font-size: min(2rem, 100%);
+    font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin-bottom: min(2rem, 4vw);
 }
 
 /* Rejilla de cartas */
 .alineacion-cartas {
-    padding: 24px;
+    padding: min(24px, 3vw);
     text-align: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 340px));
@@ -168,24 +169,20 @@ body {
     width: auto;
     height: auto;
     min-height: 250px;
-    padding: 10px;
+    padding: max(10px, 0.8vw);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--gris2);
     border: 1px solid var(--gris1);
     border-radius: 8px;
-    padding: 1.75rem;
+    padding: min(1.75rem, 3.5vw);
     text-align: left;
     position: relative;
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.etiqueta--popular {
-    top: 10px;
-    right: 10px;
-    padding: 4px 8px;
-}
+
 
 .carta:hover {
     transform: translateY(-4px);
@@ -193,15 +190,15 @@ body {
 }
 
 .titulo-carta {
-    margin: 0 0 1rem;
-    font-size: min(3rem, 100%);
+    margin: 0 0 max(1rem, 1.3vw);
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.5rem);
     font-family: var(--fuente-principal);
     color: white;
 }
 
 .descripcion-carta {
-    margin: 0.5rem 0;
-    font-size: min(1.2rem, 90%);
+    margin: max(0.5rem, 0.6vw) 0;
+    font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
     color: var(--gris-claro);
     line-height: 1.5;
 }
@@ -210,17 +207,17 @@ ul.descripcion-carta {
     list-style: square inside;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: max(0.5rem, 0.6vw);
+    margin-bottom: min(1.5rem, 3vw);
 }
 
 .etiqueta--popular {
     top: 12px;
     right: 12px;
-    padding: 4px 10px;
+    padding: max(4px, 0.3vw) max(10px, 0.8vw);
     background-color: var(--verde);
     color: white;
-    font-size: 0.75rem;
+    font-size: clamp(0.7rem, 0.65rem + 0.15vw, 0.75rem);
     position: absolute;
     border-radius: 4px;
     font-weight: bold;
@@ -240,18 +237,26 @@ ul.descripcion-carta {
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--fuente-principal);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 0.9rem + 0.4vw, 1.2rem);
     transition: opacity 0.2s ease;
+
+    /*Hover solo en dispositivos con mouse o trackpad*/
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    /*Respuesta al tocar en pantallas tactiles; desaparece al soltar el dedo*/
+    &:active {
+        transform: scale(0.97);
+    }
 }
 
 /*Efectos hover solo en dispositivos con mouse o trackpad.*/
 /*En celulares y tabletas (pantalla tactil) no hay cursor, y el hover
     se quedaria "pegado" despues de tocar un link o boton*/
 @media (hover: hover) {
-    .boton:hover {
-        transform: scale(1.05);
-    }
-
     .header__link:hover {
         color: var(--verde);
     }
@@ -261,19 +266,14 @@ ul.descripcion-carta {
     }
 }
 
-/*Respuesta al tocar en pantallas tactiles; desaparece al soltar el dedo*/
-.boton:active {
-    transform: scale(0.97);
-}
-
 /*Menu de hamburguesa: celulares y tabletas*/
 @media (max-width: 1023px) {
     .header {
         flex-direction: row;
         /*Permite que el nav baje a su propia fila debajo del logo*/
         flex-wrap: wrap;
-        gap: 1rem;
-        padding: 1rem;
+        gap: max(1rem, 2vw);
+        padding: max(1rem, 2vw);
     }
 
     /*Forma del menu de hamburgesa*/
@@ -309,9 +309,9 @@ ul.descripcion-carta {
     .header__list {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: max(1rem, 2vw);
         margin: 0;
-        padding: 1rem 0;
+        padding: max(1rem, 2vw) 0;
     }
 
     /*El icono se convierte en una X al abrir*/
@@ -332,15 +332,15 @@ ul.descripcion-carta {
 @media (max-width: 767px) {
 
     h1 {
-        font-size: 1.5rem;
+        font-size: clamp(1.25rem, 1rem + 1.5vw, 1.5rem);
     }
 
     .contenido {
-        padding: 4rem 1rem;
+        padding: min(4rem, 10vw) max(1rem, 2.5vw);
     }
 
     .alineacion-cartas {
-        padding: 24px;
+        padding: min(24px, 5vw);
     }
 
 }
@@ -352,15 +352,15 @@ ul.descripcion-carta {
     }
 
     .contenido {
-        padding: 3rem 1rem;
+        padding: min(3rem, 5vw) max(1rem, 2vw);
     }
 
     .alineacion-cartas {
-        padding: 24px;
+        padding: min(24px, 3vw);
         text-align: center;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 340px));
-        gap: 1rem;
+        gap: max(1rem, 1.5vw);
         display: grid;
         justify-content: center;
         max-width: 1200px;

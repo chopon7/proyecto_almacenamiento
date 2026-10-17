@@ -55,7 +55,7 @@
 /* Body */
 body {
     background-color: var(--fondo2);
-    font-family: var(--fuente-secundaria);
+
 }
 
 /* Header */
@@ -73,13 +73,13 @@ h2 {
     align-items: center;
     background-color: var(--fondo2);
     border-bottom: 0.1rem solid var(--gris1);
-    padding: 1rem var(--margen-base);
+    padding: max(1rem, 1.3vw) var(--margen-base);
 }
 
 .header__brand {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: max(0.5rem, 0.6vw);
 }
 
 .header__logo-img {
@@ -88,13 +88,13 @@ h2 {
 
 .header__logo-text {
     font-family: var(--fuente-principal);
-    font-size: max(1.5rem, 2vw);
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
     margin: 0;
 }
 
 .header__logo {
     font-family: var(--fuente-principal);
-    font-size: max(1.5rem, 2vw);
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
 }
 
 .header__nav {
@@ -104,7 +104,7 @@ h2 {
 
 .header__list {
     display: flex;
-    gap: 2rem;
+    gap: min(2rem, 4vw);
     list-style: none;
 }
 
@@ -145,7 +145,7 @@ body {
 /* Main */
 .main {
     text-align: center;
-    padding: 12rem 6rem;
+    padding: min(12rem, 15vw) min(6rem, 7.5vw);
     /*Es relativo para colocar una imagen de fondo*/
     position: relative;
     z-index: 1;
@@ -175,8 +175,9 @@ body {
 
 .main__title {
     font-family: var(--fuente-principal);
-    font-size: max(3rem, 4vw);
+    font-size: clamp(3rem, 1.5rem + 3vw, 4.5rem);
     margin-bottom: calc(var(--margen-base) / 2);
+    color: white;
 }
 
 .main__title--highlight {
@@ -184,7 +185,7 @@ body {
 }
 
 .main__text {
-    width: min(100%, 40);
+    width: min(100%, 40rem);
     margin: 0 auto var(--margen-base);
     line-height: 1.6;
 }
@@ -194,27 +195,39 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: max(1rem, 1.3vw);
 }
 
 .button {
-    padding: 0.8rem 1.5rem;
+    padding: max(0.8rem, 1vw) max(1.5rem, 2vw);
     border: none;
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
     font-family: var(--fuente-principal);
     transition: transform var(--time-transition) ease;
-}
 
-.button--primary {
-    background-color: var(--verde);
-    color: #fff;
-}
+    &.button--primary {
+        background-color: var(--verde);
+        color: #fff;
+    }
 
-.button--secondary {
-    background-color: var(--gris2);
-    color: #fff;
+    &.button--secondary {
+        background-color: var(--gris2);
+        color: #fff;
+    }
+
+    /*Respuesta al tocar en pantallas tactiles; desaparece al soltar el dedo*/
+    &:active {
+        transform: scale(0.97);
+    }
+
+    /*Hover solo en dispositivos con mouse o trackpad*/
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
 }
 
 /* Footer */
@@ -224,7 +237,7 @@ body {
     flex-wrap: wrap;
     background-color: var(--fondo2);
     border-top: 0.1rem solid var(--gris1);
-    padding: 2rem;
+    padding: min(2rem, 4vw);
     font-family: var(--fuente-secundaria);
     text-align: left;
 }
@@ -235,25 +248,25 @@ body {
 }
 
 .footer p {
-    width: max(100%, 100px);
+    width: 100%;
     text-align: center;
     margin-top: var(--margen-base);
-    font-size: max(0.8rem, 1vw);
+    font-size: clamp(0.8rem, 0.7rem + 0.3vw, 1rem);
     color: var(--gris-claro);
 }
 
 .footer picture img {
     width: 30px;
     height: 30px;
-    margin-right: 10px;
+    margin-right: max(10px, 0.8vw);
     vertical-align: middle;
 }
 
 .footer__copyright {
-    width: max(100%, 50px);
+    width: 100%;
     text-align: center;
     margin-top: var(--margen-base);
-    font-size: max(0.8rem, 1vw);
+    font-size: clamp(0.8rem, 0.7rem + 0.3vw, 1rem);
     color: var(--gris-claro);
 }
 
@@ -263,10 +276,6 @@ body {
 En celulares y tabletas (pantalla tactil) no hay cursor, y el hover
 se quedaria "pegado" despues de tocar un link o boton*/
 @media (hover: hover) {
-    .button:hover {
-        transform: scale(1.05);
-    }
-
     .header__link:hover {
         color: var(--verde);
     }
@@ -276,10 +285,7 @@ se quedaria "pegado" despues de tocar un link o boton*/
     }
 }
 
-/*Respuesta al tocar en pantallas tactiles; desaparece al soltar el dedo*/
-.button:active {
-    transform: scale(0.97);
-}
+
 
 /*Menu de hamburguesa: celulares y tabletas*/
 @media (max-width: 1023px) {
@@ -322,8 +328,8 @@ se quedaria "pegado" despues de tocar un link o boton*/
     .header__list {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding: 1rem 0;
+        gap: max(1rem, 2vw);
+        padding: max(1rem, 2vw) 0;
     }
 
     /*El icono se convierte en una X al abrir*/
@@ -347,12 +353,12 @@ se quedaria "pegado" despues de tocar un link o boton*/
     }
 
     .header {
-        gap: 1rem;
-        padding: 1rem;
+        gap: max(1rem, 2.5vw);
+        padding: max(1rem, 2.5vw);
     }
 
     .main {
-        padding: 4rem 1rem;
+        padding: min(4rem, 10vw) max(1rem, 2.5vw);
     }
 
 }
@@ -364,6 +370,6 @@ se quedaria "pegado" despues de tocar un link o boton*/
     }
 
     .main {
-        padding: 6rem 2rem;
+        padding: min(6rem, 9vw) min(2rem, 3vw);
     }
 }
