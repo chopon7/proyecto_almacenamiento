@@ -1,62 +1,81 @@
-:root {
-    --gris1: #626262;
-    --gris2: #27272a;
-    --fondo: #252528;
-    --fondo2: #1E1E1E;
-    --verde: #10b981;
-    --gris-claro: #cbcbcb;
+/*==================================================
+ÍNDICE
+1. Variables CSS
+2. Reset
+3. Asignación de áreas del Grid
+4. Layout
+5. Componentes BEM
+6. Media Queries Interactivas / Accesibilidad
+7. Media Queries Responsive 
+==================================================*/
 
+/* 1. Variables CSS */
+:root {
+    /* Superficies y Fondos */
+    --color-fondo: #252528;
+    --color-superficie: #1e1e1e;
+    --color-superficie-elevada: #27272a;
+
+    /* Bordes y Sombras */
+    --color-borde: #626262;
+    --color-borde-suave: #27272a;
+    --sombra-formulario: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+    /* Textos */
+    --color-texto-principal: #ffffff;
+    --color-texto-secundario: #cbcbcb;
+    --color-texto-invertido: #ffffff;
+
+    /* Acentos e Interacción */
+    --color-acento: #10b981;
+
+    /* Tipografías */
     --fuente-principal: 'Share Tech Mono', monospace;
     --fuente-secundaria: 'Roboto Mono', monospace;
 }
 
-/* Reset */
-* {
-    color: var(--gris-claro);
+/* 2. Reset */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Asignación de áreas del Grid */
-.header {
-    grid-area: header;
-}
+/* 3. Asignación de áreas del Grid */
+.header { grid-area: header; }
+.main   { grid-area: main; }
+.footer { grid-area: footer; }
 
-.main {
-    grid-area: main;
-}
-
-.footer {
-    grid-area: footer;
-}
-
-/* Contenedor Grid principal */
+/* 4. Layout */
 .layout {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "header"
-        "main"
+        "main" 
         "footer";
     min-height: 100vh;
 }
 
-/* Body */
 body {
-    background-color: var(--fondo2);
+    background-color: var(--color-superficie);
+    color: var(--color-texto-secundario);
     font-family: var(--fuente-secundaria);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header */
+/* 5. Componentes BEM */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--fondo2);
-    border-bottom: 0.1rem solid var(--gris1);
+    background-color: var(--color-superficie);
+    border-bottom: 0.1rem solid var(--color-borde);
     padding: max(1rem, 1.3vw) min(2rem, 4vw);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header__brand {
@@ -72,7 +91,7 @@ body {
 .header__logo-text {
     font-family: var(--fuente-principal);
     font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
-    color: white;
+    color: var(--color-texto-principal);
     margin: 0;
 }
 
@@ -82,55 +101,49 @@ body {
     list-style: none;
 }
 
-.header__toggle {
-    display: none;
-}
-
+.header__toggle,
 .header__burger {
     display: none;
 }
 
 .header__link {
     text-decoration: none;
-    color: var(--gris-claro);
+    color: var(--color-texto-secundario);
     font-family: var(--fuente-secundaria);
     position: relative;
     transition: color 0.3s ease;
 }
 
-/* Pseudoelemento */
 .header__link::after {
     content: "";
     display: block;
     width: 0%;
     height: 2px;
-    background-color: var(--verde);
+    background-color: var(--color-acento);
     transition: width 0.3s ease;
     position: absolute;
     bottom: -4px;
     left: 0;
 }
 
-/* Body */
-body {
-    background-color: var(--fondo2);
-    font-family: var(--fuente-secundaria);
-}
-
 /* Formulario */
 .formulario {
     font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
-    background-color: var(--fondo);
+    background-color: var(--color-fondo);
     padding: min(2.5rem, 5vw);
     border-radius: 0.5rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--sombra-formulario);
     width: 100%;
     max-width: 480px;
-    border: 1px solid var(--gris2);
+    border: 1px solid var(--color-borde-suave);
+    margin: 2rem auto;
+    animation: zoomIn 0.6s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .formulario-h2 {
-    color: var(--verde);
+    color: var(--color-acento);
     margin-bottom: min(1.5rem, 3vw);
     text-align: center;
     font-family: var(--fuente-principal);
@@ -145,22 +158,23 @@ body {
     display: block;
     margin-bottom: max(0.4rem, 0.5vw);
     font-size: clamp(0.8rem, 0.75rem + 0.2vw, 0.9rem);
+    color: var(--color-texto-principal);
 }
 
 .formulario-input {
     width: 100%;
     padding: max(0.65rem, 0.8vw) max(0.75rem, 1vw);
-    border: 1px solid var(--gris1);
-    background-color: var(--fondo2);
-    color: var(--gris-claro);
+    border: 1px solid var(--color-borde);
+    background-color: var(--color-superficie);
+    color: var(--color-texto-principal);
     font-family: var(--fuente-secundaria);
     border-radius: 4px;
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .formulario-input:focus {
-    border-color: var(--verde);
+    border-color: var(--color-acento);
 }
 
 /* Opciones de Modalidad */
@@ -169,7 +183,7 @@ body {
 }
 
 .formulario-h3 {
-    color: var(--verde);
+    color: var(--color-acento);
     margin-bottom: max(0.75rem, 1vw);
     font-family: var(--fuente-principal);
     font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
@@ -187,15 +201,15 @@ body {
     gap: max(0.35rem, 0.45vw);
     cursor: pointer;
     font-size: clamp(0.8rem, 0.75rem + 0.2vw, 0.9rem);
+    color: var(--color-texto-secundario);
 }
 
 .radio-item input[type="radio"],
 .checkbox-item input[type="checkbox"] {
-    accent-color: var(--verde);
+    accent-color: var(--color-acento);
     cursor: pointer;
 }
 
-/* Casilla de verificación */
 .checkbox-item {
     display: flex;
     align-items: center;
@@ -203,6 +217,7 @@ body {
     cursor: pointer;
     font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
     margin-top: max(0.5rem, 0.6vw);
+    color: var(--color-texto-secundario);
 }
 
 /* Botones de acción */
@@ -215,13 +230,15 @@ body {
 .formulario-botton {
     flex: 1;
     padding: max(0.75rem, 1vw);
-    border: none;
+    border: 1px solid var(--color-borde);
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--fuente-principal);
     font-weight: bold;
     font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    background-color: var(--color-superficie-elevada);
+    color: var(--color-texto-principal);
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.3s ease;
 
     &:hover {
         opacity: 0.9;
@@ -229,20 +246,18 @@ body {
     }
 
     &.formulario-botton--primary {
-        background-color: var(--verde);
-        color: white;
+        background-color: var(--color-acento);
+        color: var(--color-texto-invertido);
         border: none;
         cursor: pointer;
         font-family: var(--fuente-secundaria);
     }
 }
 
-/*Efectos hover solo en dispositivos con mouse o trackpad.
-En celulares y tabletas (pantalla tactil) no hay cursor, y el hover
-se quedaria "pegado" despues de tocar un link o boton*/
+/* 6. Media Queries Interactivas / Accesibilidad */
 @media (hover: hover) {
     .header__link:hover {
-        color: var(--verde);
+        color: var(--color-acento);
     }
 
     .header__link:hover::after {
@@ -250,16 +265,60 @@ se quedaria "pegado" despues de tocar un link o boton*/
     }
 }
 
-/*Menu de hamburguesa: celulares y tabletas*/
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Accesibilidad: Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-fondo: #f1f5f9;
+        --color-superficie: #ffffff;
+        --color-superficie-elevada: #f8fafc;
+
+        --color-borde: #cbd5e1;
+        --color-borde-suave: #e2e8f0;
+        --sombra-formulario: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+        --color-texto-principal: #0f172a;
+        --color-texto-secundario: #475569;
+        --color-texto-invertido: #ffffff;
+
+        --color-acento: #059669;
+    }
+}
+
+/* 7. Media Queries Responsive */
+/* Menú de hamburguesa */
 @media (max-width: 1023px) {
     .header {
-        /*Permite que el nav baje a su propia fila debajo del logo*/
         flex-wrap: wrap;
         gap: max(1rem, 2vw);
         padding: max(1rem, 2vw);
     }
 
-    /*Forma del menu de hamburgesa*/
     .header__burger {
         display: flex;
         flex-direction: column;
@@ -272,23 +331,20 @@ se quedaria "pegado" despues de tocar un link o boton*/
         display: block;
         width: 26px;
         height: 3px;
-        background-color: var(--gris-claro);
+        background-color: var(--color-texto-secundario);
         border-radius: 2px;
         transition: transform 0.3s, opacity 0.3s;
     }
 
-    /*Esconde el nav; width 100% lo obliga a ocupar una fila completa*/
     .header__nav {
         display: none;
         width: 100%;
     }
 
-    /*Y lo muestra cuando la checkbox esta marcada*/
-    .header__toggle:checked~.header__nav {
+    .header__toggle:checked ~ .header__nav {
         display: block;
     }
 
-    /*Estaquea los links*/
     .header__list {
         flex-direction: column;
         align-items: center;
@@ -296,16 +352,15 @@ se quedaria "pegado" despues de tocar un link o boton*/
         padding: max(1rem, 2vw) 0;
     }
 
-    /*El icono se convierte en una X al abrir*/
-    .header__toggle:checked+.header__burger span:nth-child(1) {
+    .header__toggle:checked + .header__burger span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
-    .header__toggle:checked+.header__burger span:nth-child(2) {
+    .header__toggle:checked + .header__burger span:nth-child(2) {
         opacity: 0;
     }
 
-    .header__toggle:checked+.header__burger span:nth-child(3) {
+    .header__toggle:checked + .header__burger span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
