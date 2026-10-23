@@ -1,37 +1,53 @@
-:root {
-    --gris1: #626262;
-    --gris2: #27272a;
-    --fondo: #252528;
-    --fondo2: #1E1E1E;
-    --verde: #10b981;
-    --gris-claro: #cbcbcb;
+/*==================================================
+ÍNDICE
+1. Variables CSS
+2. Reset
+3. Asignación de áreas del Grid
+4. Layout
+5. Componentes BEM
+6. Media Queries Interactivas / Accesibilidad
+7. Media Queries Responsive 
+==================================================*/
 
+/* 1. Variables CSS */
+:root {
+    /* Superficies y Fondos */
+    --color-fondo: #252528;
+    --color-superficie: #1e1e1e;
+    --color-superficie-elevada: #27272a;
+
+    /* Bordes y Sombras */
+    --color-borde: #626262;
+    --sombra-elevacion: rgba(0, 0, 0, 0.3);
+
+    /* Textos */
+    --color-texto-principal: #ffffff;
+    --color-texto-secundario: #cbcbcb;
+    --color-texto-invertido: #ffffff;
+
+    /* Acentos e Interacción */
+    --color-acento: #10b981;
+
+    /* Tipografías */
     --fuente-principal: 'Share Tech Mono', monospace;
     --fuente-secundaria: 'Roboto Mono', monospace;
-
 }
 
-/* Reset */
-* {
+/* 2. Reset */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Asignación de áreas del Grid */
-.header {
-    grid-area: header;
-}
+/* 3. Asignación de áreas del Grid */
+.header { grid-area: header; }
+.main   { grid-area: main; }
+.footer { grid-area: footer; }
 
-.main {
-    grid-area: main;
-}
-
-.footer {
-    grid-area: footer;
-}
-
-/* Contenedor principal */
+/* 4. Layout */
 .layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -44,20 +60,22 @@
 }
 
 body {
-    background-color: var(--fondo);
-    color: white;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
     font-family: var(--fuente-secundaria);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Header */
+/* 5. Componentes BEM */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--fondo2);
+    background-color: var(--color-superficie);
     font-family: var(--fuente-principal);
-    border-bottom: 0.1rem solid var(--gris1);
+    border-bottom: 0.1rem solid var(--color-borde);
     padding: max(1rem, 1.3vw) min(2rem, 4vw);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header__brand {
@@ -73,7 +91,7 @@ body {
 .header__logo-text {
     font-family: var(--fuente-principal);
     font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
-    color: white;
+    color: var(--color-texto-principal);
     margin: 0;
 }
 
@@ -83,10 +101,7 @@ body {
     list-style: none;
 }
 
-.header__toggle {
-    display: none;
-}
-
+.header__toggle,
 .header__burger {
     display: none;
 }
@@ -98,15 +113,14 @@ body {
 
 .header__link {
     text-decoration: none;
-    color: var(--gris-claro);
+    color: var(--color-texto-secundario);
     font-family: var(--fuente-secundaria);
     position: relative;
     transition: color 0.3s ease;
 }
 
-/* Pseudoelemento */
 .header__link:hover {
-    color: var(--verde);
+    color: var(--color-acento);
 }
 
 .header__link::after {
@@ -114,38 +128,32 @@ body {
     display: block;
     width: 0%;
     height: 2px;
-    background-color: var(--verde);
+    background-color: var(--color-acento);
     transition: width 0.3s ease;
     position: absolute;
     bottom: -4px;
     left: 0;
 }
 
-body {
-    margin: 0;
-    background-color: var(--fondo);
-    color: white;
-}
-
 .header__link:hover::after {
     width: 100%;
 }
 
-/* Main  */
+/* Main */
 .contenido {
     padding: min(3rem, 6vw) min(1.5rem, 3vw);
     text-align: center;
 }
 
 .contenido h2 {
-    color: white;
+    color: var(--color-texto-principal);
     margin-bottom: max(0.75rem, 1vw);
     font-size: clamp(2rem, 1.5rem + 1.5vw, 3rem);
     font-family: var(--fuente-principal);
 }
 
-.contenido>section>p {
-    color: var(--gris-claro);
+.contenido > section > p {
+    color: var(--color-texto-secundario);
     font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
     line-height: 1.6;
     margin-bottom: min(2rem, 4vw);
@@ -158,7 +166,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 340px));
     gap: clamp(0.5rem, 1rem + 1vw, 2rem);
-    display: grid;
     justify-content: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -167,39 +174,31 @@ body {
 /* Carta */
 .carta {
     width: auto;
-    height: auto;
     min-height: 250px;
-    padding: max(10px, 0.8vw);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: var(--gris2);
-    border: 1px solid var(--gris1);
+    background-color: var(--color-superficie-elevada);
+    border: 1px solid var(--color-borde);
     border-radius: 8px;
     padding: min(1.75rem, 3.5vw);
     text-align: left;
     position: relative;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
 }
 
-
-
-.carta:hover {
-    transform: translateY(-4px);
-    border-color: var(--verde);
-}
 
 .titulo-carta {
     margin: 0 0 max(1rem, 1.3vw);
     font-size: clamp(1.1rem, 1rem + 0.5vw, 1.5rem);
     font-family: var(--fuente-principal);
-    color: white;
+    color: var(--color-texto-principal);
 }
 
 .descripcion-carta {
     margin: max(0.5rem, 0.6vw) 0;
     font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
-    color: var(--gris-claro);
+    color: var(--color-texto-secundario);
     line-height: 1.5;
 }
 
@@ -215,8 +214,8 @@ ul.descripcion-carta {
     top: 12px;
     right: 12px;
     padding: max(4px, 0.3vw) max(10px, 0.8vw);
-    background-color: var(--verde);
-    color: white;
+    background-color: var(--color-acento);
+    color: var(--color-texto-invertido);
     font-size: clamp(0.7rem, 0.65rem + 0.15vw, 0.75rem);
     position: absolute;
     border-radius: 4px;
@@ -228,8 +227,8 @@ ul.descripcion-carta {
     display: block;
     width: 100%;
     padding: clamp(0.5rem, 0.75rem + 1vw, 1rem);
-    background-color: var(--verde);
-    color: white;
+    background-color: var(--color-acento);
+    color: var(--color-texto-invertido);
     font-weight: bold;
     text-align: center;
     text-decoration: none;
@@ -238,27 +237,61 @@ ul.descripcion-carta {
     cursor: pointer;
     font-family: var(--fuente-principal);
     font-size: clamp(1rem, 0.9rem + 0.4vw, 1.2rem);
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
 
-    /*Hover solo en dispositivos con mouse o trackpad*/
-    @media (hover: hover) {
-        &:hover {
-            transform: scale(1.05);
-        }
-    }
+.boton:active {
+    transform: scale(0.97);
+}
 
-    /*Respuesta al tocar en pantallas tactiles; desaparece al soltar el dedo*/
-    &:active {
-        transform: scale(0.97);
+/* Footer */
+.footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--color-superficie);
+    border-top: 0.1rem solid var(--color-borde);
+    color: var(--color-texto-secundario);
+    font-family: var(--fuente-secundaria);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 6. Media Queries Interactivas / Accesibilidad */
+@media (hover: hover) {
+    .boton:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
     }
 }
 
-/*Efectos hover solo en dispositivos con mouse o trackpad.*/
-/*En celulares y tabletas (pantalla tactil) no hay cursor, y el hover
-    se quedaria "pegado" despues de tocar un link o boton*/
+@media (hover: hover) {
+    .carta:hover {
+        transform: translateY(-8px) scale(1.03) rotate(1.5deg);
+        border-color: var(--color-acento);
+        box-shadow: 0 10px 20px var(--sombra-elevacion);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-fondo: #f1f5f9;
+        --color-superficie: #ffffff;
+        --color-superficie-elevada: #ffffff;
+
+        --color-borde: #e2e8f0;
+        --sombra-elevacion: rgba(0, 0, 0, 0.08);
+
+        --color-texto-principal: #0f172a;
+        --color-texto-secundario: #475569;
+        --color-texto-invertido: #ffffff;
+
+        --color-acento: #059669;
+    }
+}
+
+/* Efectos hover en enlaces */
 @media (hover: hover) {
     .header__link:hover {
-        color: var(--verde);
+        color: var(--color-acento);
     }
 
     .header__link:hover::after {
@@ -266,17 +299,17 @@ ul.descripcion-carta {
     }
 }
 
-/*Menu de hamburguesa: celulares y tabletas*/
+
+/* 7. Media Queries Responsive */
+/* Menú de hamburguesa */
 @media (max-width: 1023px) {
     .header {
         flex-direction: row;
-        /*Permite que el nav baje a su propia fila debajo del logo*/
         flex-wrap: wrap;
         gap: max(1rem, 2vw);
         padding: max(1rem, 2vw);
     }
 
-    /*Forma del menu de hamburgesa*/
     .header__burger {
         display: flex;
         flex-direction: column;
@@ -289,23 +322,20 @@ ul.descripcion-carta {
         display: block;
         width: 26px;
         height: 3px;
-        background-color: var(--gris-claro);
+        background-color: var(--color-texto-secundario);
         border-radius: 2px;
         transition: transform 0.3s, opacity 0.3s;
     }
 
-    /*Esconde el nav; width 100% lo obliga a ocupar una fila completa*/
     .header__nav {
         display: none;
         width: 100%;
     }
 
-    /*Y lo muestra cuando la checkbox esta marcada*/
-    .header__toggle:checked~.header__nav {
+    .header__toggle:checked ~ .header__nav {
         display: block;
     }
 
-    /*Estaquea los links*/
     .header__list {
         flex-direction: column;
         align-items: center;
@@ -314,23 +344,21 @@ ul.descripcion-carta {
         padding: max(1rem, 2vw) 0;
     }
 
-    /*El icono se convierte en una X al abrir*/
-    .header__toggle:checked+.header__burger span:nth-child(1) {
+    .header__toggle:checked + .header__burger span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
-    .header__toggle:checked+.header__burger span:nth-child(2) {
+    .header__toggle:checked + .header__burger span:nth-child(2) {
         opacity: 0;
     }
 
-    .header__toggle:checked+.header__burger span:nth-child(3) {
+    .header__toggle:checked + .header__burger span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
 
-/*Adaptacion para celulare*/
+/* Adaptación para celulares */
 @media (max-width: 767px) {
-
     h1 {
         font-size: clamp(1.25rem, 1rem + 1.5vw, 1.5rem);
     }
@@ -342,10 +370,9 @@ ul.descripcion-carta {
     .alineacion-cartas {
         padding: min(24px, 5vw);
     }
-
 }
 
-/*Adaptacion para tabletas*/
+/* Adaptación para tabletas */
 @media (min-width: 768px) and (max-width: 1023px) {
     :root {
         --margen-base: 1.3rem;
@@ -357,12 +384,7 @@ ul.descripcion-carta {
 
     .alineacion-cartas {
         padding: min(24px, 3vw);
-        text-align: center;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 340px));
         gap: max(1rem, 1.5vw);
-        display: grid;
-        justify-content: center;
         max-width: 1200px;
         margin: 0 auto;
     }
