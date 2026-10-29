@@ -16,10 +16,85 @@
     <meta name="Keywords" content="HTML, CSS, almacenamiento en la nube">
     <meta name="robots" content="index, follow">
 
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
-    <h1>Comunidad</h1>
+    <header class="header">
+        <div class="header__brand">
+            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
+                height="50" loading="lazy">
+
+            <h2 class="header__logo-text" href="../index.html">Temu Drive</h2>
+            </section>
+        </div>
+        <!-- Agrega boton hamburger, hidden checkbox + hamburger button -->
+        <input type="checkbox" id="menu-toggle" class="header__toggle">
+        <label for="menu-toggle" class="header__burger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item"><a class="header__link" href="informacion.html">Más Información</a></li>
+                <li class="header__item"><a class="header__link" href="soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="comunidad.html">Comunidad</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main class="main">
+        <section class="main__intro">
+            <h3 class="main__subtitle">Almacena, edita y comparte</h3>
+        </section>
+
+        <section class="main__slogan">
+            <h1 class="main__title main__title--highlight">Lo que somos</h1>
+        </section>
+
+        <section class="main__description">
+            <p class="main__text">Texto inicial</p>
+        </section>
+    </main>
+
+    <footer id="div-footer" class="footer">
+        <section name="Pie de pagina">
+            <h3>Temu Drive Company</h3>
+            <section>
+                Nuestra compañia se centra en el manejo de datos a gran escala y la manipulacion minusiosa de los mismos
+                datos para ejercer una grata experiencia en los usuarios.
+            </section>
+        </section>
+
+        <section name="Soporte">
+            <h3>Support</h3>
+            <section>Contact us</section>
+            <section>Q&A</section>
+            <section>Service terms</section>
+        </section>
+
+        <section name="Saber más">
+            <h3>Learn more</h3>
+            <section>
+                Blog
+                <picture>
+                    <source srcset="assets/icons/instagram_icon1.png" type="image/png">
+                    <img src="assets/icons/Instagram_Icon_DEFAULT.ico" alt="Instagram" width="30" height="30"
+                        loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="assets/icons/linked_icon1.png" type="image/png">
+                    <img src="assets/icons/Linked_Icon1_DEFAULT.png" alt="LinkedIn" width="30" height="30"
+                        loading="lazy">
+                </picture>
+            </section>
+            <section>Case studies</section>
+        </section>
+
+        <p class="footer__copyright">© 2026 Temu Drive. Todos los derechos reservados.</p>
+    </footer>
 </body>
 
 </html>
