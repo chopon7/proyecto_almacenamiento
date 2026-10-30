@@ -101,8 +101,25 @@ body {
     list-style: none;
 }
 
+.header__nav {
+    margin-left: auto;
+}
+
 .header__burger {
     display: none;
+}
+
+.header__theme {
+    display: flex;
+    background: none;
+    border: none;
+    padding: 6px;
+    margin-left: min(2rem, 4vw);
+    cursor: pointer;
+}
+
+.header__theme-img {
+    filter: invert(1);
 }
 
 .header__logo {
@@ -270,21 +287,24 @@ ul.descripcion-carta {
     }
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --color-fondo: #f1f5f9;
-        --color-superficie: #ffffff;
-        --color-superficie-elevada: #ffffff;
+/* Modo claro (botón) */
+:root.claro {
+    --color-fondo: #f1f5f9;
+    --color-superficie: #ffffff;
+    --color-superficie-elevada: #ffffff;
 
-        --color-borde: #e2e8f0;
-        --sombra-elevacion: rgba(0, 0, 0, 0.08);
+    --color-borde: #e2e8f0;
+    --sombra-elevacion: rgba(0, 0, 0, 0.08);
 
-        --color-texto-principal: #0f172a;
-        --color-texto-secundario: #475569;
-        --color-texto-invertido: #ffffff;
+    --color-texto-principal: #0f172a;
+    --color-texto-secundario: #475569;
+    --color-texto-invertido: #ffffff;
 
-        --color-acento: #059669;
-    }
+    --color-acento: #059669;
+}
+
+.claro .header__theme-img {
+    filter: none;
 }
 
 /* Efectos hover en enlaces */
@@ -305,7 +325,6 @@ ul.descripcion-carta {
     .header {
         flex-direction: row;
         position: relative;
-        gap: max(1rem, 2vw);
         padding: max(1rem, 2vw);
     }
 
@@ -317,6 +336,10 @@ ul.descripcion-carta {
         gap: 5px;
         padding: 8px;
         cursor: pointer;
+    }
+
+    .header__theme {
+        margin-left: auto;
     }
 
     .header__burger span {

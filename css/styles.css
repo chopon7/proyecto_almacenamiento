@@ -130,6 +130,7 @@ h2 {
 .header__nav {
     display: flex;
     align-items: end;
+    margin-left: auto;
 }
 
 .header__list {
@@ -140,6 +141,19 @@ h2 {
 
 .header__burger {
     display: none;
+}
+
+.header__theme {
+    display: flex;
+    background: none;
+    border: none;
+    padding: 6px;
+    margin-left: min(2rem, 4vw);
+    cursor: pointer;
+}
+
+.header__theme-img {
+    filter: invert(1);
 }
 
 .header__link {
@@ -161,6 +175,7 @@ h2 {
     bottom: -4px;
     left: 0;
 }
+
 
 /* Main */
 .main {
@@ -244,6 +259,7 @@ h2 {
             transform: scale(1.05);
         }
     }
+
 }
 
 /* Footer */
@@ -281,21 +297,24 @@ h2 {
 }
 
 /* 6. Media Queries Interactivas / Accesibilidad */
-@media (prefers-color-scheme: light) {
-    :root {
-        --color-fondo: #f1f5f9;
-        --color-superficie: #ffffff;
-        --color-superficie-elevada: #e2e8f0;
+/* Modo claro (botón) */
+:root.claro {
+    --color-fondo: #f1f5f9;
+    --color-superficie: #ffffff;
+    --color-superficie-elevada: #e2e8f0;
 
-        --color-borde: #cbd5e1;
+    --color-borde: #cbd5e1;
 
-        --color-texto-principal: #0f172a;
-        --color-texto-secundario: #475569;
-        --color-texto-atenuado: #64748b;
-        --color-texto-invertido: #ffffff;
+    --color-texto-principal: #0f172a;
+    --color-texto-secundario: #475569;
+    --color-texto-atenuado: #64748b;
+    --color-texto-invertido: #ffffff;
 
-        --color-acento: #059669;
-    }
+    --color-acento: #059669;
+}
+
+.claro .header__theme-img {
+    filter: none;
 }
 
 @media (hover: hover) {
@@ -324,6 +343,10 @@ h2 {
         gap: 5px;
         padding: 8px;
         cursor: pointer;
+    }
+
+    .header__theme {
+        margin-left: auto;
     }
 
     .header__burger span {
@@ -383,7 +406,6 @@ h2 {
     }
 
     .header {
-        gap: max(1rem, 2.5vw);
         padding: max(1rem, 2.5vw);
     }
 
