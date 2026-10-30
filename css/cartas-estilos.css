@@ -101,7 +101,6 @@ body {
     list-style: none;
 }
 
-.header__toggle,
 .header__burger {
     display: none;
 }
@@ -305,13 +304,15 @@ ul.descripcion-carta {
 @media (max-width: 1023px) {
     .header {
         flex-direction: row;
-        flex-wrap: wrap;
+        position: relative;
         gap: max(1rem, 2vw);
         padding: max(1rem, 2vw);
     }
 
     .header__burger {
         display: flex;
+        background: none;
+        border: none;
         flex-direction: column;
         gap: 5px;
         padding: 8px;
@@ -329,30 +330,40 @@ ul.descripcion-carta {
 
     .header__nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
+        background-color: var(--color-superficie);
+        border-bottom: 0.1rem solid var(--color-borde);
+        z-index: 10;
     }
 
-    .header__toggle:checked ~ .header__nav {
+    .header--open .header__nav {
         display: block;
     }
 
     .header__list {
+        right: 2%;
+        z-index: 20;
+        position: absolute;
+        background-color: var(--color-fondo);
         flex-direction: column;
-        align-items: center;
+        align-items: end;
+        border-radius: 10%;
         gap: max(1rem, 2vw);
-        margin: 0;
-        padding: max(1rem, 2vw) 0;
+        padding: max(1rem, 2vw) 1rem;
     }
 
-    .header__toggle:checked + .header__burger span:nth-child(1) {
+    .header--open .header__burger span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
 
-    .header__toggle:checked + .header__burger span:nth-child(2) {
+    .header--open .header__burger span:nth-child(2) {
         opacity: 0;
     }
 
-    .header__toggle:checked + .header__burger span:nth-child(3) {
+    .header--open .header__burger span:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
