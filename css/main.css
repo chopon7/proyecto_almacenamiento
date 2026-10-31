@@ -1,0 +1,279 @@
+/*==================================================
+ÍNDICE
+1. Variables CSS
+2. Reset
+3. Asignación de áreas del Grid
+4. Layout
+5. Componentes BEM
+6. Media Queries Interactivas / Accesibilidad
+7. Media Queries Responsive 
+==================================================*/
+
+/* 1. Variables CSS */
+:root {
+    /* Superficies y Fondos */
+    --color-fondo: #252528;
+    --color-superficie: #1e1e1e;
+    --color-superficie-elevada: #27272a;
+
+    /* Bordes y Separadores */
+    --color-borde: #626262;
+
+    /* Textos */
+    --color-texto-principal: #ffffff;
+    --color-texto-secundario: #cbcbcb;
+    --color-texto-atenuado: #8a8a93;
+    --color-texto-invertido: #ffffff;
+
+    /* Acentos e Interacción */
+    --color-acento: #10b981;
+
+    /* Tamaños de tipografía base */
+    --font-size-normal: 1.5rem;
+    --font-size-large: calc(var(--font-size-normal) * 1.5);
+    --font-size-gigante: calc(var(--font-size-normal) * 2.5);
+    --font-size-barra: calc(var(--font-size-normal) * 1.2);
+
+    /* Tipografías */
+    --fuente-principal: 'Share Tech Mono', monospace;
+    --fuente-secundaria: 'Roboto Mono', monospace;
+
+    /* Duraciones y Espaciados */
+    --tiempo-transicion: 0.3s;
+    --margen-base: 2rem;
+    --margen-small: 1rem;
+    --espaciado: 16px;
+}
+
+/* 2. Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Asignación de áreas del Grid */
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* 4. Layout */
+/* Contenedor Grid */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+}
+
+/* 5. Componentes BEM */
+body {
+    background-color: var(--color-superficie);
+    color: var(--color-texto-secundario);
+    font-family: var(--fuente-secundaria);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-superficie-elevada);
+    color: var(--color-texto-principal);
+    padding: var(--margen-base);
+    font-size: var(--font-size-large);
+}
+
+.header__brand {
+    display: flex;
+    align-items: center;
+    gap: max(0.5rem, 0.6vw);
+}
+
+.header__logo-text {
+    font-family: var(--fuente-principal);
+    font-size: var(--font-size-large);
+    color: var(--color-texto-principal);
+}
+
+.header__logo-img {
+    display: block;
+}
+
+.header__barra {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 2rem;
+}
+
+.header__barra--input {
+    width: 100%;
+    background-color: var(--color-superficie);
+    color: var(--color-texto-principal);
+    border: 1px solid var(--color-borde);
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: var(--font-size-barra);
+    transition: border-color var(--tiempo-transicion) ease, background-color var(--tiempo-transicion) ease;
+}
+
+.header__botones {
+    display: flex;
+    align-items: center;
+    gap: max(0.5rem, 0.6vw);
+}
+
+/* Main */
+.main {
+    padding: var(--margen-base);
+    background-color: var(--color-superficie);
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-secundaria);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main__slogan {
+    font-size: var(--font-size-gigante);
+    font-family: var(--fuente-principal);
+    color: var(--color-acento);
+    margin-bottom: var(--espaciado);
+}
+
+.seccion {
+    margin-bottom: var(--margen-base);
+    padding: var(--margen-base);
+    background-color: var(--color-superficie-elevada);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.archivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.25rem;
+}
+
+.archivo {
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 230px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform var(--tiempo-transicion) ease,
+                border-color var(--tiempo-transicion) ease,
+                box-shadow var(--tiempo-transicion) ease;
+}
+
+.archivo:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-acento);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.titulo__archivos {
+    font-size: var(--font-size-large);
+    font-family: var(--fuente-principal);
+    color: var(--color-texto-principal);
+    margin-bottom: var(--espaciado);
+}
+
+.archivo__cabecera {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.archivo__icono {
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.archivo__nombre {
+    flex: 1;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-texto-principal);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.boton-icono {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity var(--tiempo-transicion), background-color var(--tiempo-transicion);
+}
+
+.boton-icono:hover {
+    opacity: 1;
+    background-color: var(--color-superficie-elevada);
+}
+
+.boton-icono .icono {
+    display: block;
+}
+
+.archivo__miniatura {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-fondo);
+    border-radius: 6px;
+    margin: 0.5rem 0;
+    padding: 1.25rem 0;
+    border: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.archivo__miniatura .icono {
+    max-height: 72px;
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--tiempo-transicion) ease;
+}
+
+.archivo:hover .archivo__miniatura .icono {
+    transform: scale(1.08);
+}
+
+.archivo__pie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--color-texto-atenuado);
+    margin-top: 0.35rem;
+}
+
+.archivo__pie .estrella {
+    color: #fbbf24;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
