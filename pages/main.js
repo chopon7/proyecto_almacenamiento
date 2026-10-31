@@ -6,6 +6,5 @@ buscador.addEventListener("input", (e) => {
     document.querySelectorAll(".archivo").forEach((t) => {
         const coincide = t.textContent.toLowerCase().includes(texto);
         t.hidden = !coincide;
-        console.log("creo que econtre coincidencia en algo");
     });
 });

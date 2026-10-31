@@ -179,8 +179,12 @@ body {
     cursor: pointer;
     user-select: none;
     transition: transform var(--tiempo-transicion) ease,
-                border-color var(--tiempo-transicion) ease,
-                box-shadow var(--tiempo-transicion) ease;
+        border-color var(--tiempo-transicion) ease,
+        box-shadow var(--tiempo-transicion) ease;
+}
+
+.archivo[hidden] {
+    display: none;
 }
 
 .archivo:hover {
@@ -215,7 +219,7 @@ body {
     color: var(--color-texto-principal);
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
 .boton-icono {
