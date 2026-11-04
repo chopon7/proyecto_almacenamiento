@@ -43,6 +43,21 @@
     --espaciado: 16px;
 }
 
+:root.claro {
+    --color-fondo: #f1f5f9;
+    --color-superficie: #ffffff;
+    --color-superficie-elevada: #e2e8f0;
+
+    --color-borde: #cbd5e1;
+
+    --color-texto-principal: #0f172a;
+    --color-texto-secundario: #475569;
+    --color-texto-atenuado: #64748b;
+    --color-texto-invertido: #ffffff;
+
+    --color-acento: #059669;
+}
+
 /* 2. Reset */
 *,
 *::before,
@@ -298,21 +313,6 @@ h2 {
 
 /* 6. Media Queries Interactivas / Accesibilidad */
 /* Modo claro (botón) */
-:root.claro {
-    --color-fondo: #f1f5f9;
-    --color-superficie: #ffffff;
-    --color-superficie-elevada: #e2e8f0;
-
-    --color-borde: #cbd5e1;
-
-    --color-texto-principal: #0f172a;
-    --color-texto-secundario: #475569;
-    --color-texto-atenuado: #64748b;
-    --color-texto-invertido: #ffffff;
-
-    --color-acento: #059669;
-}
-
 .claro .header__theme-img {
     filter: none;
 }

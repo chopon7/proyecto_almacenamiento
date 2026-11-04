@@ -45,6 +45,21 @@
     --espaciado: 16px;
 }
 
+:root.claro {
+    --color-fondo: #f1f5f9;
+    --color-superficie: #ffffff;
+    --color-superficie-elevada: #e2e8f0;
+
+    --color-borde: #cbd5e1;
+
+    --color-texto-principal: #0f172a;
+    --color-texto-secundario: #475569;
+    --color-texto-atenuado: #64748b;
+    --color-texto-invertido: #ffffff;
+
+    --color-acento: #059669;
+}
+
 /* 2. Reset */
 *,
 *::before,
@@ -98,6 +113,19 @@ body {
     font-size: var(--font-size-large);
 }
 
+.header__theme {
+    display: flex;
+    background: none;
+    border: none;
+    padding: 6px;
+    margin-left: min(2rem, 4vw);
+    cursor: pointer;
+}
+
+.header__theme-img {
+    filter: invert(1);
+}
+
 .header__brand {
     display: flex;
     align-items: center;
@@ -127,6 +155,7 @@ body {
     border: 1px solid var(--color-borde);
     padding: 0.5rem;
     border-radius: 4px;
+    font-family: var(--fuente-secundaria);
     font-size: var(--font-size-barra);
     transition: border-color var(--tiempo-transicion) ease, background-color var(--tiempo-transicion) ease;
 }
@@ -151,6 +180,7 @@ body {
     font-family: var(--fuente-principal);
     color: var(--color-acento);
     margin-bottom: var(--espaciado);
+    border-bottom: 2px solid var(--color-acento);
 }
 
 .seccion {
@@ -244,6 +274,19 @@ body {
     display: block;
 }
 
+.botones__vista {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.botones__vista .boton-icono {
+    margin-bottom: var(--margen-small);
+    padding: 0.5rem;
+    height: 15%;
+    width: 15%;
+    border: 1px solid var(--color-borde);
+}
+
 .archivo__miniatura {
     flex: 1;
     display: flex;
@@ -280,4 +323,10 @@ body {
     color: #fbbf24;
     font-size: 0.9rem;
     margin-left: auto;
+}
+
+/* 6. Media Queries Interactivas / Accesibilidad */
+/* Modo claro (botón) */
+.claro .header__theme-img {
+    filter: none;
 }

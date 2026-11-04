@@ -28,6 +28,7 @@
 
     /* Acentos e Interacción */
     --color-acento: #10b981;
+    --color-error: #c0392b;
 
     /* Tipografías */
     --fuente-principal: 'Share Tech Mono', monospace;
@@ -145,6 +146,7 @@ body {
 /* Formulario */
 .formulario {
     font-size: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+    font-family: var(--fuente-secundaria);
     background-color: var(--color-fondo);
     padding: min(2.5rem, 5vw);
     border-radius: 0.5rem;
@@ -179,6 +181,8 @@ body {
 
 .formulario-input {
     width: 100%;
+    margin-bottom: max(0.5rem, 0.6vw);
+    font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
     padding: max(0.65rem, 0.8vw) max(0.75rem, 1vw);
     border: 1px solid var(--color-borde);
     background-color: var(--color-superficie);
@@ -222,6 +226,7 @@ body {
 
 .radio-item input[type="radio"],
 .checkbox-item input[type="checkbox"] {
+    margin-bottom: max(0.5rem, 0.6vw);
     accent-color: var(--color-acento);
     cursor: pointer;
 }
@@ -241,6 +246,10 @@ body {
     display: flex;
     gap: max(1rem, 1.3vw);
     margin-top: min(1.75rem, 3.5vw);
+}
+
+.error {
+  color: var(--color-error);
 }
 
 .formulario-botton {
@@ -399,3 +408,11 @@ body {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+/* Mensajes de error y validación */
+.campo { display: grid; gap: 2px; }
+.campo label { font-size: var(--texto-s); color: var(--color-texto-suave); }
+.error-campo, .mensaje.error { color: var(--color-error); font-size: var(--texto-s); min-height: 1em;}
+.mensaje { margin: 0; font-size: var(--texto-s); color: var(--color-texto-suave); }
+input.invalido, select.invalido { border-color: var(--color-error); background: var(--color-favorito-fondo); }
+select { padding: var(--espacio-xs); border: 1px solid #cccccc; border-radius: var(--radio-s); }

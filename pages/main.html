@@ -50,11 +50,13 @@
 
         <!-- Botones de configuracion, cambio de tema y cuenta-->
         <div class="header__botones">
+
             <!-- Boton de cambiar de tema-->
-            <button class="header__botones" type="button">
-                <img class="header__botones-tema-img" src="../assets/icons/modo_oscuro.png" width="26" height="26"
+            <button class="header__theme" type="button">
+                <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26"
                     alt="cambiar tema">
             </button>
+            
             <!-- Boton de ir a configuracion-->
             <button class="header__botones" type="button">
                 <img class="header__botones-configuracion-img" src="../assets/icons/icon_utils/Icono_ajustes.webp"
@@ -71,17 +73,28 @@
     <!-- Seccion del main donde se ven todos los archivos-->
     <main class="main">
         <!-- Nombre de la ruta-->
-        <div class="main__slogan">
+        <section class="main__slogan">
             <div>
                 Mi unidad
             </div>
-        </div>
-        <div class="botones__vista">
-            botones extra
-        </div>
+        </section>
+
+        <!-- Seccion de botones para la vista de los archivos-->
+        <section class="botones__vista">
+            <button class="boton-icono" type="button" aria-label="Vista de cuadricula">
+                <img class="icono" src="../assets/icons/icon_utils/Icono_vista_cuadricula.webp" alt="" width="20"
+                    height="20">
+            </button>
+
+            <button class="boton-icono" type="button" aria-label="Vista de lista">
+                <img class="icono" src="../assets/icons/icon_utils/Icono_vista_lista.webp" alt="" width="20"
+                    height="20">
+            </button>
+        </section>
+
         <!-- plantilla donde se ve los archivos-->
         <section class="seccion">
-            <h3 class="titulo__archivos">Archivos</h3>
+            <h3 class="titulo__archivos">Mis Archivos</h3>
             <div class="archivos">
                 <!-- Estructura de la tarejta/forma del archivo individual-->
                 <article class="archivo">
@@ -149,7 +162,7 @@
 
         </section>
     </main>
-    <script src="main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

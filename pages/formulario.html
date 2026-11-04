@@ -27,10 +27,10 @@
 
         <nav class="header__nav">
             <ul class="header__list">
-                <li class="header__item"><a class="header__link" href="pages/informacion.html">Más Información</a></li>
-                <li class="header__item"><a class="header__link" href="pages/soporte.html">Soporte</a></li>
-                <li class="header__item"><a class="header__link" href="pages/comunidad.html">Comunidad</a></li>
-                <li class="header__item"><a class="header__link" href="pages/soporte.html">Descargar</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/ofertas-y-paquetes.html">Más Información</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/comunidad.html">Comunidad</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/soporte.html">Descargar</a></li>
             </ul>
         </nav>
         <button class="header__theme" type="button">
@@ -49,21 +49,24 @@
         <section class="formulario">
             <h2 class="formulario-h2">Registro de usuario</h2>
 
-            <form action="/receptor-formulario" method="post" enctype="multipart/form-data">
+            <form id="formulario" action="/receptor-formulario" method="post" enctype="multipart/form-data" novalidate>
                 
                 <section class="formulario__grupo">
                     <label class="formulario-label" for="nombre_usuario">Nombre</label>
                     <input class="formulario-input" name="nombre_usuario" id="nombre_usuario" type="text" placeholder="Nombre de usuario" required autofocus>
+                    <span class="error-campo" data-error-para="nombre_usuario"></span>
                 </section>
 
                 <section class="formulario__grupo">
                     <label class="formulario-label" for="contrasenia">Contraseña</label>
                     <input class="formulario-input" name="contrasenia" id="contrasenia" type="password" placeholder="Más de 8 caracteres" required minlength="8">
+                    <span class="error-campo" data-error-para="contrasenia"></span>
                 </section>
 
                 <section class="formulario__grupo">
                     <label class="formulario-label" for="correo">Correo electrónico</label>
                     <input class="formulario-input" name="correo" id="correo" type="email" placeholder="ejemplo@correo.com" required>
+                    <span class="error-campo" data-error-para="correo"></span>
                 </section>
 
                 <section class="formulario__radios">
@@ -81,15 +84,19 @@
                             <input type="radio" id="rad-personalizado" name="plan" value="personalizado">
                             Personalizado
                         </label>
+                        <span class="error-campo" data-error-para="plan"></span>
                     </div>
                 </section>
 
                 <section class="formulario__grupo">
-                    <label class="checkbox-item" for="terminos">
-                        <input name="terminos_aceptados" id="terminos" type="checkbox" required value="aceptado">
+                    <label class="checkbox-item" for="terminos_aceptados">
+                        <input name="terminos_aceptados" id="terminos_aceptados" type="checkbox" required value="aceptado">
                         Acepto términos y condiciones
                     </label>
+                    <span class="error-campo" data-error-para="terminos_aceptados"></span>
                 </section>
+
+                <p class="mensaje"></p>
 
                 <section class="formulario__acciones">
                     <button class="formulario-botton formulario-botton--primary" type="submit">Crear cuenta</button>
@@ -100,6 +107,6 @@
         </section>
     </main>
 
-    <script src="../index.js"></script>
+    <script type="module" src="../js/formulario.js"></script>
 </body>
 </html>
