@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<!-- Head con información basica COMPLETADO-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +11,36 @@
     <link rel="icon" type="image/png" href="../assets/icons/Icono_logo.jpg">
     <title>Temu Drive - Registro</title>
 
-    <meta name="description" content="Regístrate en Temu Drive, la mejor web para almacenar tus archivos en la nube de manera segura y confiable.">
+    <meta name="description"
+        content="Regístrate en Temu Drive, la mejor web para almacenar tus archivos en la nube de manera segura y confiable.">
     <meta name="Keywords" content="HTML, CSS, almacenamiento en la nube">
     <meta name="robots" content="index, follow">
 
     <link rel="stylesheet" href="../css/formulario-usuario.css">
 </head>
 
+<!-- cuerpo principal 
+TODO: Cambiar icono de tema principal.
+TODO: Cambiar nombres de "modalidad" por nombre de paquetes
+TOOO; OPCIONAL fondo de pantalla especial. 
+-->
+
 <body id="body" class="layout">
 
     <!-- Header  -->
     <header class="header">
         <section class="header__brand">
-            <img class="header__logo-img" src="../assets/icons/nube.png" alt="Logo Temu Drive" width="50" height="50" loading="lazy">
+            <img class="header__logo-img" src="../assets/icons/nube.png" alt="Logo Temu Drive" width="50" height="50"
+                loading="lazy">
             <h2 class="header__logo-text">Temu Drive</h2>
         </section>
 
         <nav class="header__nav">
             <ul class="header__list">
-                <li class="header__item"><a class="header__link" href="../pages/ofertas-y-paquetes.html">Más Información</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/ofertas-y-paquetes.html">Más
+                        Información</a></li>
                 <li class="header__item"><a class="header__link" href="../pages/soporte.html">Soporte</a></li>
                 <li class="header__item"><a class="header__link" href="../pages/comunidad.html">Comunidad</a></li>
-                <li class="header__item"><a class="header__link" href="../pages/soporte.html">Descargar</a></li>
             </ul>
         </nav>
         <button class="header__theme" type="button">
@@ -50,22 +60,25 @@
             <h2 class="formulario-h2">Registro de usuario</h2>
 
             <form id="formulario" action="/receptor-formulario" method="post" enctype="multipart/form-data" novalidate>
-                
+
                 <section class="formulario__grupo">
                     <label class="formulario-label" for="nombre_usuario">Nombre</label>
-                    <input class="formulario-input" name="nombre_usuario" id="nombre_usuario" type="text" placeholder="Nombre de usuario" required autofocus>
+                    <input class="formulario-input" name="nombre_usuario" id="nombre_usuario" type="text"
+                        placeholder="Nombre de usuario" required autofocus>
                     <span class="error-campo" data-error-para="nombre_usuario"></span>
                 </section>
 
                 <section class="formulario__grupo">
                     <label class="formulario-label" for="contrasenia">Contraseña</label>
-                    <input class="formulario-input" name="contrasenia" id="contrasenia" type="password" placeholder="Más de 8 caracteres" required minlength="8">
+                    <input class="formulario-input" name="contrasenia" id="contrasenia" type="password"
+                        placeholder="Más de 8 caracteres" required minlength="8">
                     <span class="error-campo" data-error-para="contrasenia"></span>
                 </section>
 
                 <section class="formulario__grupo">
                     <label class="formulario-label" for="correo">Correo electrónico</label>
-                    <input class="formulario-input" name="correo" id="correo" type="email" placeholder="ejemplo@correo.com" required>
+                    <input class="formulario-input" name="correo" id="correo" type="email"
+                        placeholder="ejemplo@correo.com" required>
                     <span class="error-campo" data-error-para="correo"></span>
                 </section>
 
@@ -90,7 +103,8 @@
 
                 <section class="formulario__grupo">
                     <label class="checkbox-item" for="terminos_aceptados">
-                        <input name="terminos_aceptados" id="terminos_aceptados" type="checkbox" required value="aceptado">
+                        <input name="terminos_aceptados" id="terminos_aceptados" type="checkbox" required
+                            value="aceptado">
                         Acepto términos y condiciones
                     </label>
                     <span class="error-campo" data-error-para="terminos_aceptados"></span>
@@ -109,4 +123,5 @@
 
     <script type="module" src="../js/main.js"></script>
 </body>
+
 </html>

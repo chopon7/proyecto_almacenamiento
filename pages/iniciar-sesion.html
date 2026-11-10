@@ -1,24 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Head con información basica COMPLETADO-->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://temudrive/login">
+    <link rel="canonical" href="https://temudrive/register">
 
-    <!-- Información de pestaña-->
-    <link rel="icon" type="image/png" href="./assets/icons/nube.png">
-    <title>Iniciar Sesión</title>
+    <link rel="icon" type="image/png" href="../assets/icons/Icono_logo.jpg">
+    <title>Temu Drive - Registro</title>
 
-    <!-- Metadatos para SEO y redes sociales -->
-    <meta name="description" content="Inicia sesión, colca tu correo y contraseña para acceder.">
+    <meta name="description"
+        content="Regístrate en Temu Drive, la mejor web para almacenar tus archivos en la nube de manera segura y confiable.">
     <meta name="Keywords" content="HTML, CSS, almacenamiento en la nube">
     <meta name="robots" content="index, follow">
 
+    <link rel="stylesheet" href="../css/formulario-usuario.css">
+
 </head>
 
-<body>
-    <h1>Iniciar Sesión</h1>
+<!-- Cuerpo principal
+TODO: Asignar correctamente la imagenes de icono
+TODO: Ajustar parametros de diseño, contraseña y correo-->
+
+<body id="body" class="layout">
+    <!-- Header  -->
+    <header class="header">
+        <section class="header__brand">
+            <img class="header__logo-img" src="../assets/icons/nube.png" alt="Logo Temu Drive" width="50" height="50"
+                loading="lazy">
+            <h2 class="header__logo-text">Temu Drive</h2>
+        </section>
+
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item"><a class="header__link" href="../pages/ofertas-y-paquetes.html">Más
+                        Información</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/comunidad.html">Comunidad</a></li>
+            </ul>
+        </nav>
+        <button class="header__theme" type="button">
+            <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26"
+                alt="cambiar tema">
+        </button>
+        <button class="header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+
+    <!-- Main -->
+    <main class="main">
+        <section class="iniciar-sesion">
+            <h2 class="iniciar-sesion-h2">Iniciar sesión</h2>
+
+            <form id="formulario" action="/receptor-formulario" method="post" enctype="multipart/form-data" novalidate>
+
+                <section class="formulario__grupo">
+                    <label class="formulario-label" for="correo">Correo electrónico</label>
+                    <input class="formulario-input" name="correo" id="correo" type="email"
+                        placeholder="ejemplo@correo.com" required>
+                    <span class="error-campo" data-error-para="correo"></span>
+                </section>
+
+                <section class="formulario__grupo">
+                    <label class="formulario-label" for="contrasenia">Contraseña</label>
+                    <input class="formulario-input" name="contrasenia" id="contrasenia" type="password"
+                        placeholder="Más de 8 caracteres" required minlength="8">
+                    <span class="error-campo" data-error-para="contrasenia"></span>
+                </section>
+
+                <p class="mensaje"></p>
+
+                <section class="formulario__acciones">
+                    <button class="formulario-botton formulario-botton--primary" type="submit">Iniciar sesión</button>
+                    <button class="formulario-botton formulario-botton--secondary" type="reset">Crear cuenta
+                        nueva</button>
+                </section>
+
+            </form>
+        </section>
+    </main>
 </body>
 
 </html>
