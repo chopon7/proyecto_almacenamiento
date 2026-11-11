@@ -121,6 +121,7 @@ h2 {
 }
 
 .header__brand {
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: max(0.5rem, 0.6vw);
@@ -247,6 +248,8 @@ h2 {
 }
 
 .button {
+    text-decoration: none;
+    display: inline-block;
     padding: max(0.8rem, 1vw) max(1.5rem, 2vw);
     border: none;
     border-radius: 6px;

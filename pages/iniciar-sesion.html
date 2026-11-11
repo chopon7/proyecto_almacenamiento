@@ -27,17 +27,20 @@ TODO: Ajustar parametros de diseño, contraseña y correo-->
 <body id="body" class="layout">
     <!-- Header  -->
     <header class="header">
-        <section class="header__brand">
-            <img class="header__logo-img" src="../assets/icons/nube.png" alt="Logo Temu Drive" width="50" height="50"
-                loading="lazy">
-            <h2 class="header__logo-text">Temu Drive</h2>
-        </section>
+        <div>
+            <a class="header__brand" href="../index.html">
+                <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
+                    height="50" loading="lazy">
+
+                <h2 class="header__logo-text">Temu Drive</h2>
+            </a>
+        </div>
 
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__item"><a class="header__link" href="../pages/ofertas-y-paquetes.html">Más
                         Información</a></li>
-                <li class="header__item"><a class="header__link" href="../pages/soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/informacion.html">Soporte</a></li>
                 <li class="header__item"><a class="header__link" href="../pages/comunidad.html">Comunidad</a></li>
             </ul>
         </nav>
@@ -55,8 +58,9 @@ TODO: Ajustar parametros de diseño, contraseña y correo-->
 
     <!-- Main -->
     <main class="main">
-        <section class="iniciar-sesion">
-            <h2 class="iniciar-sesion-h2">Iniciar sesión</h2>
+        <!-- Esto le da forma de cuadro a los labels-->
+        <section class="formulario">
+            <h2 class="formulario-h2">Iniciar sesión</h2>
 
             <form id="formulario" action="/receptor-formulario" method="post" enctype="multipart/form-data" novalidate>
 
@@ -85,6 +89,7 @@ TODO: Ajustar parametros de diseño, contraseña y correo-->
             </form>
         </section>
     </main>
+    <script type="module" src="../js/main.js"></script>
 </body>
 
 </html>

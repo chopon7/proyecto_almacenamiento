@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/png" href="../assets/icons/Icono_logo.jpg">
+    <link rel="icon" type="image/png" href="/assets/icons/Icono_logo.jpg">
     <title>Temu Drive - Inicio</title>
 
     <meta name="description"
@@ -35,26 +35,27 @@
 
 <!-- Cuerpo principal 
 TODO: Asignar corretamente el tamaño de icono y letra del index
-TODO: Hacer que funcione el botones de cambio de tema, registro e iniciar sesion
 TODO: Agregar más contenido en el main
 TODO: Corregir los iconos delfooter 
 TODO: Mejorar icono principal
-TODO: A TODOS, hacer que funcione el burger menu y el cambio de tema(Checa en tu navegador jacobo)-->
+Iniciar con linea de comando del server y entra a https:localhost:8000 para ver la página-->
 
 <body id="body" class="layout">
 
     <header class="header">
-        <div class="header__brand">
-            <img class="header__logo-img" src="assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50" height="50"
-                loading="lazy">
+        <div>
+            <a class="header__brand">
+                <img class="header__logo-img" src="assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
+                    height="50" loading="lazy">
 
-            <h2 class="header__logo-text" href="index.html">Temu Drive</h2>
+                <h2 class="header__logo-text">Temu Drive</h2>
+            </a>
         </div>
 
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__item"><a class="header__link" href="pages/ofertas-y-paquetes.html">Ofertas</a></li>
-                <li class="header__item"><a class="header__link" href="pages/soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="pages/informacion.html">Soporte</a></li>
                 <li class="header__item"><a class="header__link" href="pages/comunidad.html">Comunidad</a></li>
             </ul>
         </nav>
@@ -87,8 +88,9 @@ TODO: A TODOS, hacer que funcione el burger menu y el cambio de tema(Checa en tu
         </section>
 
         <section class="main__buttons">
-            <button class="button button--primary" href="pages/iniciar-sesion.html">Iniciar sesión</button>
-            <button class="button button--secondary" href="pages/registrarse.html">Registrarse</button>
+            <a class="button button--primary" href="pages/iniciar-sesion.html">Iniciar
+                sesión</a>
+            <a class="button button--secondary" href="pages/formulario.html">Registrarse</a>
         </section>
     </main>
 
@@ -129,7 +131,7 @@ TODO: A TODOS, hacer que funcione el burger menu y el cambio de tema(Checa en tu
         <p class="footer__copyright">© 2026 Temu Drive. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="../js/index.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>

@@ -45,9 +45,17 @@
 }
 
 /* 3. Asignación de áreas del Grid */
-.header { grid-area: header; }
-.main   { grid-area: main; }
-.footer { grid-area: footer; }
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
 
 /* 4. Layout */
 .layout {
@@ -56,7 +64,7 @@
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
         "header"
-        "main" 
+        "main"
         "footer";
     min-height: 100vh;
 }
@@ -80,6 +88,7 @@ body {
 }
 
 .header__brand {
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: max(0.5rem, 0.6vw);
@@ -249,7 +258,7 @@ body {
 }
 
 .error {
-  color: var(--color-error);
+    color: var(--color-error);
 }
 
 .formulario-botton {
@@ -295,10 +304,12 @@ body {
         opacity: 0;
         transform: scale(0.8);
     }
+
     50% {
         opacity: 0.7;
         transform: scale(1.05);
     }
+
     100% {
         opacity: 1;
         transform: scale(1);
@@ -307,6 +318,7 @@ body {
 
 /* Accesibilidad: Reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -410,9 +422,37 @@ body {
 }
 
 /* Mensajes de error y validación */
-.campo { display: grid; gap: 2px; }
-.campo label { font-size: var(--texto-s); color: var(--color-texto-suave); }
-.error-campo, .mensaje.error { color: var(--color-error); font-size: var(--texto-s); min-height: 1em;}
-.mensaje { margin: 0; font-size: var(--texto-s); color: var(--color-texto-suave); }
-input.invalido, select.invalido { border-color: var(--color-error); background: var(--color-favorito-fondo); }
-select { padding: var(--espacio-xs); border: 1px solid #cccccc; border-radius: var(--radio-s); }
+.campo {
+    display: grid;
+    gap: 2px;
+}
+
+.campo label {
+    font-size: var(--texto-s);
+    color: var(--color-texto-suave);
+}
+
+.error-campo,
+.mensaje.error {
+    color: var(--color-error);
+    font-size: var(--texto-s);
+    min-height: 1em;
+}
+
+.mensaje {
+    margin: 0;
+    font-size: var(--texto-s);
+    color: var(--color-texto-suave);
+}
+
+input.invalido,
+select.invalido {
+    border-color: var(--color-error);
+    background: var(--color-favorito-fondo);
+}
+
+select {
+    padding: var(--espacio-xs);
+    border: 1px solid #cccccc;
+    border-radius: var(--radio-s);
+}

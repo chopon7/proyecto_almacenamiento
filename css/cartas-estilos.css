@@ -43,9 +43,17 @@
 }
 
 /* 3. Asignación de áreas del Grid */
-.header { grid-area: header; }
-.main   { grid-area: main; }
-.footer { grid-area: footer; }
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
 
 /* 4. Layout */
 .layout {
@@ -79,6 +87,7 @@ body {
 }
 
 .header__brand {
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: max(0.5rem, 0.6vw);
@@ -168,7 +177,7 @@ body {
     font-family: var(--fuente-principal);
 }
 
-.contenido > section > p {
+.contenido>section>p {
     color: var(--color-texto-secundario);
     font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
     line-height: 1.6;

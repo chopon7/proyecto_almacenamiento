@@ -44,11 +44,11 @@ document.addEventListener("click", (e) => {
 
 // Validación de campos individuales
 function validarNombre(campo) {
-    campo.setCustomValidity(esNombreValido(campo.value)? "": "El nombre debe tener al menos 3 caracteres");
+    campo.setCustomValidity(esNombreValido(campo.value) ? "" : "El nombre debe tener al menos 3 caracteres");
 }
 
 function validarCorreo(campo) {
-    campo.setCustomValidity(esEmailValido(campo.value)? "": "Correo electrónico inválido"
+    campo.setCustomValidity(esEmailValido(campo.value) ? "" : "Correo electrónico inválido"
     );
 }
 
