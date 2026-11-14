@@ -1,0 +1,23 @@
+{
+  "name": "proyecto_almacenamiento",
+  "version": "1.0.0",
+  "description": "**Una solución ligera, segura e intuitiva para el almacenamiento y gestión de archivos en la nube.**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chopon7/proyecto_almacenamiento.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chopon7/proyecto_almacenamiento/issues"
+  },
+  "homepage": "https://github.com/chopon7/proyecto_almacenamiento#readme",
+  "dependencies": {
+    "sweetalert2": "^11.26.25"
+  }
+}

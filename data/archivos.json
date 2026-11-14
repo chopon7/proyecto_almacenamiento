@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "nombre": "Reporte de usuarios.pdf",
+        "tipo": "documento",
+        "propietario": "Tú",
+        "fecha": "2026-10-30"
+    },
+    {
+        "id": 2,
+        "nombre": "Jose jose musica chida.wav",
+        "tipo": "audio",
+        "propietario": "Tú",
+        "fecha": "2026-10-30"
+    },
+    {
+        "id": 3,
+        "nombre": "Vacaciones.mp4",
+        "tipo": "video",
+        "propietario": "Amukiri",
+        "fecha": "2026-11-02"
+    },
+    {
+        "id": 4,
+        "nombre": "Foto perfil.png",
+        "tipo": "imagen",
+        "propietario": "Tú",
+        "fecha": "2026-11-05"
+    },
+    {
+        "id": 5,
+        "nombre": "Ventas 2026.csv",
+        "tipo": "datos",
+        "propietario": "Jacobo",
+        "fecha": "2026-11-08"
+    },
+    {
+        "id": 6,
+        "nombre": "Respaldo.zip",
+        "tipo": "comprimido",
+        "propietario": "Tú",
+        "fecha": "2026-11-10"
+    }
+]

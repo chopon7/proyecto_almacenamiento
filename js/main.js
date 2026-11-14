@@ -14,9 +14,11 @@ import {
 
 const header = document.querySelector(".header");
 const modo = document.querySelector(".header__theme")
+const cuenta = document.querySelector(".header__cuenta-boton");
+const opcionesCuenta = document.querySelector(".header__cuenta-opciones");
 const form = document.getElementById("formulario");
 
-
+// Boton de cambio de tema
 function setMenu(open) {
     header.classList.toggle("header--open", open);
 }
@@ -30,16 +32,28 @@ if (modo) {
     });
 }
 
+cuenta.addEventListener('click', (e) => {
+    console.log("click en cuenta");
+    e.stopPropagation();
+    const abierto = opcionesCuenta.classList.toggle('abierto');
+    cuenta.setAttribute('aria-expanded', abierto);
+});
+
+
 header.addEventListener("click", (e) => {
-    if (!burger.contains(e.target)) setMenu(false);
+    if (!opcionesCuenta.contains(e.target) || !burger.contains(e.target)) {
+        desactivarMenu();
+    }
 });
 
-document.addEventListener("keydown", (e) => {
+function desactivarMenu() {
+    setMenu(false);
+    opcionesCuenta.classList.remove('abierto');
+    cuenta.setAttribute('aria-expanded', 'false');
+}
+
+document.addEventListener("keydown" || "click", (e) => {
     if (e.key === "Escape") setMenu(false);
-});
-
-document.addEventListener("click", (e) => {
-    if (!header.contains(e.target)) setMenu(false);
 });
 
 // Validación de campos individuales
