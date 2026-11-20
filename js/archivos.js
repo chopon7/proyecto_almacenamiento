@@ -1,5 +1,5 @@
 const marco = document.querySelector(".archivos");
-const estado = document.querySelector(".estao");
+const estado = document.querySelector(".estado");
 const botonTema = document.querySelector(".header__theme");
 
 const CLAVE_TEMA = "tema";
@@ -22,6 +22,7 @@ if (leerJSON(CLAVE_TEMA, "oscuro") === "claro") {
 }
 
 botonTema?.addEventListener("click", () => {
+    console.log("CLICK");
     const esClaro = document.documentElement.classList.toggle("claro");
     guardarJSON(CLAVE_TEMA, esClaro ? "claro" : "oscuro");
 });
