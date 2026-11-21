@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://temudrive/aboutus">
+
+    <!-- Información de pestaña-->
+    <link rel="icon" type="image/png" href="/assets/icons/Icono_logo.jpg">
+    <title>Temu Drive | Soporte</title>
+
+    <!-- Metadatos para SEO y redes sociales -->
+    <meta name="description"
+        content="Temu Drive es un proyecto de almacenamiento en la nube que permite a los usuarios guardar, compartir y acceder a sus archivos de manera segura, sin necesidad de descargar software, todo desde la red.">
+    <meta name="Keywords" content="HTML, CSS, almacenamiento en la nube">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="../css/soporte.css">
+</head>
+
+<body class="layout">
+    <header class="header">
+        <a href="../index.html" class="header__brand">
+            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
+                    height="50" loading="lazy">
+            <h2 class="header__logo-text">Temu Drive</h2>
+        </a>
+
+        <button type="button" class="header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__status">Estado: Operativo</li>
+                <li class="header__item"><a class="header__link" href="/pages/ofertas-y-paquetes.html">Paquetes</a></li>
+                <li class="header__item"><a class="header__link" href="/pages/comunidad.html">Comunidad</a></li>
+            </ul>
+        </nav>
+
+        <button class="header__theme" type="button">
+            <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26" alt="cambiar tema">
+        </button>
+    </header>
+
+    <main class="main">
+        <section class="support-section support-hero">
+            <h1 class="support-hero__title">
+                Centro de <span class="support-hero__title--highlight">soporte</span>
+            </h1>
+            <p class="support-hero__subtitle">
+                Consulta guías sobre almacenamiento, permisos, papelera y sincronización.
+            </p>
+
+            <!-- TODO: Implementar la funcionalidad de esta seccion--> 
+            <form action="#" method="get" class="support-search">
+                <label for="buscador" class="support-search__label">Buscar artículo de ayuda:</label>
+                <input type="search" id="buscador" name="q" class="support-search__input" placeholder="Ej. recuperar archivo borrado...">
+                <button type="submit" class="button button--primary">Buscar</button>
+            </form>
+        </section>
+
+        <section class="support-section categories">
+            <h2>Explorar por categoría</h2>
+
+            <div class="categories__grid">
+                <article class="category-card">
+                    <h3 class="category-card__title">Almacenamiento y Planes</h3>
+                    <p class="category-card__desc">Gestiona tu cuota de espacio, libera memoria y revisa tu suscripción.</p>
+                    <a href="#" class="category-card__link">Ver guías</a>
+                </article>
+
+                <article class="category-card">
+                    <h3 class="category-card__title">Compartir y Permisos</h3>
+                    <p class="category-card__desc">Configura quién puede ver, comentar o editar tus carpetas y enlaces.</p>
+                    <a href="#" class="category-card__link">Ver guías</a>
+                </article>
+
+                <article class="category-card">
+                    <h3 class="category-card__title">Papelera y Recuperación</h3>
+                    <p class="category-card__desc">Restaura archivos eliminados o versiones anteriores de tus documentos.</p>
+                    <a href="#" class="category-card__link">Ver guías</a>
+                </article>
+
+                <article class="category-card">
+                    <h3 class="category-card__title">Sincronización y Apps</h3>
+                    <p class="category-card__desc">Ayuda con la app de escritorio, móvil y el modo sin conexión.</p>
+                    <a href="#" class="category-card__link">Ver guías</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="support-section faq">
+            <h2>Preguntas frecuentes</h2>
+
+            <div class="faq__list">
+                <details id="faq-papelera" class="faq-item">
+                    <summary class="faq-item__summary">¿Cómo recupero un archivo que eliminé de la papelera?</summary>
+                    <p class="faq-item__answer">Los archivos permanecen en la papelera durante 30 días antes de eliminarse de forma definitiva.</p>
+                </details>
+
+                <details id="faq-almacenamiento" class="faq-item">
+                    <summary class="faq-item__summary">¿Por qué mi almacenamiento sigue lleno después de borrar archivos?</summary>
+                    <p class="faq-item__answer">Los elementos dentro de la papelera siguen contando para tu cuota hasta que vacíes la papelera.</p>
+                </details>
+
+                <details id="faq-permisos" class="faq-item">
+                    <summary class="faq-item__summary">¿Cómo evito que otros descarguen un archivo que compartí?</summary>
+                    <p class="faq-item__answer">Abre la configuración de compartir del archivo y desactiva las opciones de descargar, imprimir o copiar.</p>
+                </details>
+
+                <details id="faq-sincronizacion" class="faq-item">
+                    <summary class="faq-item__summary">¿Cuál es el tamaño máximo por archivo que puedo subir?</summary>
+                    <p class="faq-item__answer">El límite por archivo individual depende de tu plan y del espacio disponible en tu cuenta.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="support-section">
+            <h2>Contactar a soporte técnico</h2>
+
+            <form action="#" method="post" class="ticket-form">
+                <div class="ticket-form__group">
+                    <label for="categoria" class="ticket-form__label">Categoría del problema:</label>
+                    <select id="categoria" name="categoria" class="ticket-form__control" required>
+                        <option value="">-- Selecciona una opción --</option>
+                        <option value="recuperacion">Recuperación de archivos</option>
+                        <option value="almacenamiento">Almacenamiento y facturación</option>
+                        <option value="sincronizacion">Problemas de subida o sincronización</option>
+                        <option value="cuenta">Acceso y seguridad de la cuenta</option>
+                    </select>
+                </div>
+
+                <div class="ticket-form__group">
+                    <label for="correo" class="ticket-form__label">Correo electrónico de tu cuenta:</label>
+                    <input type="email" id="correo" name="correo" class="ticket-form__control" required placeholder="usuario@ejemplo.com">
+                </div>
+
+                <div class="ticket-form__group">
+                    <label for="asunto" class="ticket-form__label">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" class="ticket-form__control" required>
+                </div>
+
+                <div class="ticket-form__group">
+                    <label for="descripcion" class="ticket-form__label">Descripción detallada del problema:</label>
+                    <textarea id="descripcion" name="descripcion" class="ticket-form__control ticket-form__textarea" required></textarea>
+                </div>
+
+                <div class="ticket-form__group">
+                    <label for="captura" class="ticket-form__label">Adjuntar captura de pantalla (opcional):</label>
+                    <input type="file" id="captura" name="captura" class="ticket-form__control" accept="image/*">
+                </div>
+
+                <button type="submit" class="button button--primary">Enviar solicitud</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <section name="Pie de pagina">
+            <h3>Temu Drive Company</h3>
+            <section>
+                Nuestra compañia se centra en el manejo de datos a gran escala y la manipulacion minusiosa de los mismos
+                datos para ejercer una grata experiencia en los usuarios.
+            </section>
+        </section>
+
+        <section name="Support">
+            <h3>Support</h3>
+            <section>Contact us</section>
+            <section>Q&A</section>
+            <section>Service terms</section>
+        </section>
+
+        <section name="Learn more">
+            <h3>Learn more</h3>
+            <section>
+                Blog
+                <picture>
+                    <source srcset="../assets/icons/instagram_icon1.png" type="image/png">
+                    <img src="../assets/icons/Instagram_Icon_DEFAULT.ico" alt="Instagram" width="30" height="30"
+                        loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="../assets/icons/linked_icon1.png" type="image/png">
+                    <img src="../assets/icons/Linked_Icon1_DEFAULT.png" alt="LinkedIn" width="30" height="30"
+                        loading="lazy">
+                </picture>
+            </section>
+            <section>Case studies</section>
+        </section>
+        <p class="footer__copyright">© 2026 Temu Drive. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
