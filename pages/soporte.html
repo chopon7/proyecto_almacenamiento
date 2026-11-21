@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://temudrive/aboutus">
 
     <!-- Información de pestaña-->
-    <link rel="icon" type="image/png" href="/assets/icons/Icono_logo.jpg">
+    <link rel="icon" type="image/jpg" href="/assets/icons/Icono_logo.jpg">
     <title>Temu Drive | Soporte</title>
 
     <!-- Metadatos para SEO y redes sociales -->
@@ -15,6 +15,13 @@
         content="Temu Drive es un proyecto de almacenamiento en la nube que permite a los usuarios guardar, compartir y acceder a sus archivos de manera segura, sin necesidad de descargar software, todo desde la red.">
     <meta name="Keywords" content="HTML, CSS, almacenamiento en la nube">
     <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Temu Drive">
+    <meta property="og:description" content="Temu Drive es un proyecto de almacenamiento">
+    <meta property="og:image" content="/assets/img/Fondo1.jpg">
+    <meta property="og:url" content="https://temudrive/aboutus">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="../css/soporte.css">
 </head>
 
@@ -22,7 +29,7 @@
     <header class="header">
         <a href="../index.html" class="header__brand">
             <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
-                    height="50" loading="lazy">
+                height="50">
             <h2 class="header__logo-text">Temu Drive</h2>
         </a>
 
@@ -35,13 +42,15 @@
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__status">Estado: Operativo</li>
-                <li class="header__item"><a class="header__link" href="/pages/ofertas-y-paquetes.html">Paquetes</a></li>
-                <li class="header__item"><a class="header__link" href="/pages/comunidad.html">Comunidad</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/ofertas-y-paquetes.html">Paquetes</a>
+                </li>
+                <li class="header__item"><a class="header__link" href="../pages/comunidad.html">Comunidad</a></li>
             </ul>
         </nav>
 
         <button class="header__theme" type="button">
-            <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26" alt="cambiar tema">
+            <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26"
+                alt="cambiar tema">
         </button>
     </header>
 
@@ -54,10 +63,11 @@
                 Consulta guías sobre almacenamiento, permisos, papelera y sincronización.
             </p>
 
-            <!-- TODO: Implementar la funcionalidad de esta seccion--> 
+            <!-- TODO: Implementar la funcionalidad de esta seccion-->
             <form action="#" method="get" class="support-search">
                 <label for="buscador" class="support-search__label">Buscar artículo de ayuda:</label>
-                <input type="search" id="buscador" name="q" class="support-search__input" placeholder="Ej. recuperar archivo borrado...">
+                <input type="search" id="buscador" name="q" class="support-search__input"
+                    placeholder="Ej. recuperar archivo borrado...">
                 <button type="submit" class="button button--primary">Buscar</button>
             </form>
         </section>
@@ -68,19 +78,22 @@
             <div class="categories__grid">
                 <article class="category-card">
                     <h3 class="category-card__title">Almacenamiento y Planes</h3>
-                    <p class="category-card__desc">Gestiona tu cuota de espacio, libera memoria y revisa tu suscripción.</p>
+                    <p class="category-card__desc">Gestiona tu cuota de espacio, libera memoria y revisa tu suscripción.
+                    </p>
                     <a href="#" class="category-card__link">Ver guías</a>
                 </article>
 
                 <article class="category-card">
                     <h3 class="category-card__title">Compartir y Permisos</h3>
-                    <p class="category-card__desc">Configura quién puede ver, comentar o editar tus carpetas y enlaces.</p>
+                    <p class="category-card__desc">Configura quién puede ver, comentar o editar tus carpetas y enlaces.
+                    </p>
                     <a href="#" class="category-card__link">Ver guías</a>
                 </article>
 
                 <article class="category-card">
                     <h3 class="category-card__title">Papelera y Recuperación</h3>
-                    <p class="category-card__desc">Restaura archivos eliminados o versiones anteriores de tus documentos.</p>
+                    <p class="category-card__desc">Restaura archivos eliminados o versiones anteriores de tus
+                        documentos.</p>
                     <a href="#" class="category-card__link">Ver guías</a>
                 </article>
 
@@ -98,22 +111,28 @@
             <div class="faq__list">
                 <details id="faq-papelera" class="faq-item">
                     <summary class="faq-item__summary">¿Cómo recupero un archivo que eliminé de la papelera?</summary>
-                    <p class="faq-item__answer">Los archivos permanecen en la papelera durante 30 días antes de eliminarse de forma definitiva.</p>
+                    <p class="faq-item__answer">Los archivos permanecen en la papelera durante 30 días antes de
+                        eliminarse de forma definitiva.</p>
                 </details>
 
                 <details id="faq-almacenamiento" class="faq-item">
-                    <summary class="faq-item__summary">¿Por qué mi almacenamiento sigue lleno después de borrar archivos?</summary>
-                    <p class="faq-item__answer">Los elementos dentro de la papelera siguen contando para tu cuota hasta que vacíes la papelera.</p>
+                    <summary class="faq-item__summary">¿Por qué mi almacenamiento sigue lleno después de borrar
+                        archivos?</summary>
+                    <p class="faq-item__answer">Los elementos dentro de la papelera siguen contando para tu cuota hasta
+                        que vacíes la papelera.</p>
                 </details>
 
                 <details id="faq-permisos" class="faq-item">
-                    <summary class="faq-item__summary">¿Cómo evito que otros descarguen un archivo que compartí?</summary>
-                    <p class="faq-item__answer">Abre la configuración de compartir del archivo y desactiva las opciones de descargar, imprimir o copiar.</p>
+                    <summary class="faq-item__summary">¿Cómo evito que otros descarguen un archivo que compartí?
+                    </summary>
+                    <p class="faq-item__answer">Abre la configuración de compartir del archivo y desactiva las opciones
+                        de descargar, imprimir o copiar.</p>
                 </details>
 
                 <details id="faq-sincronizacion" class="faq-item">
                     <summary class="faq-item__summary">¿Cuál es el tamaño máximo por archivo que puedo subir?</summary>
-                    <p class="faq-item__answer">El límite por archivo individual depende de tu plan y del espacio disponible en tu cuenta.</p>
+                    <p class="faq-item__answer">El límite por archivo individual depende de tu plan y del espacio
+                        disponible en tu cuenta.</p>
                 </details>
             </div>
         </section>
@@ -135,7 +154,8 @@
 
                 <div class="ticket-form__group">
                     <label for="correo" class="ticket-form__label">Correo electrónico de tu cuenta:</label>
-                    <input type="email" id="correo" name="correo" class="ticket-form__control" required placeholder="usuario@ejemplo.com">
+                    <input type="email" id="correo" name="correo" class="ticket-form__control" required
+                        placeholder="usuario@ejemplo.com">
                 </div>
 
                 <div class="ticket-form__group">
@@ -145,7 +165,8 @@
 
                 <div class="ticket-form__group">
                     <label for="descripcion" class="ticket-form__label">Descripción detallada del problema:</label>
-                    <textarea id="descripcion" name="descripcion" class="ticket-form__control ticket-form__textarea" required></textarea>
+                    <textarea id="descripcion" name="descripcion" class="ticket-form__control ticket-form__textarea"
+                        required></textarea>
                 </div>
 
                 <div class="ticket-form__group">
@@ -196,4 +217,5 @@
     </footer>
 
 </body>
+
 </html>
