@@ -271,13 +271,36 @@ ul.descripcion-carta {
 
 /* Footer */
 .footer {
-    padding: 2rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     background-color: var(--color-superficie);
     border-top: 0.1rem solid var(--color-borde);
-    color: var(--color-texto-secundario);
+    padding: min(2rem, 4vw);
     font-family: var(--fuente-secundaria);
+    text-align: left;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footer section {
+    flex: 1 1 200px;
+    margin: var(--margen-small);
+}
+
+.footer picture img {
+    width: 30px;
+    height: 30px;
+    margin-right: max(10px, 0.8vw);
+    vertical-align: middle;
+}
+
+.footer p,
+.footer__copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--margen-base);
+    font-size: clamp(0.8rem, 0.7rem + 0.3vw, 1rem);
+    color: var(--color-texto-secundario);
 }
 
 /* 6. Media Queries Interactivas / Accesibilidad */
