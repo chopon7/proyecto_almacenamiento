@@ -24,29 +24,27 @@
         content="Temu Drive es un proyecto de almacenamiento en la nube que permite a los usuarios guardar, compartir y acceder a sus archivos.">
 
     <link rel="stylesheet" href="../css/main.css">
-
 </head>
 
-
-<!-- cuerpo principal 
- TODO: agregar diseño completo del main y javscriprt-->
-
-<body id="body">
+<body id="body" class="layout">
 
     <!-- Barra de navegación, donde esta la barra de busqueda de archivos-->
-
     <header class="header">
-        <!-- Icono de la empresa que va hasta la izquierda-->
-        <div class="header__brand">
-            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
-                height="50">
-            <h2 class="header__logo-text">Temu Drive</h2>
+
+        <div>
+            <a class="header__brand" href="../index.html">
+                <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
+                    height="50">
+                <h2 class="header__logo-text">Temu Drive</h2>
+            </a>
         </div>
 
         <!-- Barra de busqueda -->
         <div class="header__barra">
-            <input class="header__barra--input" type="search" placeholder="¿Qué buscamos hoy?">
-            <button class="header__barra-boton" type="button">
+            <label for="buscador-archivos" class="sr-only">Buscar archivos</label>
+            <input id="buscador-archivos" class="header__barra--input" type="search" placeholder="¿Qué buscamos hoy?"
+                aria-label="Buscar archivos">
+            <button class="header__barra-boton" type="button" aria-label="Ejecutar búsqueda">
                 <img class="header__boton--img" src="../assets/icons/icon_utils/Icono_buscar.webp" width="26"
                     height="26" alt="buscar">
             </button>
@@ -54,63 +52,152 @@
 
         <!-- Botones de configuracion, cambio de tema y cuenta-->
         <div class="header__botones">
-            <!-- Boton de cambiar de tema-->
-            <button class="header__theme" type="button" aria-expanded="false" aria-label="Cuenta">
+            <button class="header__theme" type="button" aria-expanded="false" aria-label="Cambiar tema">
                 <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26"
                     alt="cambiar tema">
             </button>
 
-            <!-- Boton de informacion de cuenta (contiene  configuracion adentro)-->
             <div class="header__cuenta">
-                <button class="header__cuenta-boton" type="button">
+                <button class="header__cuenta-boton" type="button" aria-expanded="false"
+                    aria-label="Opciones de cuenta">
                     <img class="header__boton--img" src="../assets/icons/icon_utils/Icono_usuario.webp" width="26"
                         height="26" alt="cuenta">
                 </button>
                 <div class="header__cuenta-opciones">
                     <ul class="header__cuenta-lista">
                         <li class="header__cuenta-item"><a class="header__cuenta-link" href="#">Configuración</a></li>
-                        <li class="header__cuenta-item"><a class="header__cuenta-link" href="#">Cerrar sesión</a></li>
+                        <li class="header__cuenta-item"><a class="header__cuenta-link" href="../index.html">Cerrar sesión</a></li>
                     </ul>
                 </div>
             </div>
-
-
-
-            <!-- Panel de opciones al hacer clic en el botón de cuenta-->
-
         </div>
     </header>
 
+    <!-- Navegación lateral para localizar documentos por sección y almacenamiento -->
+    <aside class="sidebar" aria-label="Navegación de archivos">
+        <nav class="sidebar__nav">
+            <ul class="sidebar__lista">
+                <li class="sidebar__item">
+                    <button class="sidebar__enlace sidebar__enlace--activo" type="button" data-vista="mi-unidad">
+                        Mi unidad
+                    </button>
+                </li>
+                <li class="sidebar__item">
+                    <button class="sidebar__enlace" type="button" data-vista="recientes">
+                        Recientes
+                    </button>
+                </li>
+                <li class="sidebar__item">
+                    <button class="sidebar__enlace" type="button" data-vista="destacados">
+                        Destacados
+                    </button>
+                </li>
+                <li class="sidebar__item">
+                    <button class="sidebar__enlace" type="button" data-vista="compartidos">
+                        Compartidos conmigo
+                    </button>
+                </li>
+                <li class="sidebar__item">
+                    <button class="sidebar__enlace" type="button" data-vista="papelera">
+                        Papelera
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__almacenamiento" aria-label="Espacio utilizado">
+            <p class="sidebar__almacenamiento-titulo">Almacenamiento</p>
+            <div class="sidebar__barra" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                <div class="sidebar__barra-progreso" style="width: 20%;"></div>
+            </div>
+            <p class="sidebar__almacenamiento-texto">3.5 GB de 10 GB usados</p>
+        </div>
+    </aside>
+
     <!-- Seccion del main donde se ven todos los archivos-->
     <main class="main">
-        <!-- Nombre de la ruta-->
+        <!-- Nombre de la ruta y migas de pan -->
         <section class="main__slogan">
-            <div>
-                Mi unidad
+            <h1 class="main__titulo">Mi unidad</h1>
+            <nav class="breadcrumb" aria-label="Ruta de carpetas">
+                <ol class="breadcrumb__lista">
+                    <li class="breadcrumb__item">
+                        <button class="breadcrumb__enlace breadcrumb__enlace--actual" type="button" data-ruta="/">
+                            Mi unidad
+                        </button>
+                    </li>
+                </ol>
+            </nav>
+        </section>
+
+        <!-- Barra de control: filtros por tipo, ordenamiento y cambio de vista -->
+        <section class="barra-controles" aria-label="Filtros y vista de archivos">
+            <div class="filtros" role="group" aria-label="Filtrar por tipo de documento">
+                <button class="filtro-btn filtro-btn--activo" type="button" data-tipo="todos">Todos</button>
+                <button class="filtro-btn" type="button" data-tipo="carpeta">Carpetas</button>
+                <button class="filtro-btn" type="button" data-tipo="documento">Documentos</button>
+                <button class="filtro-btn" type="button" data-tipo="imagen">Imágenes</button>
+                <button class="filtro-btn" type="button" data-tipo="otro">Otros</button>
+            </div>
+
+            <div class="controles-derecha">
+                <div class="ordenamiento">
+                    <label for="ordenar-por" class="ordenamiento__etiqueta">Ordenar:</label>
+                    <select id="ordenar-por" class="ordenamiento__select">
+                        <option value="nombre-asc">Nombre (A-Z)</option>
+                        <option value="nombre-desc">Nombre (Z-A)</option>
+                        <option value="fecha-desc">Más recientes</option>
+                        <option value="tamano-desc">Mayor tamaño</option>
+                    </select>
+                </div>
+
+                <!-- Botones para la vista de los archivos-->
+                <div class="botones__vista" role="group" aria-label="Cambiar vista de archivos">
+                    <button class="boton-icono boton-icono--activo" type="button" aria-label="Vista de cuadricula"
+                        data-vista-modo="cuadricula">
+                        <img class="icono" src="../assets/icons/icon_utils/Icono_vista_cuadricula.webp" alt=""
+                            width="20" height="20">
+                    </button>
+
+                    <button class="boton-icono" type="button" aria-label="Vista de lista" data-vista-modo="lista">
+                        <img class="icono" src="../assets/icons/icon_utils/Icono_vista_lista.webp" alt="" width="20"
+                            height="20">
+                    </button>
+                </div>
             </div>
         </section>
 
-        <!-- Seccion de botones para la vista de los archivos-->
-        <section class="botones__vista">
-            <button class="boton-icono" type="button" aria-label="Vista de cuadricula">
-                <img class="icono" src="../assets/icons/icon_utils/Icono_vista_cuadricula.webp" alt="" width="20"
-                    height="20">
-            </button>
-
-            <button class="boton-icono" type="button" aria-label="Vista de lista">
-                <img class="icono" src="../assets/icons/icon_utils/Icono_vista_lista.webp" alt="" width="20"
-                    height="20">
-            </button>
-        </section>
-
-        <!-- plantilla donde se ve los archivos-->
+        <!-- Plantilla donde se ven los archivos-->
         <section class="seccion">
-            <h3 class="titulo__archivos">Mis Archivos</h3>
+            <div class="seccion__cabecera">
+                <h3 class="titulo__archivos">Mis Archivos</h3>
+                <button class="boton-limpiar" type="button" hidden>Limpiar filtros</button>
+            </div>
+
             <p class="estado" role="status" aria-live="polite"></p>
+
+            <!-- Encabezados visibles cuando .archivos tiene la clase .archivos--lista -->
+            <div class="archivos__encabezados" aria-hidden="true">
+                <span>Nombre</span>
+                <span>Tipo</span>
+                <span>Modificado</span>
+                <span>Tamaño</span>
+            </div>
+
             <div class="archivos"></div>
 
+            <!-- Estado vacío cuando no hay coincidencias o la carpeta no tiene documentos -->
+            <div class="estado-vacio" hidden>
+                <p class="estado-vacio__texto">No se encontraron documentos con los filtros actuales.</p>
+                <button class="boton-limpiar estado-vacio__boton" type="button">Restablecer vista</button>
+            </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Temu Drive · Almacenamiento en la nube</p>
+    </footer>
+
     <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script src="../js/archivos.js"></script>
 </body>
