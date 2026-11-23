@@ -1,0 +1,60 @@
+:root {
+    /* Superficies y Fondos */
+    --color-fondo: #252528;
+    --color-superficie: #1e1e1e;
+    --color-superficie-elevada: #27272a;
+
+    /* Bordes y Separadores */
+    --color-borde: #626262;
+
+    /* Textos */
+    --color-texto-principal: #ffffff;
+    --color-texto-secundario: #cbcbcb;
+    --color-texto-atenuado: #8a8a93;
+    --color-texto-invertido: #ffffff;
+
+    /* Acentos e Interacción */
+    --color-acento: #10b981;
+
+    /* Tamaños de tipografía base */
+    --font-size-normal: 1.5rem;
+    --font-size-large: calc(var(--font-size-normal) * 1.5);
+
+    /* Tipografías */
+    --fuente-principal: 'Share Tech Mono', monospace;
+    --fuente-secundaria: 'Roboto Mono', monospace;
+
+    /* Duraciones y Espaciados */
+    --tiempo-transicion: 0.3s;
+    --margen-base: 2rem;
+    --margen-small: 1rem;
+    --espaciado: 16px;
+}
+
+/* Tema claro
+   - Grises "zinc" (la misma familia que el tema oscuro: #27272a = zinc-800)
+   - Verde "emerald" (la misma familia que el verde de los iconos #34D399)
+   - Contrastes WCAG medidos contra fondo / superficie / superficie-elevada:
+     texto 4.5:1 mínimo, bordes de controles 3:1 mínimo */
+:root.claro {
+    --color-fondo: #f4f4f5;
+    /* zinc-100 */
+    --color-superficie: #ffffff;
+    --color-superficie-elevada: #e4e4e7;
+    /* zinc-200 */
+
+    --color-borde: #71717a;
+    /* 4.40 / 4.83 / 3.81 */
+
+    --color-texto-principal: #18181b;
+    /* 16.12 / 17.72 / 13.96 */
+    --color-texto-secundario: #3f3f46;
+    /*  9.50 / 10.44 /  8.23 */
+    --color-texto-atenuado: #5e5e68;
+    /*  5.83 /  6.41 /  5.05 */
+    --color-texto-invertido: #ffffff;
+    /* sobre el acento: 6.52 */
+
+    --color-acento: #056b4e;
+    /*  5.93 /  6.52 /  5.14 */
+}

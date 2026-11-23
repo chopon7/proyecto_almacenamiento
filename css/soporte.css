@@ -9,54 +9,6 @@
 7. Media Queries Responsive
 ==================================================*/
 
-/* 1. Variables CSS */
-:root {
-    /* Superficies y Fondos */
-    --color-fondo: #252528;
-    --color-superficie: #1e1e1e;
-    --color-superficie-elevada: #27272a;
-
-    /* Bordes y Separadores */
-    --color-borde: #626262;
-
-    /* Textos */
-    --color-texto-principal: #ffffff;
-    --color-texto-secundario: #cbcbcb;
-    --color-texto-atenuado: #8a8a93;
-    --color-texto-invertido: #ffffff;
-
-    /* Acentos e Interacción */
-    --color-acento: #10b981;
-
-    /* Tamaños de tipografía base */
-    --font-size-normal: 1rem;
-    --font-size-large: calc(var(--font-size-normal) * 1.4);
-
-    /* Tipografías */
-    --fuente-principal: 'Share Tech Mono', monospace;
-    --fuente-secundaria: 'Roboto Mono', monospace;
-
-    /* Duraciones y Espaciados */
-    --tiempo-transicion: 0.3s;
-    --margen-base: 2rem;
-    --margen-small: 1rem;
-    --espaciado: 1rem;
-}
-
-:root.claro {
-    --color-fondo: #f1f5f9;
-    --color-superficie: #ffffff;
-    --color-superficie-elevada: #e2e8f0;
-
-    --color-borde: #cbd5e1;
-
-    --color-texto-principal: #0f172a;
-    --color-texto-secundario: #475569;
-    --color-texto-atenuado: #64748b;
-    --color-texto-invertido: #ffffff;
-
-    --color-acento: #059669;
-}
 
 /* 2. Reset */
 *,
@@ -102,7 +54,9 @@ body {
     transition: background-color var(--tiempo-transicion) ease, color var(--tiempo-transicion) ease;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--color-texto-principal);
     font-family: var(--fuente-principal);
 }
@@ -307,18 +261,18 @@ h2 {
 }
 
 .category-card__link::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-acento);
-  transition: width var(--tiempo-transicion) ease;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-acento);
+    transition: width var(--tiempo-transicion) ease;
 }
 
 .category-card__link:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
 /* Preguntas frecuentes*/
@@ -451,6 +405,7 @@ h2 {
 
 /* 6. Media Queries Interactivas / Accesibilidad */
 @media (hover: hover) {
+
     .header__link:hover,
     .category-card__link:hover,
     .footer__link:hover {

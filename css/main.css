@@ -9,56 +9,7 @@
 7. Media Queries Responsive 
 ==================================================*/
 
-/* 1. Variables CSS */
-:root {
-    /* Superficies y Fondos */
-    --color-fondo: #252528;
-    --color-superficie: #1e1e1e;
-    --color-superficie-elevada: #27272a;
 
-    /* Bordes y Separadores */
-    --color-borde: #626262;
-
-    /* Textos */
-    --color-texto-principal: #ffffff;
-    --color-texto-secundario: #cbcbcb;
-    --color-texto-atenuado: #8a8a93;
-    --color-texto-invertido: #ffffff;
-
-    /* Acentos e Interacción */
-    --color-acento: #10b981;
-
-    /* Tamaños de tipografía base */
-    --font-size-normal: 1.1rem;
-    --font-size-large: calc(var(--font-size-normal) * 1.5);
-    --font-size-gigante: calc(var(--font-size-normal) * 2.5);
-    --font-size-barra: calc(var(--font-size-normal) * 1.2);
-
-    /* Tipografías */
-    --fuente-principal: 'Share Tech Mono', monospace;
-    --fuente-secundaria: 'Roboto Mono', monospace;
-
-    /* Duraciones y Espaciados */
-    --tiempo-transicion: 0.3s;
-    --margen-base: 2rem;
-    --margen-small: 1rem;
-    --espaciado: 16px;
-}
-
-:root.claro {
-    --color-fondo: #f1f5f9;
-    --color-superficie: #ffffff;
-    --color-superficie-elevada: #e2e8f0;
-
-    --color-borde: #cbd5e1;
-
-    --color-texto-principal: #0f172a;
-    --color-texto-secundario: #475569;
-    --color-texto-atenuado: #64748b;
-    --color-texto-invertido: #ffffff;
-
-    --color-acento: #059669;
-}
 
 /* 2. Reset */
 *,
@@ -167,36 +118,47 @@ h2 {
     min-width: 0;
     background-color: var(--color-superficie);
     color: var(--color-texto-principal);
-    border: 1px solid var(--color-borde);
     padding: 0.5rem 0.75rem;
     border-radius: 4px 0 0 4px;
+    border-top: 2px solid var(--color-borde);
+    border-bottom: 2px solid var(--color-borde);
+    border-left: 2px solid var(--color-borde);
+    border-right: none;
     font-family: var(--fuente-secundaria);
     font-size: var(--font-size-normal);
     transition: border-color var(--tiempo-transicion) ease, background-color var(--tiempo-transicion) ease;
 }
 
-.header__barra--input:focus {
+
+.header__barra :focus {
     outline: none;
     border-color: var(--color-acento);
+
+    .header__barra--boton {
+        border-color: var(--color-acento);
+    }
 }
 
-.header__barra-boton {
+.header__barra--boton {
     display: flex;
     align-items: center;
     justify-content: center;
     align-self: stretch;
     padding: 0 0.75rem;
     background-color: var(--color-superficie);
-    border: 1px solid var(--color-borde);
+
+    border-top: 2px solid var(--color-borde);
+    border-bottom: 2px solid var(--color-borde);
+    border-right: 2px solid var(--color-borde);
     border-left: none;
-    border-radius: 0 4px 4px 0;
     cursor: pointer;
     transition: background-color var(--tiempo-transicion) ease;
 }
 
-.header__barra-boton:hover {
-    background-color: var(--color-fondo);
+.header__barra--boton:hover {
+    background-color: var(--color-superficie-elevada);
 }
+
 
 .header__botones {
     display: flex;
@@ -240,6 +202,10 @@ h2 {
     border-radius: 4px;
     padding: 0.5rem;
     z-index: 100;
+}
+
+.header__cuenta-opciones.abierto {
+    display: block;
 }
 
 .header__cuenta:hover .header__cuenta-opciones,
@@ -386,7 +352,7 @@ h2 {
     font-size: 0.9rem;
 }
 
-.breadcrumb__item + .breadcrumb__item::before {
+.breadcrumb__item+.breadcrumb__item::before {
     content: "/";
     color: var(--color-texto-atenuado);
     margin-right: 0.4rem;
@@ -565,7 +531,7 @@ h2 {
     border-bottom: 1px solid var(--color-borde);
 }
 
-.archivos--lista ~ .archivos__encabezados {
+.archivos--lista~.archivos__encabezados {
     display: grid;
 }
 
@@ -748,6 +714,7 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {

@@ -8,54 +8,9 @@
 6. Media Queries Interactivas / Accesibilidad
 7. Media Queries Responsive 
 ==================================================*/
-
-/* 1. Variables CSS */
-:root {
-    /* Superficies y Fondos */
-    --color-fondo: #252528;
-    --color-superficie: #1e1e1e;
-    --color-superficie-elevada: #27272a;
-
-    /* Bordes y Separadores */
-    --color-borde: #626262;
-
-    /* Textos */
-    --color-texto-principal: #ffffff;
-    --color-texto-secundario: #cbcbcb;
-    --color-texto-atenuado: #8a8a93;
-    --color-texto-invertido: #ffffff;
-
-    /* Acentos e Interacción */
-    --color-acento: #10b981;
-
-    /* Tamaños de tipografía base */
-    --font-size-normal: 1.5rem;
-    --font-size-large: calc(var(--font-size-normal) * 1.5);
-
-    /* Tipografías */
-    --fuente-principal: 'Share Tech Mono', monospace;
-    --fuente-secundaria: 'Roboto Mono', monospace;
-
-    /* Duraciones y Espaciados */
-    --tiempo-transicion: 0.3s;
-    --margen-base: 2rem;
-    --margen-small: 1rem;
-    --espaciado: 16px;
-}
-
-:root.claro {
-    --color-fondo: #f1f5f9;
-    --color-superficie: #ffffff;
-    --color-superficie-elevada: #e2e8f0;
-
-    --color-borde: #cbd5e1;
-
-    --color-texto-principal: #0f172a;
-    --color-texto-secundario: #475569;
-    --color-texto-atenuado: #64748b;
-    --color-texto-invertido: #ffffff;
-
-    --color-acento: #059669;
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(../assets/fonts/Roboto-Medium.ttf);
 }
 
 /* 2. Reset */

@@ -9,31 +9,6 @@
 7. Media Queries Responsive 
 ==================================================*/
 
-/* 1. Variables CSS */
-:root {
-    /* Superficies y Fondos */
-    --color-fondo: #252528;
-    --color-superficie: #1e1e1e;
-    --color-superficie-elevada: #27272a;
-
-    /* Bordes y Sombras */
-    --color-borde: #626262;
-    --color-borde-suave: #27272a;
-    --sombra-formulario: 0 4px 15px rgba(0, 0, 0, 0.4);
-
-    /* Textos */
-    --color-texto-principal: #ffffff;
-    --color-texto-secundario: #cbcbcb;
-    --color-texto-invertido: #ffffff;
-
-    /* Acentos e Interacción */
-    --color-acento: #10b981;
-    --color-error: #c0392b;
-
-    /* Tipografías */
-    --fuente-principal: 'Share Tech Mono', monospace;
-    --fuente-secundaria: 'Roboto Mono', monospace;
-}
 
 /* 2. Reset */
 *,
