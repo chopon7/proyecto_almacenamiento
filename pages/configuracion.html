@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- Head con información basica COMPLETADO-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="canonical" href="https://temudrive/configuration">
+
+    <link rel="icon" type="image/jpg" href="../assets/icons/Icono_logo.jpg">
+    <title>Temu Drive - Configuración</title>
+
+    <meta name="description"
+        content="Inicia sesión en Temu Drive, la mejor web para almacenar tus archivos en la nube de manera segura y confiable.">
+    <meta name="Keywords" content="HTML, CSS, almacenamiento en la nube">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Esta parte se aclara cuando se tenga css de configuracion
+    <link rel="stylesheet" href="../css/formulario-usuario.css">
+    -->
+</head>
+
+<body id="body" class="layout">
+    <!-- Header  -->
+    <header class="header">
+        <!-- Icono de la empresa que va hasta la izquierda-->
+        <div class="header__brand">
+            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
+                height="50">
+            <h2 class="header__logo-text">Temu Drive</h2>
+        </div>
+
+        <!-- Barra de busqueda -->
+        <div class="header__barra">
+            <input class="header__barra--input" type="search" placeholder="¿Qué buscamos hoy?">
+            <button class="header__barra-boton" type="button">
+                <img class="header__boton--img" src="../assets/icons/icon_utils/Icono_buscar.webp" width="26"
+                    height="26" alt="buscar">
+            </button>
+        </div>
+
+        <!-- Botones de configuracion, cambio de tema y cuenta-->
+        <div class="header__botones">
+            <!-- Boton de cambiar de tema-->
+            <button class="header__theme" type="button" aria-expanded="false" aria-label="Cuenta">
+                <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26"
+                    alt="cambiar tema">
+            </button>
+
+            <!-- Boton de informacion de cuenta (contiene  configuracion adentro)-->
+            <div class="header__cuenta">
+                <button class="header__cuenta-boton" type="button">
+                    <img class="header__boton--img" src="../assets/icons/icon_utils/Icono_usuario.webp" width="26"
+                        height="26" alt="cuenta">
+                </button>
+                <div class="header__cuenta-opciones">
+                    <ul class="header__cuenta-lista">
+                        <li class="header__cuenta-item">
+                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_usuario.webp"
+                                width="26" height="26" alt="usuario">
+                            <a class="header__cuenta-link" href="#">Mi Perfil</a>
+                        </li>
+                        <li class="header__cuenta-item">
+                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_configuracion.webp"
+                                width="26" height="26" alt="configuracion">
+                            <a class="header__cuenta-link" href="#">Configuración</a>
+                        </li>
+                        <li class="header__cuenta-item" id="cerrar sesion">
+                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_cerrar_sesion.webp"
+                                width="26" height="26" alt="cerrar sesion">
+                            <a class="header__cuenta-link" href="#">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Main -->
+    <main class="main">
+        <!-- Esto le da forma de cuadro a los labels-->
+        <article class="main__configuracion">
+            <h1 class="titulo">Configuración</h1>
+
+            <!-- Configuraciones a realizar, tema por default, -->
+            <section class="main__perfil-usuario">
+                <img class="main__perfil-usuario-img" src="../assets/icons/icon_utils/Icono_usuario.webp" width="100"
+                    height="100" alt="usuario">
+                <!-- Aqui se agrega todo lo de cambios de las imagenes de perfil-->
+                <button class="main__perfil-usuario-boton" type="button">Cambiar foto de perfil</button>
+            </section>
+
+            <section class="main__cambiar-nombre">
+                <button class="main__cambiar-nombre-boton" type="button">Nombre de usuario</button>
+            </section>
+            <section class="main__cambiar-correo">
+                <button class="main__cambiar-correo-boton" type="button">Correo electrónico</button>
+            </section>
+            <section class="main__cambiar-contrasenia">
+                <button class="main__cambiar-contrasenia-boton" type="button">Contraseña</button>
+            </section>
+            <section class="main__cambiar-tema">
+                <button class="main__cambiar-tema-boton" type="button">Tema de la página</button>
+            </section>
+            <section class="main__cambiar-paquete">
+                <button class="main__cambiar-paquete-boton" type="button">Paquete de servicios</button>
+            </section>
+            <section class="main__cambiar-verificacion">
+                <button class="main__cambiar-verificacion-boton" type="button">Opciones de verificación</button>
+            </section>
+            <section class="main__cambiar-seguridad">
+                <button class="main__cambiar-seguridad-boton" type="button">Opciones de seguridad</button>
+                <!-- Aqui se agregan las opciones de seguridad de como se guardan los archivos, si se les agrega una encriptación extra y muchas más metodologias según sea su paquete seleccionado-->
+            </section>
+            <section class="main__descargar-informacion">
+                <button class="main__descargar-informacion-boton" type="button">Descargar información de la
+                    cuenta</button>
+            </section>
+            <section class="main__eliminar-cuenta">
+                <button class="main__eliminar-cuenta-boton" type="button">Eliminar cuenta</button>
+            </section>
+        </article>
+    </main>
+    <script type="module" src="../js/main.js"></script>
+</body>
+
+</html>

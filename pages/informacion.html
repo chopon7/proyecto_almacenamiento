@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://temudrive/aboutus">
+    <link rel="canonical" href="https://temudrive/sobre-nosotros">
 
     <!-- Información de pestaña-->
     <link rel="icon" type="image/jpg" href="./assets/icons/Icono_logo.jpg">
@@ -25,7 +25,102 @@
 </head>
 
 <body>
-    <h1>Sobre nosotros</h1>
+    <header class="header">
+        <div>
+            <a class="header__brand">
+                <img class="header__logo-img" src="assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
+                    height="50">
+
+                <span class="header__logo-text">Temu Drive</span>
+            </a>
+        </div>
+
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item"><a class="header__link" href="pages/ofertas-y-paquetes.html">Paquetes</a></li>
+                <li class="header__item"><a class="header__link" href="pages/soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__selected">Más Información</a></li>
+            </ul>
+        </nav>
+
+        <button class="header__theme" type="button">
+            <img class="header__theme-img" src="assets/icons/modo_claro.png" width="26" height="26" alt="Cambiar tema">
+        </button>
+
+        <button class="header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main class="main">
+        <section class="main__intro">
+            <section class="main__intro-titulo">
+                <h1 class="main__subtitle">Sobre nosotros</h1>
+            </section>
+            <p class="main__text">Temu Drive es un proyecto de almacenamiento en la nube que permite a los usuarios
+                guardar,
+                compartir y acceder a sus archivos de manera segura, sin necesidad de descargar software, todo desde la
+                red.
+                Nuestro objetivo es proporcionar una solución confiable y eficiente para el almacenamiento de datos,
+                garantizando la privacidad y seguridad de la información de nuestros usuarios.</p>
+        </section>
+
+        <section class="main__historia">
+            <h2 class="main__historia-titulo">Nuestra Historia</h2>
+            <p class="main__text">Temu Drive es un proyecto de almacenamiento web diseñado a las adversidades personales
+                de uno de los desarrolladores, el cual busca ofrecer una solución innovadora para todos aquellos que
+                buscan no dejar sus archivos personales a grandes personas y quieran mantener de manera segura, y
+                accesible su información.</p>
+        </section>
+
+        <section class="main__desarrolladores">
+            <h2 class="main__desarrolladores-titulo">Nuestro Equipo</h2>
+            <p class="main__text">El equipo de Temu Drive está compuesto por un grupo de estudiantes de desarroladores
+                de software y apasaionados en el desarrollo de proyectos web, que trabajan juntos para crear una
+                plataforma de almacenamiento en la nube confiable y segura.
+                nube.</p>
+        </section>
+
+        <section class="main__contactos">
+            <h2 class="main__contactos-titulo">Contáctanos</h2>
+            <p class="main__text">Si tienes alguna pregunta, sugerencia o comentario, no dudes en ponerte en contacto
+                con
+                nosotros. Puedes enviarnos un correo electrónico a <a
+                    href="mailto:info@temudrive.com">info@temudrive.com</a>.</p>
+        </section>
+    </main>
+    <footer class="footer">
+        <section>
+            <h3>Temu Drive</h3> <!-- Deberia usar h3??????-->
+            <p>
+                Proyecto de Programación Web.
+                Desarrollado por Alfonso Jacobo Rodríguez García y Amukiri Romero Peláez.
+                UABCS 2026 II
+            </p>
+        </section>
+
+
+        <section>
+            <h3>Soporte</h3>
+            <ul>
+                <li><a href="pages/soporte.html">Preguntas frecuentes</a></li>
+                <li><a href="pages/informacion.html">Más información de nosotros</a></li>
+            </ul>
+
+        </section>
+
+        <section>
+            <h3>Más sobre nosotros</h3>
+            <ul>
+                <li><a href="pages/privacidad.html">Aviso de privacidad</a></li>
+                <li><a href="pages/terminos.html">Términos de servicio</a></li>
+            </ul>
+        </section>
+
+        <p class="footer__copyright">© 2026 Temu Drive. Todos los derechos reservados.</p>
+    </footer>
 </body>
 
 </html>

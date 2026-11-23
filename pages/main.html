@@ -68,51 +68,126 @@
                 </button>
                 <div class="header__cuenta-opciones">
                     <ul class="header__cuenta-lista">
-                        <li class="header__cuenta-item"><a class="header__cuenta-link" href="#">Configuración</a></li>
-                        <li class="header__cuenta-item"><a class="header__cuenta-link" href="#">Cerrar sesión</a></li>
+                        <li class="header__cuenta-item">
+                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_usuario.webp"
+                                width="26" height="26" alt="usuario">
+                            <a class="header__cuenta-link" href="#">Mi Perfil</a>
+                        </li>
+                        <li class="header__cuenta-item">
+                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_configuracion.webp"
+                                width="26" height="26" alt="configuracion">
+                            <a class="header__cuenta-link" href="#">Configuración</a>
+                        </li>
+                        <li class="header__cuenta-item" id="cerrar sesion">
+                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_cerrar_sesion.webp"
+                                width="26" height="26" alt="cerrar sesion">
+                            <a class="header__cuenta-link" href="#">Cerrar sesión</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
-
-
-            <!-- Panel de opciones al hacer clic en el botón de cuenta-->
-
         </div>
     </header>
 
-    <!-- Seccion del main donde se ven todos los archivos-->
-    <main class="main">
-        <!-- Nombre de la ruta-->
-        <section class="main__slogan">
-            <div>
-                Mi unidad
-            </div>
-        </section>
-
-        <!-- Seccion de botones para la vista de los archivos-->
-        <section class="botones__vista">
-            <button class="boton-icono" type="button" aria-label="Vista de cuadricula">
-                <img class="icono" src="../assets/icons/icon_utils/Icono_vista_cuadricula.webp" alt="" width="20"
-                    height="20">
+    <aside class="aside">
+        <nav class="aside__nav">
+            <button class="aside__nav-boton" type="button" aria-expanded="false" aria-label="+ Nuevo">
+                <img class="aside__nav-icono" src="../assets/icons/icon_utils/Icono_menu.webp" width="26" height="26"
+                    alt="menu">
             </button>
+            <!-- Aqui no estoy seguro si es dirigir un nuevo html o simplemente actualizar la seccion "main" para que no cambie nada-->
+            <ul class="aside__nav-lista">
+                <li class="aside__nav-item">
+                    <img class="aside__nav-icono" src="../assets/icons/icon_utils/Icono_menu.webp" width="26"
+                        height="26" alt="menu">
+                    <a class="aside__nav-link" href="../pages/main.html">Inicio</a>
+                </li>
+                <li class="aside__nav-item">
+                    <img class="aside__nav-icono" src="../assets/icons/icon_utils/Icono_unidad.webp" width="26"
+                        height="26" alt="unidad">
+                    <a class="aside__nav-link" href="../pages/main.html">Mi unidad</a>
+                </li>
+                <li class="aside__nav-item">
+                    <img class="aside__nav-icono" src="../assets/icons/icon_utils/Icono_compartidos.webp" width="26"
+                        height="26" alt="compartidos">
+                    <a class="aside__nav-link" href="../pages/compartidos.html">Compartidos</a>
+                </li>
+                <li class="aside__nav-item">
+                    <img class="aside__nav-icono" src="../assets/icons/icon_utils/Icono_recientes.webp" width="26"
+                        height="26" alt="recientes">
+                    <a class="aside__nav-link" href="../pages/recientes.html">Recientes</a>
+                </li>
+                <li class="aside__nav-item">
+                    <img class="aside__nav-icono" src="../assets/icons/icon_utils/Icono_destacados.webp" width="26"
+                        height="26" alt="destacados">
+                    <a class="aside__nav-link" href="../pages/destacados.html">Destacados</a>
+                </li>
+                <li class="aside__nav-item">
+                    <img class="aside__nav-icono" src="../assets/icons/icon_utils/Icono_papelera.webp" width="26"
+                        height="26" alt="papelera">
+                    <a class="aside__nav-link" href="../pages/papelera.html">Papelera</a>
+                </li>
+                <li class="aside__nav-item">
+                    <img class="aside__nav-icono" src="../assets/icons/icon_utils/Icono_almacenamiento.webp" width="26"
+                        height="26" alt="almacenamiento">
+                    <a class="aside__nav-link" href="../pages/almacenamiento.html">Almacenamiento</a>
+                </li>
+            </ul>
+        </nav>
 
-            <button class="boton-icono" type="button" aria-label="Vista de lista">
-                <img class="icono" src="../assets/icons/icon_utils/Icono_vista_lista.webp" alt="" width="20"
-                    height="20">
-            </button>
-        </section>
+        <!-- Seccion del main donde se ven todos los archivos-->
+        <main class="main">
+            <!-- Nombre de la ruta-->
+            <section class="main__slogan">
+                <div>
+                    <h1 class="main__titulo">Mi unidad</h1>
+                </div>
 
-        <!-- plantilla donde se ve los archivos-->
-        <section class="seccion">
-            <h3 class="titulo__archivos">Mis Archivos</h3>
-            <p class="estado" role="status" aria-live="polite"></p>
-            <div class="archivos"></div>
+                <!-- Seccion de botones para la vista de los archivos-->
+                <section class="botones__vista">
+                    <button class="boton-icono" type="button" aria-label="Vista de cuadricula">
+                        <img class="icono" src="../assets/icons/icon_utils/Icono_vista_cuadricula.webp" alt=""
+                            width="20" height="20">
+                    </button>
 
-        </section>
-    </main>
-    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script src="../js/archivos.js"></script>
+                    <button class="boton-icono" type="button" aria-label="Vista de lista">
+                        <img class="icono" src="../assets/icons/icon_utils/Icono_vista_lista.webp" alt="" width="20"
+                            height="20">
+                    </button>
+                </section>
+            </section>
+
+
+            <!-- plantilla donde se ve los archivos-->
+            <section class="seccion">
+                <p class="estado" role="status" aria-live="polite"></p>
+                <button class="boton-categoria-todos">Todos</button>
+                <button class="boton-categoria-documentos">Documentos</button>
+                <button class="boton-categoria-imagenes">Imágenes</button>
+                <button class="boton-categoria-videos">Videos</button>
+
+            </section>
+            <!-- plantilla donde se ve los las carpetas del usuario-->
+            <section class="seccion">
+                <h3 class="titulo__carpetas">Mis Carpetas</h3>
+                <p class="estado" role="status" aria-live="polite"></p>
+                <div class="carpetas"></div>
+
+            </section>
+
+
+
+            <!-- plantilla donde se ve los archivos-->
+            <section class="seccion">
+                <h3 class="titulo__archivos">Mis Archivos</h3>
+                <p class="estado" role="status" aria-live="polite"></p>
+                <div class="archivos"></div>
+
+            </section>
+        </main>
+        <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <script src="../js/archivos.js"></script>
 </body>
 
 </html>
