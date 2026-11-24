@@ -23,7 +23,7 @@ export function esContraseniaValida(contrasenia) {
 }
 
 export function esPlanValido(plan) {
-    if (plan === "basico" || plan === "seguro" || plan === "personalizado") {
+    if (plan === "basico" || plan === "pro" || plan === "master") {
         return true;
     }
 
