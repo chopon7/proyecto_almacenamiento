@@ -68,19 +68,19 @@
                 <div class="header__cuenta-opciones">
                     <ul class="header__cuenta-lista">
                         <li class="header__cuenta-item">
-                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_usuario.ico"
-                                width="26" height="26" alt="usuario">
-                            <a class="header__cuenta-link" href="#">Mi Perfil</a>
+                            <a class="header__cuenta-link" href="#"><img class="header__cuenta-icono"
+                                    src="../assets/icons/icon_utils/Icono_usuario.ico" width="26" height="26"
+                                    alt="usuario">Mi Perfil</a>
                         </li>
                         <li class="header__cuenta-item">
-                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_ajustes.ico"
-                                width="26" height="26" alt="configuracion">
-                            <a class="header__cuenta-link" href="#">Configuración</a>
+                            <a class="header__cuenta-link" href="#"><img class="header__cuenta-icono"
+                                    src="../assets/icons/icon_utils/Icono_ajustes.ico" width="26" height="26"
+                                    alt="configuracion">Configuración</a>
                         </li>
                         <li class="header__cuenta-item">
-                            <img class="header__cuenta-icono" src="../assets/icons/icon_utils/Icono_cerrar_sesion.ico"
-                                width="26" height="26" alt="cerrar sesion">
-                            <a class="header__cuenta-link" href="../index.html">Cerrar sesión</a>
+                            <a class="header__cuenta-link" href="../index.html"><img class="header__cuenta-icono"
+                                    src="../assets/icons/icon_utils/Icono_cerrar_sesion.ico" width="26" height="26"
+                                    alt="cerrar sesion">Cerrar sesión</a>
                         </li>
                     </ul>
                 </div>
@@ -137,14 +137,14 @@
 
                 </li>
             </ul>
-            <div class="sidebar__almacenamiento" aria-label="Espacio utilizado">
-                <p class="sidebar__almacenamiento-titulo">Almacenamiento</p>
-                <div class="sidebar__barra" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                    <div class="sidebar__barra-progreso" style="width: 20%;"></div>
-                </div>
-                <p class="sidebar__almacenamiento-texto">3.5 GB de 10 GB usados</p>
-            </div>
         </nav>
+        <div class="sidebar__almacenamiento" aria-label="Espacio utilizado">
+            <p class="sidebar__almacenamiento-titulo">Almacenamiento</p>
+            <div class="sidebar__barra" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                <div class="sidebar__barra-progreso" style="width: 20%;"></div>
+            </div>
+            <p class="sidebar__almacenamiento-texto">3.5 GB de 10 GB usados</p>
+        </div>
     </aside>
 
 
@@ -226,6 +226,13 @@
                 <button class="boton-limpiar estado-vacio__boton" type="button">Restablecer vista</button>
             </div>
         </section>
+
+        <!-- Zona para soltar archivos: cubre todo el main mientras se arrastra -->
+        <div class="zona-subida" aria-hidden="true">
+            <img class="zona-subida__icono" src="../assets/icons/icon_utils/Icono_subir.webp" width="64" height="64"
+                alt="">
+            <p class="zona-subida__texto">Suelta tus archivos para subirlos a Mi unidad</p>
+        </div>
     </main>
 
     <footer class="footer">

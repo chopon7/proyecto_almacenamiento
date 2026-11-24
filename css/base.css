@@ -15,10 +15,18 @@
 
     /* Acentos e Interacción */
     --color-acento: #10b981;
+    --color-error: #f87171;
 
     /* Tamaños de tipografía base */
-    --font-size-normal: 1.5rem;
+    --font-size-small: 0.85rem;
+    --font-size-normal: 1.1rem;
     --font-size-large: calc(var(--font-size-normal) * 1.5);
+    --font-size-gigante: calc(var(--font-size-normal) * 2.5);
+
+    /* Bordes suaves y sombras */
+    --color-borde-suave: #27272a;
+    --sombra-elevacion: rgba(0, 0, 0, 0.5);
+    --sombra-formulario: 0 4px 15px rgba(0, 0, 0, 0.4);
 
     /* Tipografías */
     --fuente-principal: 'Share Tech Mono', monospace;
@@ -56,5 +64,10 @@
     /* sobre el acento: 6.52 */
 
     --color-acento: #056b4e;
+    --color-error: #b91c1c;
+
+    --color-borde-suave: #e2e8f0;
+    --sombra-elevacion: rgba(0, 0, 0, 0.08);
+    --sombra-formulario: 0 10px 25px rgba(0, 0, 0, 0.08);
     /*  5.93 /  6.52 /  5.14 */
 }

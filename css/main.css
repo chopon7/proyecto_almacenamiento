@@ -72,7 +72,6 @@ body {
 
 h2 {
     color: var(--color-texto-principal);
-    margin: 1 0 var(--espaciado);
     font-size: var(--font-size-large);
     font-family: var(--fuente-principal);
 }
@@ -195,7 +194,7 @@ h2 {
 .header__cuenta-opciones {
     display: none;
     position: absolute;
-    top: calc(100% + 4px);
+    top: 100%;
     right: 0;
     background-color: var(--color-superficie-elevada);
     border: 1px solid var(--color-borde);
@@ -204,9 +203,6 @@ h2 {
     z-index: 100;
 }
 
-.header__cuenta-opciones.abierto {
-    display: block;
-}
 
 .header__cuenta:hover .header__cuenta-opciones,
 .header__cuenta:focus-within .header__cuenta-opciones,
@@ -219,7 +215,9 @@ h2 {
 }
 
 .header__cuenta-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     padding: 0.5rem 1rem;
     font-size: var(--font-size-normal);
     font-family: var(--fuente-secundaria);
@@ -233,6 +231,10 @@ h2 {
 .header__cuenta-link:hover {
     background-color: var(--color-superficie);
     color: var(--color-acento);
+}
+
+.header__cuenta-icono {
+    flex-shrink: 0;
 }
 
 /* Sidebar */
@@ -254,6 +256,9 @@ h2 {
 }
 
 .sidebar__enlace {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     width: 100%;
     text-align: left;
     padding: 0.65rem 0.85rem;
@@ -317,6 +322,7 @@ h2 {
 
 /* Main */
 .main {
+    position: relative;
     padding: var(--margen-base);
     background-color: var(--color-superficie);
     color: var(--color-texto-principal);
@@ -419,6 +425,11 @@ h2 {
     background-color: var(--color-acento);
     color: var(--color-texto-invertido);
     border-color: var(--color-acento);
+    font-weight: bold;
+}
+
+.filtro-btn--activo::before {
+    content: "✓ ";
 }
 
 .controles-derecha {
@@ -531,7 +542,7 @@ h2 {
     border-bottom: 1px solid var(--color-borde);
 }
 
-.archivos--lista~.archivos__encabezados {
+.seccion:has(.archivos--lista) .archivos__encabezados {
     display: grid;
 }
 
@@ -572,6 +583,7 @@ h2 {
 }
 
 .archivo {
+    position: relative;
     background-color: var(--color-superficie);
     border: 1px solid var(--color-borde);
     border-radius: 8px;
@@ -650,7 +662,7 @@ h2 {
     border-radius: 6px;
     margin: 0.5rem 0;
     padding: 1.25rem 0;
-    border: 1px dashed rgba(255, 255, 255, 0.08);
+    border: 1px dashed var(--color-fondo);
 }
 
 .archivo__miniatura .icono {
@@ -695,6 +707,98 @@ h2 {
 .estado-vacio__texto {
     color: var(--color-texto-secundario);
     margin-bottom: var(--margen-small);
+}
+
+/* Archivo seleccionado */
+.archivo--seleccionado {
+    border-color: var(--color-acento);
+    box-shadow: inset 0 0 0 1px var(--color-acento);
+    background-color: var(--color-superficie-elevada);
+}
+
+.archivo--seleccionado::after {
+    content: "✓";
+    position: absolute;
+    top: -0.6rem;
+    left: -0.6rem;
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--color-acento);
+    color: var(--color-texto-invertido);
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Zona de subida (arrastrar y soltar sobre todo el main) */
+.zona-subida {
+    position: absolute;
+    inset: var(--margen-small);
+    z-index: 30;
+    display: none;
+    place-content: center;
+    justify-items: center;
+    gap: var(--margen-small);
+    padding: var(--margen-base);
+    border: 3px dashed var(--color-acento);
+    border-radius: 12px;
+    background-color: var(--color-superficie-elevada);
+    color: var(--color-texto-principal);
+    text-align: center;
+    pointer-events: none;
+}
+
+.zona-subida--activa {
+    display: grid;
+}
+
+.zona-subida__texto {
+    font-family: var(--fuente-principal);
+    font-size: var(--font-size-large);
+    color: var(--color-acento);
+}
+
+/* Menú contextual de cada archivo (botón "⋮") */
+.menu-contextual {
+    position: absolute;
+    top: 2.5rem;
+    right: 0.5rem;
+    z-index: 20;
+    min-width: 11rem;
+    padding: 0.35rem;
+    list-style: none;
+    background-color: var(--color-superficie-elevada);
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.menu-contextual[hidden] {
+    display: none;
+}
+
+.menu-contextual__opcion {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-secundaria);
+    font-size: 0.85rem;
+    text-align: left;
+    cursor: pointer;
+}
+
+.menu-contextual__opcion:hover,
+.menu-contextual__opcion:focus-visible {
+    background-color: var(--color-superficie);
+    color: var(--color-acento);
 }
 
 /* Footer */

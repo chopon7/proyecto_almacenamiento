@@ -6,7 +6,7 @@
 4. Layout
 5. Componentes BEM
 6. Media Queries Interactivas / Accesibilidad
-7. Media Queries Responsive 
+7. Media Queries Responsive
 ==================================================*/
 @font-face {
     font-family: Roboto-Medium;
@@ -47,19 +47,60 @@
         "main"
         "footer";
     min-height: 100vh;
+    min-height: 100dvh;
 }
+
+.main--inicio {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: var(--margen-base);
+    min-height: 80vh;
+    min-height: 80dvh;
+    padding: min(12rem, 15vw) min(6rem, 7.5vw);
+    text-align: center;
+}
+
+.main__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(100%, 70rem);
+}
+
+.main__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: max(var(--margen-small), 1.3vw);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer section {
+    flex: 1 1 200px;
+    margin: var(--margen-small);
+}
+
 
 /* 5. Componentes BEM */
 body {
     background-color: var(--color-superficie);
     color: var(--color-texto-secundario);
     font-family: var(--fuente-secundaria);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    line-height: 1.5;
+    transition: background-color var(--tiempo-transicion) ease, color var(--tiempo-transicion) ease;
 }
 
 h2 {
     color: var(--color-texto-principal);
-    margin: 0 0 var(--espaciado);
+    margin: 0px 0px var(--espaciado);
     font-size: var(--font-size-large);
     font-family: var(--fuente-principal);
 }
@@ -72,7 +113,7 @@ h2 {
     background-color: var(--color-superficie);
     border-bottom: 0.1rem solid var(--color-borde);
     padding: max(1rem, 1.3vw) var(--margen-base);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color var(--tiempo-transicion) ease, border-color var(--tiempo-transicion) ease;
 }
 
 .header__brand {
@@ -100,7 +141,7 @@ h2 {
 
 .header__nav {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     margin-left: auto;
 }
 
@@ -108,6 +149,10 @@ h2 {
     display: flex;
     gap: min(2rem, 4vw);
     list-style: none;
+}
+
+.header__item {
+    display: flex;
 }
 
 .header__burger {
@@ -120,6 +165,7 @@ h2 {
     border: none;
     padding: 6px;
     margin-left: min(2rem, 4vw);
+    border-radius: 6px;
     cursor: pointer;
 }
 
@@ -149,14 +195,7 @@ h2 {
 
 
 /* Main */
-.main {
-    text-align: center;
-    padding: min(12rem, 15vw) min(6rem, 7.5vw);
-    position: relative;
-    z-index: 1;
-}
-
-.main::before {
+.main--inicio::before {
     content: "";
     position: absolute;
     top: 0;
@@ -166,91 +205,112 @@ h2 {
     background-image: url('../assets/img/Fondo1.avif');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     opacity: 0.3;
     z-index: -1;
 }
 
 .main__subtitle {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border: 1px solid var(--color-acento);
+    border-radius: 999px;
     font-family: var(--fuente-secundaria);
-    color: var(--color-texto-atenuado);
-    margin-bottom: calc(var(--margen-base) / 2);
+    font-size: 0.85rem;
+    color: var(--color-acento);
+    margin-bottom: var(--margen-base);
 }
 
 .main__title {
     font-family: var(--fuente-principal);
     font-size: clamp(3rem, 1.5rem + 3vw, 4.5rem);
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
     margin-bottom: calc(var(--margen-base) / 2);
     color: var(--color-texto-principal);
 }
 
 .main__title--highlight {
+    display: block;
     color: var(--color-acento);
 }
 
 .main__text {
-    width: min(100%, 40rem);
+    width: min(100%, 36rem);
     margin: 0 auto var(--margen-base);
-    line-height: 1.6;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
     color: var(--color-texto-secundario);
 }
 
-/* Botones */
-.main__buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: max(1rem, 1.3vw);
+.main__lateral {
+    width: 100%;
 }
 
+.main__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+/* Botones */
 .button {
     text-decoration: none;
     display: inline-block;
     padding: max(0.8rem, 1vw) max(1.5rem, 2vw);
-    border: none;
+    border: 1px solid transparent;
     border-radius: 6px;
     font-weight: bold;
+    text-align: center;
     cursor: pointer;
     font-family: var(--fuente-principal);
     transition: transform var(--tiempo-transicion) ease, background-color var(--tiempo-transicion) ease;
+}
 
-    &.button--primary {
-        background-color: var(--color-acento);
-        color: var(--color-texto-invertido);
-    }
+.button--primary {
+    background-color: var(--color-acento);
+    color: var(--color-texto-invertido);
+}
 
-    &.button--secondary {
-        background-color: var(--color-superficie-elevada);
-        color: var(--color-texto-principal);
-    }
+.button--secondary {
+    background-color: var(--color-superficie-elevada);
+    border-color: var(--color-borde);
+    color: var(--color-texto-principal);
+}
 
-    &:active {
-        transform: scale(0.97);
-    }
-
-    @media (hover: hover) {
-        &:hover {
-            transform: scale(1.05);
-        }
-    }
-
+.button:active {
+    transform: scale(0.97);
 }
 
 /* Footer */
 .footer {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     background-color: var(--color-superficie);
     border-top: 0.1rem solid var(--color-borde);
     padding: min(2rem, 4vw);
     font-family: var(--fuente-secundaria);
     text-align: left;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color var(--tiempo-transicion) ease, border-color var(--tiempo-transicion) ease;
 }
 
-.footer section {
-    flex: 1 1 200px;
-    margin: var(--margen-small);
+.footer h3 {
+    font-family: var(--fuente-principal);
+    font-size: 1.15rem;
+    color: var(--color-texto-principal);
+    margin-bottom: var(--margen-small);
+}
+
+.footer ul {
+    list-style: none;
+    display: grid;
+    gap: calc(var(--margen-small) / 2);
+}
+
+.footer a {
+    color: var(--color-texto-secundario);
+    transition: color var(--tiempo-transicion) ease;
 }
 
 .footer picture img {
@@ -260,13 +320,18 @@ h2 {
     vertical-align: middle;
 }
 
-.footer p,
+.footer p {
+    font-size: clamp(0.8rem, 0.7rem + 0.3vw, 1rem);
+    color: var(--color-texto-secundario);
+    line-height: 1.5;
+}
+
 .footer__copyright {
     width: 100%;
     text-align: center;
     margin-top: var(--margen-base);
-    font-size: clamp(0.8rem, 0.7rem + 0.3vw, 1rem);
-    color: var(--color-texto-secundario);
+    padding-top: var(--margen-small);
+    border-top: 0.1rem solid var(--color-borde);
 }
 
 /* 6. Media Queries Interactivas / Accesibilidad */
@@ -282,6 +347,41 @@ h2 {
 
     .header__link:hover::after {
         width: 100%;
+    }
+
+    .button:hover {
+        transform: scale(1.05);
+    }
+
+    .footer a:hover {
+        color: var(--color-acento);
+    }
+}
+
+.header__link:focus-visible,
+.footer a:focus-visible {
+    color: var(--color-acento);
+}
+
+.header__link:focus-visible::after {
+    width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+    .main--inicio::before {
+        background-attachment: scroll;
+    }
+
+    .button:hover,
+    .button:active {
+        transform: none;
     }
 }
 
@@ -337,7 +437,7 @@ h2 {
         position: absolute;
         background-color: var(--color-fondo);
         flex-direction: column;
-        align-items: end;
+        align-items: flex-end;
         border-radius: 10%;
         gap: max(1rem, 2vw);
         padding: max(1rem, 2vw) 1rem;
@@ -359,7 +459,6 @@ h2 {
 /* Responsive */
 @media (max-width: 767px) {
     :root {
-        --font-size-normal: 1.1rem;
         --margen-base: 1rem;
     }
 
@@ -367,18 +466,17 @@ h2 {
         padding: max(1rem, 2.5vw);
     }
 
-    .main {
+    .main--inicio {
         padding: min(4rem, 10vw) max(1rem, 2.5vw);
     }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
     :root {
-        --font-size-normal: 1.3rem;
         --margen-base: 1.3rem;
     }
 
-    .main {
+    .main--inicio {
         padding: min(6rem, 9vw) min(2rem, 3vw);
     }
 }

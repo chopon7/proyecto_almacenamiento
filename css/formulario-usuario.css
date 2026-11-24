@@ -304,23 +304,6 @@ body {
     }
 }
 
-/* Modo claro (botón) */
-:root.claro {
-    --color-fondo: #f1f5f9;
-    --color-superficie: #ffffff;
-    --color-superficie-elevada: #f8fafc;
-
-    --color-borde: #cbd5e1;
-    --color-borde-suave: #e2e8f0;
-    --sombra-formulario: 0 10px 25px rgba(0, 0, 0, 0.08);
-
-    --color-texto-principal: #0f172a;
-    --color-texto-secundario: #475569;
-    --color-texto-invertido: #ffffff;
-
-    --color-acento: #059669;
-}
-
 .claro .header__theme-img {
     filter: none;
 }
@@ -403,31 +386,35 @@ body {
 }
 
 .campo label {
-    font-size: var(--texto-s);
-    color: var(--color-texto-suave);
+    font-size: var(--font-size-small);
+    color: var(--color-texto-atenuado);
 }
 
 .error-campo,
 .mensaje.error {
     color: var(--color-error);
-    font-size: var(--texto-s);
+    font-size: var(--font-size-small);
     min-height: 1em;
 }
 
 .mensaje {
     margin: 0;
-    font-size: var(--texto-s);
-    color: var(--color-texto-suave);
+    font-size: var(--font-size-small);
+    color: var(--color-texto-atenuado);
 }
 
 input.invalido,
 select.invalido {
-    border-color: var(--color-error);
-    background: var(--color-favorito-fondo);
+    border: 2px solid var(--color-error);
+    padding-right: 2.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='2.5' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 7v6M12 17h.01'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25rem;
 }
 
 select {
-    padding: var(--espacio-xs);
-    border: 1px solid #cccccc;
-    border-radius: var(--radio-s);
+    padding: 0.5rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
 }
