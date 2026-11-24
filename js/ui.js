@@ -9,31 +9,44 @@ export function mostrarError(form, nombre, mensaje) {
 }
 
 export function mostrarErroresNativos(form) {
-    const invalidos =[...form.elements].filter((campo) => !campo.checkValidity());
+    const invalidos = [...form.elements].filter((campo) => !campo.checkValidity());
 
     invalidos.forEach((campo) => {
-        mostrarError(form,campo.name,campo.validationMessage);
+        mostrarError(form, campo.name, campo.validationMessage);
     });
 
     invalidos[0]?.focus();
 }
 
 export function limpiarErrores(form) {
-    form.querySelectorAll("[data-error-para]").forEach(span => { span.textContent = "";});
-    form.querySelectorAll(".invalido").forEach(campo => {campo.classList.remove("invalido");});
+    form.querySelectorAll("[data-error-para]").forEach((span) => {
+        span.textContent = "";
+    });
+    form.querySelectorAll(".invalido").forEach((campo) => {
+        campo.classList.remove("invalido");
+    });
 }
 
 export function limpiarError(campo) {
     campo.classList.remove("invalido");
 
     const grupo = campo.closest(".formulario__grupo");
-
     if (!grupo) return;
 
-    const span =
-        grupo.querySelector(".error-campo");
-
+    const span = grupo.querySelector(".error-campo");
     if (span) {
         span.textContent = "";
     }
 }
+
+export function mostrarMensaje(form, texto, esError = false) {
+    const parrafo = form.querySelector(".mensaje");
+    if (!parrafo) return;
+
+    parrafo.textContent = texto;
+    parrafo.classList.remove("error", "exito");
+    if (texto !== "") {
+        parrafo.classList.add(esError ? "error" : "exito");
+    }
+}
+
