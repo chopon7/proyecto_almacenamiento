@@ -28,32 +28,31 @@
 
 <body class="layout">
     <header class="header">
-        <a href="../index.html" class="header__brand">
-            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
-                height="50">
-            <h2 class="header__logo-text">Temu Drive</h2>
+        <a class="header__brand" href="../index.html">
+            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="" width="50" height="50">
+            <span class="header__logo-text">Temu Drive</span>
         </a>
 
-        <button type="button" class="header__burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="header__nav">
+        <nav class="header__nav" id="menu-principal" aria-label="Principal">
             <ul class="header__list">
-                <li class="header__status">Estado: Operativo</li>
                 <li class="header__item"><a class="header__link" href="../pages/ofertas-y-paquetes.html">Paquetes</a>
                 </li>
-                <li class="header__item"><a class="header__selected">Soporte</a></li>
-                <li class="header__item"><a class="header__link" href="../pages/informacion.html">Más Información</a>
+                <li class="header__item"><a class="header__link header__link--seleccionado"
+                        href="../pages/soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="../pages/informacion.html">Más información</a>
                 </li>
             </ul>
         </nav>
 
-        <button class="header__theme" type="button">
-            <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26"
-                alt="cambiar tema">
+        <button class="header__theme" type="button" aria-label="Cambiar a tema claro">
+            <img class="header__theme-img" src="../assets/icons/modo_claro.png" alt="" width="26" height="26">
+        </button>
+
+        <button class="header__burger" type="button" aria-label="Abrir menú" aria-expanded="false"
+            aria-controls="menu-principal">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </header>
 
@@ -81,14 +80,16 @@
             <div class="categories__grid">
                 <article class="category-card">
                     <h3 class="category-card__title">Almacenamiento y Planes</h3>
-                    <p class="category-card__desc">Gestiona tu cuota de espacio, libera memoria y revisa tu suscripción.
+                    <p class="category-card__desc">Gestiona tu cuota de espacio, libera memoria y revisa tu
+                        suscripción.
                     </p>
                     <a href="#" class="category-card__link">Ver guías</a>
                 </article>
 
                 <article class="category-card">
                     <h3 class="category-card__title">Compartir y Permisos</h3>
-                    <p class="category-card__desc">Configura quién puede ver, comentar o editar tus carpetas y enlaces.
+                    <p class="category-card__desc">Configura quién puede ver, comentar o editar tus carpetas y
+                        enlaces.
                     </p>
                     <a href="#" class="category-card__link">Ver guías</a>
                 </article>
@@ -113,7 +114,8 @@
 
             <div class="faq__list">
                 <details id="faq-papelera" class="faq-item">
-                    <summary class="faq-item__summary">¿Cómo recupero un archivo que eliminé de la papelera?</summary>
+                    <summary class="faq-item__summary">¿Cómo recupero un archivo que eliminé de la papelera?
+                    </summary>
                     <p class="faq-item__answer">Los archivos permanecen en la papelera durante 30 días antes de
                         eliminarse de forma definitiva.</p>
                 </details>
@@ -121,19 +123,22 @@
                 <details id="faq-almacenamiento" class="faq-item">
                     <summary class="faq-item__summary">¿Por qué mi almacenamiento sigue lleno después de borrar
                         archivos?</summary>
-                    <p class="faq-item__answer">Los elementos dentro de la papelera siguen contando para tu cuota hasta
+                    <p class="faq-item__answer">Los elementos dentro de la papelera siguen contando para tu cuota
+                        hasta
                         que vacíes la papelera.</p>
                 </details>
 
                 <details id="faq-permisos" class="faq-item">
                     <summary class="faq-item__summary">¿Cómo evito que otros descarguen un archivo que compartí?
                     </summary>
-                    <p class="faq-item__answer">Abre la configuración de compartir del archivo y desactiva las opciones
+                    <p class="faq-item__answer">Abre la configuración de compartir del archivo y desactiva las
+                        opciones
                         de descargar, imprimir o copiar.</p>
                 </details>
 
                 <details id="faq-sincronizacion" class="faq-item">
-                    <summary class="faq-item__summary">¿Cuál es el tamaño máximo por archivo que puedo subir?</summary>
+                    <summary class="faq-item__summary">¿Cuál es el tamaño máximo por archivo que puedo subir?
+                    </summary>
                     <p class="faq-item__answer">El límite por archivo individual depende de tu plan y del espacio
                         disponible en tu cuenta.</p>
                 </details>
@@ -213,7 +218,7 @@
 
         <p class="footer__copyright">© 2026 Temu Drive. Todos los derechos reservados.</p>
     </footer>
-
+    <script src="../js/index.js"></script>
 </body>
 
 </html>

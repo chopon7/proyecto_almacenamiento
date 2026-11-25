@@ -1,146 +1,3 @@
-/*==================================================
-ÍNDICE
-1. Variables CSS
-2. Reset
-3. Asignación de áreas del Grid
-4. Layout
-5. Componentes BEM
-6. Media Queries Interactivas / Accesibilidad
-7. Media Queries Responsive 
-==================================================*/
-
-
-/* 2. Reset */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* 3. Asignación de áreas del Grid */
-.header {
-    grid-area: header;
-}
-
-.main {
-    grid-area: main;
-}
-
-.footer {
-    grid-area: footer;
-}
-
-/* 4. Layout */
-.layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-        "header"
-        "main"
-        "footer";
-    min-height: 100vh;
-}
-
-body {
-    background-color: var(--color-fondo);
-    color: var(--color-texto-principal);
-    font-family: var(--fuente-secundaria);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* 5. Componentes BEM */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-superficie);
-    font-family: var(--fuente-principal);
-    border-bottom: 0.1rem solid var(--color-borde);
-    padding: max(1rem, 1.3vw) min(2rem, 4vw);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.header__brand {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: max(0.5rem, 0.6vw);
-}
-
-.header__logo-img {
-    display: block;
-}
-
-.header__logo-text {
-    font-family: var(--fuente-principal);
-    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
-    color: var(--color-texto-principal);
-    margin: 0;
-}
-
-.header__list {
-    display: flex;
-    gap: min(2rem, 4vw);
-    list-style: none;
-}
-
-.header__nav {
-    margin-left: auto;
-}
-
-.header__burger {
-    display: none;
-}
-
-.header__theme {
-    display: flex;
-    background: none;
-    border: none;
-    padding: 6px;
-    margin-left: min(2rem, 4vw);
-    cursor: pointer;
-}
-
-.header__theme-img {
-    filter: invert(1);
-}
-
-.header__logo {
-    font-family: var(--fuente-principal);
-    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
-}
-
-.header__link {
-    text-decoration: none;
-    color: var(--color-texto-secundario);
-    font-family: var(--fuente-secundaria);
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.header__link:hover {
-    color: var(--color-acento);
-}
-
-.header__link::after {
-    content: "";
-    display: block;
-    width: 0%;
-    height: 2px;
-    background-color: var(--color-acento);
-    transition: width 0.3s ease;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-}
-
-.header__link:hover::after {
-    width: 100%;
-}
-
 /* Main */
 .contenido {
     padding: min(3rem, 6vw) min(1.5rem, 3vw);
@@ -186,7 +43,7 @@ body {
     padding: min(1.75rem, 3.5vw);
     text-align: left;
     position: relative;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    transition: transform var(--tiempo-transicion) ease, border-color var(--tiempo-transicion) ease, box-shadow var(--tiempo-transicion) ease, background-color var(--tiempo-transicion) ease;
 }
 
 
@@ -246,39 +103,6 @@ ul.descripcion-carta {
     transform: scale(0.97);
 }
 
-/* Footer */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: var(--color-superficie);
-    border-top: 0.1rem solid var(--color-borde);
-    padding: min(2rem, 4vw);
-    font-family: var(--fuente-secundaria);
-    text-align: left;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.footer section {
-    flex: 1 1 200px;
-    margin: var(--margen-small);
-}
-
-.footer picture img {
-    width: 30px;
-    height: 30px;
-    margin-right: max(10px, 0.8vw);
-    vertical-align: middle;
-}
-
-.footer p,
-.footer__copyright {
-    width: 100%;
-    text-align: center;
-    margin-top: var(--margen-base);
-    font-size: clamp(0.8rem, 0.7rem + 0.3vw, 1rem);
-    color: var(--color-texto-secundario);
-}
 
 /* 6. Media Queries Interactivas / Accesibilidad */
 @media (hover: hover) {
@@ -342,7 +166,7 @@ ul.descripcion-carta {
         height: 3px;
         background-color: var(--color-texto-secundario);
         border-radius: 2px;
-        transition: transform 0.3s, opacity 0.3s;
+        transition: transform var(--tiempo-transicion), opacity var(--tiempo-transicion);
     }
 
     .header__nav {

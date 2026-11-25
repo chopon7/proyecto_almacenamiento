@@ -1,0 +1,87 @@
+# Peticiones de prueba para la API de archivos de Temu Drive
+# Requiere la extensión "REST Client" de VS Code (humao.rest-client).
+# Servidor: XAMPP con Apache y MySQL encendidos, y el proyecto en htdocs.
+# Haz clic en "Send Request" sobre cada petición.
+
+@host = http://localhost/proyecto_almacenamiento
+
+###############################################################
+# ARCHIVOS: LEER (SELECT)
+###############################################################
+
+### Listar todos mis archivos
+GET {{host}}/api/archivos.php
+
+### Obtener uno por id
+GET {{host}}/api/archivos.php?id=1
+
+### Buscar por nombre
+GET {{host}}/api/archivos.php?buscar=foto
+
+### Id que no existe (espera 404)
+GET {{host}}/api/archivos.php?id=999
+
+###############################################################
+# ARCHIVOS: CREAR (INSERT)
+###############################################################
+
+### Crear archivo (espera 201)
+POST {{host}}/api/archivos.php
+Content-Type: application/json
+
+{
+  "nombre": "Tarea final.pdf",
+  "tipo": "documento"
+}
+
+### Crear con datos inválidos (espera 422)
+POST {{host}}/api/archivos.php
+Content-Type: application/json
+
+{
+  "nombre": "",
+  "tipo": "pelicula"
+}
+
+###############################################################
+# ARCHIVOS: ACTUALIZAR (UPDATE)
+# Cambia el id por el que te devolvió el POST
+###############################################################
+
+### Renombrar (espera 200)
+PUT {{host}}/api/archivos.php?id=7
+Content-Type: application/json
+
+{
+  "nombre": "Tarea final v2.pdf",
+  "tipo": "documento"
+}
+
+### Actualizar un id que no existe (espera 404)
+PUT {{host}}/api/archivos.php?id=999
+Content-Type: application/json
+
+{
+  "nombre": "Fantasma.txt",
+  "tipo": "documento"
+}
+
+###############################################################
+# ARCHIVOS: ELIMINAR (DELETE)
+###############################################################
+
+### Eliminar el archivo creado (espera 204)
+DELETE {{host}}/api/archivos.php?id=7
+
+### Eliminar uno que no existe (espera 404)
+DELETE {{host}}/api/archivos.php?id=999
+
+###############################################################
+# SEGURIDAD
+###############################################################
+
+### Inyección SQL (espera 404, NO la lista completa)
+GET {{host}}/api/archivos.php?id=0%20OR%201=1
+
+### Método no permitido (espera 405)
+PATCH {{host}}/api/archivos.php?id=1

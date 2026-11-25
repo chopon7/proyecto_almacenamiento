@@ -75,7 +75,7 @@ async function cargarArchivos() {
     marco.replaceChildren();
 
     try {
-        const respuesta = await fetch("../data/archivos.json");
+        const respuesta = await fetch("../api/archivos.php");
         if (!respuesta.ok) {
             // Que hace esto??
             throw new Error(`HTTP ${respuesta.status}`);

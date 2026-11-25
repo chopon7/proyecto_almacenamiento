@@ -42,34 +42,29 @@ Iniciar con linea de comando del server y entra a https:localhost:8000/index.htm
 
 <body id="body" class="layout">
     <header class="header">
-        <div>
-            <a class="header__brand">
-                <img class="header__logo-img" src="assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
-                    height="50">
+        <a class="header__brand" href="../index.html">
+            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="" width="50" height="50">
+            <span class="header__logo-text">Temu Drive</span>
+        </a>
 
-                <h2 class="header__logo-text">Temu Drive</h2>
-            </a>
-        </div>
-
-        <nav class="header__nav">
+        <nav class="header__nav" id="menu-principal" aria-label="Principal">
             <ul class="header__list">
-                <li class="header__item"><a class="header__link" href="pages/ofertas-y-paquetes.html">Paquetes</a></li>
+                <li class="header__item"><a class="header__link" href="/pages/ofertas-y-paquetes.html">Paquetes</a></li>
                 <li class="header__item"><a class="header__link" href="pages/soporte.html">Soporte</a></li>
-                <li class="header__item"><a class="header__link" href="pages/informacion.html">Más Información</a></li>
+                <li class="header__item"><a class="header__link" href="pages/informacion.html">Más información</a></li>
             </ul>
         </nav>
 
-        <button class="header__theme" type="button">
-            <img class="header__theme-img" src="assets/icons/modo_claro.png" width="26" height="26" alt="Cambiar tema">
+        <button class="header__theme" type="button" aria-label="Cambiar a tema claro">
+            <img class="header__theme-img" src="../assets/icons/modo_claro.png" alt="" width="26" height="26">
         </button>
 
-        <button class="header__burger">
+        <button class="header__burger" type="button" aria-label="Abrir menú" aria-expanded="false"
+            aria-controls="menu-principal">
             <span></span>
             <span></span>
             <span></span>
         </button>
-
-
     </header>
 
     <main class="main main--inicio">
@@ -102,33 +97,25 @@ Iniciar con linea de comando del server y entra a https:localhost:8000/index.htm
     </main>
 
     <footer class="footer">
-        <section>
-            <h3>Temu Drive</h3> <!-- Deberia usar h3??????-->
-            <p>
-                Proyecto de Programación Web.
+        <section class="footer__seccion">
+            <h2 class="footer__titulo">Temu Drive</h2>
+            <p class="footer__texto">Proyecto de Programación Web.
                 Desarrollado por Alfonso Jacobo Rodríguez García y Amukiri Romero Peláez.
-                UABCS 2026 II
-            </p>
+                UABCS 2026 II</p>
         </section>
-
-
-        <section>
-            <h3>Soporte</h3>
-            <ul>
-                <li><a href="pages/soporte.html">Preguntas frecuentes</a></li>
-                <li><a href="pages/informacion.html">Más información de nosotros</a></li>
-            </ul>
-
-        </section>
-
-        <section>
-            <h3>Más sobre nosotros</h3>
-            <ul>
-                <li><a href="pages/privacidad.html">Aviso de privacidad</a></li>
-                <li><a href="pages/terminos.html">Términos de servicio</a></li>
+        <section class="footer__seccion">
+            <h2 class="footer__titulo">Soporte</h2>
+            <ul class="footer__lista">
+                <li><a class="footer__link" href="soporte.html">Preguntas frecuentes</a></li>
             </ul>
         </section>
-
+        <section class="footer__seccion">
+            <h2 class="footer__titulo">Más sobre nosotros</h2>
+            <ul class="footer_lista">
+                <li><a class="footer__link" href="pages/privacidad.html">Aviso de privacidad</a></li>
+                <li><a class="footer__link" href="pages/terminos.html">Términos de servicio</a></li>
+            </ul>
+        </section>
         <p class="footer__copyright">© 2026 Temu Drive. Todos los derechos reservados.</p>
     </footer>
 

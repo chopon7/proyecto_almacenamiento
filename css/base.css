@@ -1,3 +1,23 @@
+/* Paleta aprobada el 24 nov 2026 (WCAG 2.2 AA).
+   Junto a cada color: contraste contra fondo / superficie / superficie-elevada.
+   Texto: 4.5:1 mínimo · bordes, iconos y foco: 3:1 mínimo.
+   Ver MANUAL_CORRECCIONES_proyecto_almacenamiento.md, capítulo 2.
+
+    ==================================================
+    ÍNDICE base.css                                             Linea 7
+    1. Variables (oscuro y .claro)                              Linea 21
+    2. Reset                                                    Linea
+    3. Utilidades (.sr-only)
+    4. Layout y áreas del Grid
+    5. Elementos generales (body, h1-h3, a, listas)
+    6. Header 
+    7. Footer
+    8. Botones
+    9. Interacción y accesibilidad (:focus-visible, hover, reduced-motion, tema)
+    10. Responsive (menú hamburguesa)
+==================================================
+*/
+/* Tema oscuro (principal) */
 :root {
     /* Superficies y Fondos */
     --color-fondo: #252528;
@@ -5,28 +25,59 @@
     --color-superficie-elevada: #27272a;
 
     /* Bordes y Separadores */
-    --color-borde: #626262;
+    --color-borde: #78787f;
+    /*  3.49 /  3.80 /  3.40  (antes #626262: 2.44, no pasaba) */
+    --color-borde-suave: #3f3f46;
+    /* solo decoración, no necesita 3:1 */
 
     /* Textos */
     --color-texto-principal: #ffffff;
+    /* 15.28 / 16.67 / 14.89 */
     --color-texto-secundario: #cbcbcb;
-    --color-texto-atenuado: #8a8a93;
-    --color-texto-invertido: #ffffff;
+    /*  9.42 / 10.28 /  9.18 */
+    --color-texto-atenuado: #a1a1aa;
+    /*  5.96 /  6.50 /  5.81  (antes #8a8a93: 4.35, no pasaba) */
+    --color-texto-invertido: #0c0a09;
+    /* sobre el acento: 7.79  (antes #ffffff: 2.54, no pasaba) */
 
     /* Acentos e Interacción */
     --color-acento: #10b981;
+    /*  6.03 /  6.57 /  5.87 */
+    --color-acento-hover: #34d399;
+    /*  7.95 /  8.67 /  7.75  (el verde de los iconos) */
+    --color-foco: var(--color-acento-hover);
+
+    /* Estados */
     --color-error: #f87171;
+    /*  5.53 /  6.03 /  5.38 */
+    --color-exito: var(--color-acento);
+    --color-favorito: #fbbf24;
+    /*  9.16 /  9.99 /  8.92 */
+    --color-aviso: var(--color-favorito);
+
+    /* Tipos de archivo (iguales a los iconos de icon_format/) */
+    --color-tipo-documento: #93c5fd;
+    --color-tipo-audio: #d8b4fe;
+    --color-tipo-video: #f40043;
+    --color-tipo-imagen: #ffa23a;
+    --color-tipo-datos: #00d164;
+    --color-tipo-comprimido: #f4d000;
+    --color-tipo-web: #00d1ce;
+    --color-tipo-ejecutable: #ff85cf;
+    --color-tipo-sistema: #b8b8b8;
+
+    /* Sombras */
+    --sombra-elevacion: rgba(0, 0, 0, 0.5);
+    --sombra-formulario: 0 4px 15px rgba(0, 0, 0, 0.4);
+    --sombra-tarjeta: 0 6px 14px rgba(0, 0, 0, 0.4);
 
     /* Tamaños de tipografía base */
+    --font-size-chico: 0.75rem;
+    --font-size-medio: 1.25rem;
     --font-size-small: 0.85rem;
     --font-size-normal: 1.1rem;
     --font-size-large: calc(var(--font-size-normal) * 1.5);
     --font-size-gigante: calc(var(--font-size-normal) * 2.5);
-
-    /* Bordes suaves y sombras */
-    --color-borde-suave: #27272a;
-    --sombra-elevacion: rgba(0, 0, 0, 0.5);
-    --sombra-formulario: 0 4px 15px rgba(0, 0, 0, 0.4);
 
     /* Tipografías */
     --fuente-principal: 'Share Tech Mono', monospace;
@@ -37,13 +88,21 @@
     --margen-base: 2rem;
     --margen-small: 1rem;
     --espaciado: 16px;
+
+    /* Tamaño minimo de botones tactiles*/
+    --boton-tactil-min: 44px;
+    --boton-radio-chico: 4px;
+    --boton-radio-normal: 6px;
+    --boton-radio-grande: 12px;
+    --boton-radio-pastilla: 999px;
+    --borde-grosor: 1px;
+
+
 }
 
 /* Tema claro
    - Grises "zinc" (la misma familia que el tema oscuro: #27272a = zinc-800)
-   - Verde "emerald" (la misma familia que el verde de los iconos #34D399)
-   - Contrastes WCAG medidos contra fondo / superficie / superficie-elevada:
-     texto 4.5:1 mínimo, bordes de controles 3:1 mínimo */
+   - Verde "emerald" (la misma familia que el verde de los iconos #34D399) */
 :root.claro {
     --color-fondo: #f4f4f5;
     /* zinc-100 */
@@ -52,7 +111,8 @@
     /* zinc-200 */
 
     --color-borde: #71717a;
-    /* 4.40 / 4.83 / 3.81 */
+    /*  4.40 /  4.83 /  3.81 */
+    --color-borde-suave: #e2e8f0;
 
     --color-texto-principal: #18181b;
     /* 16.12 / 17.72 / 13.96 */
@@ -64,10 +124,379 @@
     /* sobre el acento: 6.52 */
 
     --color-acento: #056b4e;
-    --color-error: #b91c1c;
+    /*  5.93 /  6.52 /  5.14 */
+    --color-acento-hover: #047857;
+    /*  4.99 /  5.48 /  4.32 */
 
-    --color-borde-suave: #e2e8f0;
+    --color-error: #b91c1c;
+    /*  5.89 /  6.47 /  5.10 */
+    --color-favorito: #a15c07;
+    /*  4.72 /  5.19 /  4.09 */
+
+    /* Tipos de archivo (iconos Icono_<tipo>_claro de icon_format/) */
+    --color-tipo-documento: #1d4ed8;
+    --color-tipo-audio: #7e22ce;
+    --color-tipo-video: #be123c;
+    --color-tipo-imagen: #c2410c;
+    --color-tipo-datos: #15803d;
+    --color-tipo-comprimido: #8a6d00;
+    --color-tipo-web: #0e7490;
+    --color-tipo-ejecutable: #be185d;
+    --color-tipo-sistema: #52525b;
+
     --sombra-elevacion: rgba(0, 0, 0, 0.08);
     --sombra-formulario: 0 10px 25px rgba(0, 0, 0, 0.08);
-    /*  5.93 /  6.52 /  5.14 */
+    --sombra-tarjeta: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* 2. Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Utilidades (.sr-only)*/
+.sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+
+}
+
+/* 4. Asignación de áreas del Grid */
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* 4. Layout */
+.layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+
+/* 6 Elementos generales */
+
+body {
+    background-color: var(--color-superficie);
+    color: var(--color-texto-secundario);
+    font-family: var(--fuente-secundaria);
+    font-size: var(--font-size-normal);
+    line-height: 1.6;
+    transition: var(--tiempo-transicion);
+}
+
+h1 {
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-principal);
+}
+
+h2 {
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-principal);
+    font-size: var(--font-size-large);
+    margin-bottom: var(--espaciado);
+}
+
+h3 {
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-principal);
+}
+
+/*7 Seccion completa del header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-superficie);
+    border-bottom: 0.1rem solid var(--color-borde);
+    padding: max(1rem, 1.3vw) var(--margen-base);
+    transition: background-color var(--tiempo-transicion) ease, border-color var(--tiempo-transicion) ease;
+}
+
+.header__brand {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: max(0.5rem, 0.6vw);
+}
+
+.header__logo-img {
+    display: block;
+}
+
+.header__logo-text {
+    font-family: var(--fuente-principal);
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
+    color: var(--color-texto-principal);
+    margin: 0;
+}
+
+.header__nav {
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.header__list {
+    display: flex;
+    gap: min(2rem, 4vw);
+    list-style: none;
+}
+
+.header__item {
+    display: flex;
+}
+
+/* Los links*/
+.header__link {
+    text-decoration: none;
+    color: var(--color-texto-secundario);
+    font-family: var(--fuente-secundaria);
+    position: relative;
+    transition: background-color var(--tiempo-transicion) ease, color var(--tiempo-transicion) ease;
+}
+
+.header__link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-acento);
+    transition: width var(--tiempo-transicion) ease;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+
+.header__link--seleccionado {
+    color: var(--color-acento);
+    font-weight: 600;
+}
+
+.header__link--seleccionado::after {
+    width: 100%;
+}
+
+.header__burger {
+    display: none;
+}
+
+/*Menu de hamburguesa*/
+.header__theme {
+    display: flex;
+    background: none;
+    border: none;
+    padding: 6px;
+    margin-left: min(2rem, 4vw);
+    min-height: var(--min-boton-tactil);
+    min-width: var(--min-boton-tactil);
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.header__theme-img {
+    filter: invert(1);
+}
+
+/* Modo claro (botón) */
+.claro .header__theme-img {
+    filter: none;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-foco);
+    outline-offset: 2px;
+}
+
+/* 8.- Footer */
+.footer {
+    background-color: var(--color-superficie);
+    border-top: 0.1rem solid var(--color-borde);
+    padding: min(2rem, 4vw);
+    font-family: var(--fuente-secundaria);
+    text-align: left;
+    transition: background-color var(--tiempo-transicion) ease, border-color var(--tiempo-transicion) ease;
+}
+
+.footer_titulo {
+    font-family: var(--fuente-principal);
+    font-size: 1.15rem;
+    color: var(--color-texto-principal);
+    margin-bottom: var(--margen-small);
+}
+
+.footer_lista {
+    list-style: none;
+    display: grid;
+    gap: calc(var(--margen-small) / 2);
+}
+
+.footer__link {
+    color: var(--color-texto-secundario);
+    transition: color var(--tiempo-transicion) ease;
+}
+
+.footer__texto {
+    font-size: clamp(0.8rem, 0.7rem + 0.3vw, 1rem);
+    color: var(--color-texto-secundario);
+    line-height: 1.5;
+}
+
+.footer__copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--margen-base);
+    padding-top: var(--margen-small);
+    border-top: 0.1rem solid var(--color-borde);
+}
+
+
+/*10 BOTONESSSSSS*/
+.button {
+    min-height: var(--boton-tactil-min);
+    border-radius: var(--boton-radio-normal);
+}
+
+.button--primary {
+    background-color: var(--color-acento);
+}
+
+.button--secondary {
+    border: var(--color-acento);
+    background-color: var(--color-superficie-elevada);
+}
+
+.button--peligro {
+    border: var(--color-error);
+}
+
+.button:disabled {
+
+    cursor: not-allowed;
+}
+
+.button--cargando {
+    cursor: not-allowed;
+}
+
+/* media para dispositivos responsivos*/
+@media (max-width: 1023px) {
+    .header {
+        position: relative;
+        flex-direction: row;
+    }
+
+    .header__burger {
+        display: flex;
+        background: none;
+        border: none;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    .header__theme {
+        margin-left: auto;
+    }
+
+    .header__burger span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background-color: var(--color-texto-secundario);
+        border-radius: 2px;
+        transition: transform var(--tiempo-transicion), opacity var(--tiempo-transicion);
+    }
+
+    .header__nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-superficie);
+        border-bottom: 0.1rem solid var(--color-borde);
+        z-index: 10;
+    }
+
+    .header--open .header__nav {
+        display: block;
+    }
+
+    .header__list {
+        right: 2%;
+        z-index: 20;
+        position: absolute;
+        background-color: var(--color-fondo);
+        flex-direction: column;
+        align-items: flex-end;
+        border-radius: 10%;
+        /* TODO: modificar aqui por variable radio*/
+        gap: max(1rem, 2vw);
+        padding: max(1rem, 2vw) 1rem;
+    }
+
+    .header--open .header__burger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .header--open .header__burger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header--open .header__burger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    :root {
+        --margen-base: 1rem;
+    }
+
+    .header {
+        padding: max(1rem, 2.5vw);
+    }
+
+    .main--inicio {
+        padding: min(4rem, 10vw) max(1rem, 2.5vw);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --margen-base: 1.3rem;
+    }
+
+    .main--inicio {
+        padding: min(6rem, 9vw) min(2rem, 3vw);
+    }
 }

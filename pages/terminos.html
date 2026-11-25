@@ -28,31 +28,28 @@
 
 <body class="layout">
     <header class="header">
-        <a href="../index.html" class="header__brand">
-            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="Logo Temu Drive" width="50"
-                height="50">
-            <h2 class="header__logo-text">Temu Drive</h2>
+        <a class="header__brand" href="../index.html">
+            <img class="header__logo-img" src="../assets/img/Icono_logo.webp" alt="" width="50" height="50">
+            <span class="header__logo-text">Temu Drive</span>
         </a>
 
-        <button type="button" class="header__burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav class="header__nav">
+        <nav class="header__nav" id="menu-principal" aria-label="Principal">
             <ul class="header__list">
-                <li class="header__item"><a class="header__link" href="pages/ofertas-y-paquetes.html">Paquetes</a>
-                </li>
-                <li class="header__item"><a class="header__link" href="pages/soporte.html">Soporte</a></li>
-                <li class="header__item"><a class="header__link" href="pages/informacion.html">Más Información</a>
-                </li>
+                <li class="header__item"><a class="header__link" href="ofertas-y-paquetes.html">Paquetes</a></li>
+                <li class="header__item"><a class="header__link" href="soporte.html">Soporte</a></li>
+                <li class="header__item"><a class="header__link" href="informacion.html">Más información</a></li>
             </ul>
         </nav>
 
-        <button class="header__theme" type="button">
-            <img class="header__theme-img" src="../assets/icons/modo_claro.png" width="26" height="26"
-                alt="cambiar tema">
+        <button class="header__theme" type="button" aria-label="Cambiar a tema claro">
+            <img class="header__theme-img" src="../assets/icons/modo_claro.png" alt="" width="26" height="26">
+        </button>
+
+        <button class="header__burger" type="button" aria-label="Abrir menú" aria-expanded="false"
+            aria-controls="menu-principal">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </header>
 
@@ -402,6 +399,7 @@
 
         <p class="footer__copyright">© 2026 Temu Drive. Todos los derechos reservados.</p>
     </footer>
+    <script src="js/index.js" defer></script>
 </body>
 
 </html>

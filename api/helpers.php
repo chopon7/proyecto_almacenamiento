@@ -7,3 +7,10 @@ function responder($datos, int $codigo = 200): void
     echo json_encode($datos, JSON_UNESCAPED_UNICODE);
     exit;
 }
+
+// Lee el cuerpo JSON de la petición. Devuelve [] si viene vacío o inválido.
+function leerJson(): array
+{
+    $datos = json_decode(file_get_contents('php://input'), true);
+    return is_array($datos) ? $datos : [];
+}
