@@ -215,21 +215,13 @@
     }
 }
 
-.header__link:focus-visible,
-.footer a:focus-visible {
-    color: var(--color-acento);
-}
-
-.header__link:focus-visible::after {
-    width: 100%;
-}
-
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
         transition: none !important;
+        /* Checar como funciona profefer reducer motion*/
     }
 
     .main--inicio::before {

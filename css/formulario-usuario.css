@@ -44,7 +44,6 @@
     color: var(--color-texto-principal);
     font-family: var(--fuente-secundaria);
     border-radius: 4px;
-    outline: none;
     transition: border-color 0.2s ease, background-color var(--tiempo-transicion) ease, color var(--tiempo-transicion) ease;
 }
 
@@ -61,7 +60,7 @@
     color: var(--color-acento);
     margin-bottom: max(0.75rem, 1vw);
     font-family: var(--fuente-principal);
-    font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
+    font-size: var(--font-size-medio);
 }
 
 .radio-group {
@@ -103,8 +102,9 @@
     margin-top: min(1.75rem, 3.5vw);
 }
 
-.error {
+.error-campo {
     color: var(--color-error);
+    border: var(--borde-grosor);
 }
 
 .formulario-botton {
@@ -177,77 +177,6 @@
 
 .claro .header__theme-img {
     filter: none;
-}
-
-/* 7. Media Queries Responsive */
-/* Menú de hamburguesa */
-@media (max-width: 1023px) {
-    .header {
-        position: relative;
-        padding: max(1rem, 2vw);
-    }
-
-    .header__burger {
-        display: flex;
-        background: none;
-        border: none;
-        flex-direction: column;
-        gap: 5px;
-        padding: 8px;
-        cursor: pointer;
-    }
-
-    .header__theme {
-        margin-left: auto;
-    }
-
-    .header__burger span {
-        display: block;
-        width: 26px;
-        height: 3px;
-        background-color: var(--color-texto-secundario);
-        border-radius: 2px;
-        transition: transform var(--tiempo-transicion), opacity var(--tiempo-transicion);
-    }
-
-    .header__nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-superficie);
-        border-bottom: 0.1rem solid var(--color-borde);
-        z-index: 10;
-    }
-
-    .header--open .header__nav {
-        display: block;
-    }
-
-    .header__list {
-        right: 2%;
-        z-index: 20;
-        position: absolute;
-        background-color: var(--color-fondo);
-        flex-direction: column;
-        align-items: end;
-        border-radius: 10%;
-        gap: max(1rem, 2vw);
-        padding: max(1rem, 2vw) 1rem;
-    }
-
-    .header--open .header__burger span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .header--open .header__burger span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .header--open .header__burger span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
 }
 
 /* Mensajes de error y validación */

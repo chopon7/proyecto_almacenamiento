@@ -87,7 +87,7 @@
     --tiempo-transicion: 0.3s;
     --margen-base: 2rem;
     --margen-small: 1rem;
-    --espaciado: 16px;
+    --espaciado: 2rem;
 
     /* Tamaño minimo de botones tactiles*/
     --boton-tactil-min: 44px;
@@ -95,7 +95,7 @@
     --boton-radio-normal: 6px;
     --boton-radio-grande: 12px;
     --boton-radio-pastilla: 999px;
-    --borde-grosor: 1px;
+    --borde-grosor: 0.25rem;
 
 
 }
@@ -330,8 +330,8 @@ h3 {
 }
 
 :focus-visible {
-    outline: 3px solid var(--color-foco);
-    outline-offset: 2px;
+    outline: var(--borde-grosor) solid var(--color-foco);
+    border-radius: var(--boton-radio-normal);
 }
 
 /* 8.- Footer */
@@ -346,7 +346,7 @@ h3 {
 
 .footer_titulo {
     font-family: var(--fuente-principal);
-    font-size: 1.15rem;
+    font-size: var(--font-size-large);
     color: var(--color-texto-principal);
     margin-bottom: var(--margen-small);
 }
@@ -385,6 +385,7 @@ h3 {
 
 .button--primary {
     background-color: var(--color-acento);
+
 }
 
 .button--secondary {
@@ -431,7 +432,7 @@ h3 {
         width: 26px;
         height: 3px;
         background-color: var(--color-texto-secundario);
-        border-radius: 2px;
+        border-radius: var(--borde-grosor);
         transition: transform var(--tiempo-transicion), opacity var(--tiempo-transicion);
     }
 
@@ -498,5 +499,16 @@ h3 {
 
     .main--inicio {
         padding: min(6rem, 9vw) min(2rem, 3vw);
+    }
+}
+
+@media (hover:hover) {
+
+    .header__link:hover {
+        background-color: var(--color-superficie-elevada);
+    }
+
+    .footer__link:hover {
+        background-color: var(--color-superficie-elevada);
     }
 }

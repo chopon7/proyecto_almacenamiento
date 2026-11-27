@@ -1,9 +1,3 @@
-.header__status {
-    color: var(--color-acento);
-    font-family: var(--fuente-principal);
-    font-size: 0.9rem;
-}
-
 /* Main y secciones de soporte */
 .main {
     background-color: var(--color-fondo);
@@ -226,57 +220,4 @@
 .support-search__input:focus,
 .ticket-form__control:focus {
     outline: 2px solid var(--color-acento);
-    outline-offset: 2px;
-}
-
-/* 7. Media Queries Responsive */
-@media (max-width: 1023px) {
-    .header__burger {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        padding: 0.5rem;
-        cursor: pointer;
-    }
-
-    .header__burger span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background-color: var(--color-texto-principal);
-    }
-
-    .header__nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-superficie);
-        border-bottom: 0.1rem solid var(--color-borde);
-        padding: var(--margen-small);
-        z-index: 10;
-    }
-
-    .header--open .header__nav {
-        display: block;
-    }
-
-    .header__list {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 767px) {
-    :root {
-        --margen-base: 1rem;
-    }
-
-    .support-section {
-        padding: var(--margen-small);
-    }
 }
